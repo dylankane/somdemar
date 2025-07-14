@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Som de Mar</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- FAB Menu -->
+    <div class="fab-container">
+        <button class="fab-menu" id="fabMenu">
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+        </button>
+        <nav class="fab-dropdown" id="fabDropdown">
+            <a href="#home">Inicio</a>
+            <a href="#reserve">Reservar</a>
+            <a href="#dishes">Nuestros Platos</a>
+            <a href="#contact">Contactanos</a>
+            <a href="#location">Ubicación</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#blog">Blog</a>
+        </nav>
+    </div>
+
+    <!-- Navigation (now in page flow) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image"></div>
+            </div>
+            <div class="language-selector">
+                <a href="#" class="language-link active">ES</a>
+                <span class="language-divider">|</span>
+                <a href="#" class="language-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="som">SOM</span>
+                <span class="de">DE</span>
+                <span class="mar">MAR</span>
+            </h1>
+            <p>Cocina De Mercado Y Arroces</p>
+            <a href="#" class="cta-button">Reservar Ahora</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>La Experiencia Som de Mar</h2>
+                    <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar. Nuestro compromiso con la calidad y la excelencia nos lleva a seleccionar cuidadosamente cada ingrediente, desde las capturas del puerto local hasta los productos de nuestros distribuidores exclusivos.</p>
+                    <p>Nuestro objetivo es alcanzar excelencia, combinando técnicas tradicionales con innovación culinaria para ofrecer una experiencia gastronómica inigualable.</p>
+                </div>
+                <div class="about-image" aria-label="Interior del restaurante"></div>
+            </div>
+            <div class="about-overlay"></div>
+        </div>
+    </section>
+    
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+        <div class="quote-overlay">
+            <p class="quote-text">Todos los artes son maravillosos, y la cocina es uno de ellos. Así que disfruten de la comida.</p>
+        </div>
+    </section>
+
+    <!-- Food Gallery Section -->
+    <section id="food-gallery" class="food-gallery">
+        <div class="container">
+            <div class="gallery-content">
+                <div class="gallery-grid">
+                    <div class="carousel" data-delay="6000">
+                        <img src="assets/images/pulpo_plancha.jpg" class="carousel-img active">
+                        <img src="assets/images/pulpo_kinfe.jpg" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="7000">
+                        <img src="assets/images/postre.jpg" class="carousel-img active">
+                        <img src="assets/images/postre_close.jpg" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="8000">
+                        <img src="assets/images/gambas_plate.jpeg" class="carousel-img active">
+                        <img src="assets/images/arty_dish.jpeg" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="6500">
+                        <img src="assets/images/arroz_negro.jpeg" class="carousel-img active">
+                        <img src="assets/images/atun_chop.jpeg" class="carousel-img">
+                    </div>
+                </div>
+                <div class="gallery-text">
+                    <h2>Nuestra Cocina</h2>
+                    <p>Descubra la pasión y el arte que hay detrás de cada plato en Som de Mar. Nuestra cocina es un homenaje a los sabores del mar, donde la frescura y la creatividad se unen para ofrecer una experiencia gastronómica inolvidable.</p>
+                    <a href="#" class="gallery-button animate-on-scroll">Nuestros Platos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Video Background Section -->
+    <section class="video-banner">
+        <div class="video-container">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-overlay">
+            <div class="hero-content">
+                <h1>
+                    <span class="som">SOM</span>
+                    <span class="de">DE</span>
+                    <span class="mar">MAR</span>
+                </h1>
+            </div>
+        </div>
+      </section>
+
+    <!-- Spacer -->
+    <div class="spacer">
+        <a href="#" class="reservar-button animate-on-scroll">Reservar Ahora</a>
+    </div>
+
+    <!-- Location -->
+    <section id="location" class="location">
+        <div class="container">
+            <h2 class="section-title">Visítanos</h2>
+            
+            <!-- First Row: Three Images with La Zona Text -->
+            <div class="location-row location-row-images">
+                <div class="location-images">
+                    <div class="location-images-top">
+                        <div class="location-image" style="background-image: url('assets/images/areil.jpeg')"></div>
+                        <div class="location-image" style="background-image: url('assets/images/la_villa_joiosa.jpeg')"></div>
+                    </div>
+                    <div class="location-images-bottom">
+                        <div class="location-image" style="background-image: url('assets/images/shop_front.jpg')"></div>
+                    </div>
+                </div>
+                <div class="location-text">
+                    <h3>La Villa Joiosa</h3>
+                    <p>Ubicados en uno de los pueblos costeros más pintorescos de la Costa Blanca, nuestro restaurante está rodeado de historia y belleza natural. Disfruta de las vistas al mar y del encanto de nuestro casco antiguo, con sus coloridas casas de pescadores y su ambiente mediterráneo único.</p>
+                </div>
+            </div>
+
+            <!-- Second Row: Map with Cómo Llegar Text -->
+            <div class="location-row location-row-map">
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072.058114213396!2d-0.1194549841874617!3d38.55723997934826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6393804358951f%3A0x5c792a6e5f5a6587!2sVillajoyosa!5e0!3m2!1ses!2ses!4v1704833953055!5m2!1ses!2ses" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="location-text">
+                    <h3>Cómo Llegar</h3>
+                    <p>Nos encontramos en el corazón de Villajoyosa, a solo 5 minutos a pie de la playa. Puedes llegar fácilmente en coche por la N-332 o en transporte público, con paradas de autobús a solo 3 minutos andando.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer">
+        <a href="#" class="reservar-button">contactanos</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Left Column - Navigation Links -->
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#dishes">Nuestros Platos</a></li>
+                        <li><a href="#reserve">Reservar</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Center Column - Logo -->
+                <div class="footer-logo">
+                    <h1>
+                        <span class="som">SOM</span>
+                        <span class="de">DE</span>
+                        <span class="mar">MAR</span>
+                    </h1>
+                </div>
+                
+                <!-- Right Column - Contact Info -->
+                <div class="footer-contact">
+                    <div class="contact-address">
+                        <p>Calle del Mar, 12<br>Villajoyosa, Alicante</p>
+                    </div>
+                    <div class="contact-hours">
+                        <p>Lunes - Domingo<br>13:00 - 16:00<br>19:30 - 23:00</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>+34 123 456 789<br>info@somdemar.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="developer-credit">
+                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Som de Mar.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scroll-effects.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/fab-menu.js"></script>
+</body>
+</html>

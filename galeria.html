@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Som de Mar</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Gallery Specific Styles */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            color: #333;
+            font-size: 2.5rem;
+            margin: 3rem 0 2rem 0;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Gallery Grid */
+        .album {
+            padding: 4rem 0;
+            background: #f5f5f5;
+        }
+
+        .album .responsive-container-block.bg {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 6px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .album .responsive-container-block.img-cont {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+            gap: 6px;
+            height: 100%;
+        }
+
+        .album .img {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease;
+            opacity: 1;
+            position: relative;
+        }
+
+        /* Standardize all images to same height */
+        .album .img {
+            height: 224px;
+            padding-bottom: 0;
+        }
+
+        /* Big images take up 2x height + gap */
+        .album .img.img-big {
+            height: 339px; /* (200px * 2) + 6px gap */
+        }
+
+        .album .img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-button {
+            display: block;
+            max-width: 50%;
+            margin: 0rem auto 5rem;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: #000000;
+            border: 2px solid #009697;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .gallery-button:hover {
+            background-color: #009697;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .album .responsive-container-block.bg {
+                flex-wrap: wrap;
+            }
+            
+            .album .responsive-container-block.img-cont {
+                flex: 0 0 calc(50% - 5px);
+                margin-bottom: 10px;
+                height: auto;
+            }
+            
+            .album .img {
+                height: 180px;
+            }
+            
+            .album .img.img-big {
+                height: 366px; /* (180px * 2) + 6px gap */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .album .responsive-container-block.img-cont {
+                flex: 0 0 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+                height: auto;
+            }
+            
+            .album .img {
+                flex: 0 0 calc(50% - 5px);
+                height: 160px;
+            }
+            
+            .album .img.img-big {
+                flex: 0 0 100%;
+                height: 326px; /* (160px * 2) + 6px gap */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .album .img:not(.img-big) {
+                flex: 0 0 100%;
+                padding-bottom: 75%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- FAB Menu -->
+    <div class="fab-container">
+        <button class="fab-menu" id="fabMenu">
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+        </button>
+        <nav class="fab-dropdown" id="fabDropdown">
+            <a href="index.html">Inicio</a>
+            <a href="#reserve">Reservar</a>
+            <a href="nuestros-platos.html">Nuestros Platos</a>
+            <a href="contactanos.html">Contactanos</a>
+            <a href="index.html#location">Ubicación</a>
+            <a href="galeria.html">Galería</a>
+            <a href="blogs.html">Blog</a>
+        </nav>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-image"></div>
+                </a>
+            </div>
+            <div class="language-selector">
+                <a href="#" class="language-link active">ES</a>
+                <span class="language-divider">|</span>
+                <a href="#" class="language-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Content -->
+    <main class="page-content">
+        <section class="section">
+            <div class="gallery-container">
+                <h1 class="section-title">Nuestra Galería</h1>
+            <div class="album">
+                <div class="responsive-container-block bg">
+                    <!-- First Column - 3 images -->
+                    <div class="responsive-container-block img-cont">
+                        <div class="img" style="background-image: url('./assets/images/arroz_negro.jpeg')" aria-label="Arroz Negro"></div>
+                        <div class="img" style="background-image: url('./assets/images/pulpo_plancha.jpg')" aria-label="Pulpo a la Brasa"></div>
+                        <div class="img img-last" style="background-image: url('./assets/images/dish-1.jpg')" aria-label="Plato Especial"></div>
+                    </div>
+                    
+                    <!-- Second Column - 2 large images -->
+                    <div class="responsive-container-block img-cont">
+                        <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
+                        <div class="img img-big img-last" style="background-image: url('./assets/images/arty_dish.jpeg')" aria-label="Plato Artístico"></div>
+                    </div>
+                    
+                    <!-- Third Column - 3 images -->
+                    <div class="responsive-container-block img-cont">
+                        <div class="img" style="background-image: url('./assets/images/dish-2.jpg')" aria-label="Plato del Día"></div>
+                        <div class="img" style="background-image: url('./assets/images/atun_chop.jpeg')" aria-label="Atún a la Plancha"></div>
+                </div>
+                <a href="index.html" class="gallery-button">Volver al Inicio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Left Column - Navigation Links -->
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nuestros-platos.html">Nuestros Platos</a></li>
+                        <li><a href="#reserve">Reservar</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Center Column - Logo -->
+                <div class="footer-logo">
+                    <h1>
+                        <span class="som">SOM</span>
+                        <span class="de">DE</span>
+                        <span class="mar">MAR</span>
+                    </h1>
+                </div>
+                
+                <!-- Right Column - Contact Info -->
+                <div class="footer-contact">
+                    <div class="contact-address">
+                        <p>Calle del Mar, 12<br>Villajoyosa, Alicante</p>
+                    </div>
+                    <div class="contact-hours">
+                        <p>Lunes - Domingo<br>13:00 - 16:00<br>19:30 - 23:00</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>+34 123 456 789<br>info@somdemar.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="developer-credit">
+                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Som de Mar.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scroll-effects.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/fab-menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure all images are properly loaded
+            const images = document.querySelectorAll('.img');
+            images.forEach(img => {
+                // Force background image to be visible
+                const bg = img.style.backgroundImage;
+                if (bg && bg !== 'none') {
+                    img.style.backgroundImage = bg;
+                }
+                
+                // Add loaded class when image is loaded
+                const imgUrl = bg.replace('url("', '').replace('")', '').replace('url(', '').replace(')', '');
+                const tempImg = new Image();
+                tempImg.onload = function() {
+                    img.style.backgroundImage = `url(${imgUrl})`;
+                    img.style.opacity = '1';
+                };
+                tempImg.src = imgUrl;
+            });
+        });
+    </script>
+</body>
+</html>

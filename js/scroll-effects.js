@@ -1,0 +1,33 @@
+// ScrollReveal configuration
+const sr = ScrollReveal({
+    distance: '60px',
+    duration: 2000,
+    delay: 400,
+    reset: false
+});
+
+// Animate elements on scroll
+//hero section
+sr.reveal('.hero-content h1', { delay: 200 });
+sr.reveal('.hero-content p', { delay: 400 });
+sr.reveal('.hero-content .cta-button', { delay: 600 });
+
+//about section
+sr.reveal('.about-text', { origin: 'left', delay: 200 });
+sr.reveal('.about-image', { origin: 'right', delay: 200 });
+
+//food gallery section
+sr.reveal('.gallery-grid', { origin: 'left', delay: 200 });
+sr.reveal('.gallery-text', { origin: 'right', delay: 200 });
+
+
+// Location section animations
+sr.reveal('.location .section-title', { origin: 'top', distance: '30px' });
+
+// First row - Images and text
+sr.reveal('.location-row-images .location-images', { origin: 'right', distance: '60px' });
+sr.reveal('.location-row-images .location-text', { origin: 'left', distance: '60px' });
+
+// Second row - Map and text
+sr.reveal('.location-map', { origin: 'left', distance: '60px' })
+sr.reveal('.location-row-map .location-text', { origin: 'right', distance: '60px' });
