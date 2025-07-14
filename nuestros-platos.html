@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Platos - Som de Mar</title>
+    <title>Som de Mar</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -49,15 +52,163 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero sub-hero">
+        <div class="hero-content">
+            <h1>
+                <span class="som">NUESTROS</span>
+                <span class="de">PLATOS</span>
+            </h1>
+            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
     <!-- Main Content -->
-    <main class="page-content">
-        <section class="section">
-            <div class="container">
-                <h1>Nuestros Platos</h1>
-                <p>Descubre nuestra selección de platos elaborados con los ingredientes más frescos del Mediterráneo.</p>
-                <!-- Menu items will be added here -->
+    <main class="main">
+        <div class="section-title">
+            <h2>Platos Estrella</h2>
+        </div>
+        <section class="container dish-container">
+            <article class="special-dish">
+                <div class="dish-content">
+                    <h2>Arroz Negro con Gambas</h2>
+                    <div class="dish-section">
+                        <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                            Un plato marinero intenso y equilibrado.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Origen e Historia</h3>
+                        <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
+                            Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Técnicas y Preparación</h3>
+                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
+                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
+                    </div>
+                </div>
+                <div class="dish-images">
+                    <div class="main-image" style="background-image: url('assets/images/arroz_negro.jpeg');"></div>
+                    <div class="thumbnails">
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/atun_chop.jpeg');"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="special-dish">
+                <div class="dish-content">
+                    <h2>Arroz Negro con Gambas</h2>
+                    <div class="dish-section">
+                        <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                            Un plato marinero intenso y equilibrado.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Origen e Historia</h3>
+                        <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
+                            Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Técnicas y Preparación</h3>
+                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
+                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
+                    </div>
+                </div>
+                <div class="dish-images">
+                    <div class="main-image" style="background-image: url('assets/images/arroz_negro.jpeg');"></div>
+                    <div class="thumbnails">
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/atun_chop.jpeg');"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="special-dish">
+                <div class="dish-content">
+                    <h2>Arroz Negro con Gambas</h2>
+                    <div class="dish-section">
+                        <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                            Un plato marinero intenso y equilibrado.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Origen e Historia</h3>
+                        <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
+                            Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Técnicas y Preparación</h3>
+                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
+                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
+                    </div>
+                </div>
+                <div class="dish-images">
+                    <div class="main-image" style="background-image: url('assets/images/arroz_negro.jpeg');"></div>
+                    <div class="thumbnails">
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
+                        <div class="thumbnail" style="background-image: url('assets/images/atun_chop.jpeg');"></div>
+                    </div>
+                </div>
+            </article>
+            <div class="spacer">
+                <a href="#" class="reservar-button">Reservar Ahora</a>
             </div>
         </section>
+            
+        <!-- Menu List -->
+        <section class="menu-list">
+            <div class="menu-header">
+                <div class="menu-overlay"></div>
+                <div class="container">
+                    <h2>Otras Sugerencias del Chef </h2>
+                    <p class="menu-intro">Aquí tienes una lista de algunos de nuestros platos clásicos más queridos por nuestros clientes. Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esta es solo una muestra de lo que ofrecemos. No dudes en ponerte en contacto para conocer nuestras especialidades más recientes.</p>
+                </div>
+            </div>
+            <div class="menu-content">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <h3>Paella Valenciana</h3>
+                            <p>Arroz de Calasparra con pollo, conejo y verduras de temporada.</p>
+                        </li>
+                        <li>
+                            <h3>Lubina al Horno</h3>
+                            <p>Lubina fresca del Mediterráneo con azafrán y hierbas del jardín.</p>
+                        </li>
+                        <li>
+                            <h3>Arroz con Bogavante</h3>
+                            <p>Arroz de Calasparra con bogavante de la costa alicantina.</p>
+                            </li>
+                        <li>
+                            <h3>Calamares a la Romana</h3>
+                            <p>Calamares frescos rebozados con harina de trigo y azafrán.</p>
+                        </li>
+                        <li>
+                            <h3>Ensaladilla Rusa</h3>
+                            <p>Ensalada tradicional con patata, zanahoria y mayonesa casera.</p>
+                        </li>
+                        <li>
+                            <h3>Postre Tradicional</h3>
+                            <p>Tarta de limón con merengue italiano y ralladura de limón.</p>
+                        </li>
+                        <li>
+                            <h3>Arroz al Horno</h3>
+                            <p>Arroz de Calasparra con pollo, conejo y verduras de temporada.</p>
+                        </li>
+                        <li>
+                            <h3>Ensalada de Mariscos</h3>
+                            <p>Ensalada fresca con gambas, mejillones y almejas.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spacer">
+                <a href="#" class="reservar-button">Inicio</a>
+            </div>
+            <div class="spacer"></div>
+        </section>
+
     </main>
 
     <!-- Footer -->

@@ -49,13 +49,81 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero sub-hero">
+        <div class="hero-content">
+            <h1>
+                <span class="som">CONTACTANOS</span>
+            </h1>
+            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
     <!-- Main Content -->
     <main class="page-content">
         <section class="section">
             <div class="container">
-                <h1>Contáctanos</h1>
-                <p>Estamos aquí para responder a tus preguntas y escuchar tus comentarios.</p>
-                <!-- Contact form will be added here -->
+                <div class="contact-info-section">
+                    <div class="section-title">
+                        <h2>Información de Contacto</h2>
+                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen arriba. 
+                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y te responderemos lo antes posible.</p>
+                    </div>
+                    <div class="contact-info-grid">
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>+34 612 345 678</h3>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>info@somdemar.com</h3>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Calle Mar Bella, 123<br>08001 Barcelona, Spain</h3>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Martes-Domingo: 12:00 - 23:00</h3>
+                                <h3>Lunes: Cerrado</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="message-button">Enviar Mensaje</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

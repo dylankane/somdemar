@@ -10,7 +10,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/_variables.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -29,10 +29,14 @@
             font-family: 'Playfair Display', serif;
         }
 
+        .gallery-section {
+            margin: 6rem 0 3rem 0;
+        }
+
         /* Gallery Grid */
         .album {
             padding: 4rem 0;
-            background: #f5f5f5;
+            background: #f8f8f8;
         }
 
         .album .responsive-container-block.bg {
@@ -187,32 +191,57 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero sub-hero">
+        <div class="hero-content">
+            <h1>
+                <span class="som">Galeria</span>
+            </h1>
+            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
     <!-- Gallery Content -->
     <main class="page-content">
-        <section class="section">
+        <section class="gallery-section">
             <div class="gallery-container">
-                <h1 class="section-title">Nuestra Galería</h1>
-            <div class="album">
-                <div class="responsive-container-block bg">
-                    <!-- First Column - 3 images -->
-                    <div class="responsive-container-block img-cont">
-                        <div class="img" style="background-image: url('./assets/images/arroz_negro.jpeg')" aria-label="Arroz Negro"></div>
-                        <div class="img" style="background-image: url('./assets/images/pulpo_plancha.jpg')" aria-label="Pulpo a la Brasa"></div>
-                        <div class="img img-last" style="background-image: url('./assets/images/dish-1.jpg')" aria-label="Plato Especial"></div>
-                    </div>
+                <div class="album">
+                    <div class="responsive-container-block bg">
+                        <!-- First Column - 3 images -->
+                        <div class="responsive-container-block img-cont">
+                            <div class="img" style="background-image: url('./assets/images/arroz_negro.jpeg')" aria-label="Arroz Negro"></div>
+                            <div class="img" style="background-image: url('./assets/images/pulpo_plancha.jpg')" aria-label="Pulpo a la Brasa"></div>
+                            <div class="img" style="background-image: url('./assets/images/dish-1.jpg')" aria-label="Plato Especial"></div>
+                            <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
+                            <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
+                        </div>
                     
-                    <!-- Second Column - 2 large images -->
-                    <div class="responsive-container-block img-cont">
-                        <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
-                        <div class="img img-big img-last" style="background-image: url('./assets/images/arty_dish.jpeg')" aria-label="Plato Artístico"></div>
-                    </div>
+                        <!-- Second Column - 2 large images -->
+                        <div class="responsive-container-block img-cont">
+                            <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
+                            <div class="img img-big" style="background-image: url('./assets/images/arty_dish.jpeg')" aria-label="Plato Artístico"></div>
+                            <div class="img" style="background-image: url('./assets/images/arroz_negro.jpeg')" aria-label="Arroz Negro"></div>
+                            <div class="img" style="background-image: url('./assets/images/pulpo_plancha.jpg')" aria-label="Pulpo a la Brasa"></div>
+                            <div class="img" style="background-image: url('./assets/images/dish-1.jpg')" aria-label="Plato Especial"></div>
+                        </div>
                     
-                    <!-- Third Column - 3 images -->
-                    <div class="responsive-container-block img-cont">
-                        <div class="img" style="background-image: url('./assets/images/dish-2.jpg')" aria-label="Plato del Día"></div>
-                        <div class="img" style="background-image: url('./assets/images/atun_chop.jpeg')" aria-label="Atún a la Plancha"></div>
+                        <!-- Third Column - 3 images -->
+                        <div class="responsive-container-block img-cont">
+                            <div class="img" style="background-image: url('./assets/images/dish-2.jpg')" aria-label="Plato del Día"></div>
+                            <div class="img img-big" style="background-image: url('./assets/images/gambas_plate.jpeg')" aria-label="Gambas al Ajillo"></div>
+                            <div class="img img-big" style="background-image: url('./assets/images/arty_dish.jpeg')" aria-label="Plato Artístico"></div>
+                            <div class="img" style="background-image: url('./assets/images/atun_chop.jpeg')" aria-label="Atún a la Plancha"></div>
+                            <div class="img" style="background-image: url('./assets/images/atun_chop.jpeg')" aria-label="Atún a la Plancha"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="spacer">
                 <a href="index.html" class="gallery-button">Volver al Inicio</a>
+            </div>
+            <div class="spacer">
+                <a href="#reserva" class="reservar-button">Reservar Ahora</a>
             </div>
         </section>
     </main>

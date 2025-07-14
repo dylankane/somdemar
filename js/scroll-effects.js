@@ -20,6 +20,32 @@ sr.reveal('.about-image', { origin: 'right', delay: 200 });
 sr.reveal('.gallery-grid', { origin: 'left', delay: 200 });
 sr.reveal('.gallery-text', { origin: 'right', delay: 200 });
 
+// articles section
+sr.reveal('.dish-container .special-dish:nth-child(1) .dish-content', { 
+    origin: 'left', 
+    delay: 200
+});
+sr.reveal('.dish-container .special-dish:nth-child(1) .dish-images', { 
+    origin: 'right', 
+    delay: 200
+});
+sr.reveal('.dish-container .special-dish:nth-child(2) .dish-content', { 
+    origin: 'right', 
+    delay: 200
+});
+sr.reveal('.dish-container .special-dish:nth-child(2) .dish-images', { 
+    origin: 'left', 
+    delay: 200
+});
+sr.reveal('.dish-container .special-dish:nth-child(3) .dish-content', { 
+    origin: 'left', 
+    delay: 200
+});
+sr.reveal('.dish-container .special-dish:nth-child(3) .dish-images', { 
+    origin: 'right', 
+    delay: 200
+});
+
 
 // Location section animations
 sr.reveal('.location .section-title', { origin: 'top', distance: '30px' });
