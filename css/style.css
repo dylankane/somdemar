@@ -756,8 +756,8 @@ a {
 }
 
 .quote-text {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'anton', serif;
+    font-weight: 300;
     font-size: 2rem;
     line-height: 1.4;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -976,7 +976,7 @@ a {
 
 /* Location Section */
 .location {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background-color: #f8f8f8;
 }
 
@@ -1506,26 +1506,25 @@ a {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
-    text-align: right;
+    text-align: left;
 }
 
 .gallery-text p {
     color: #333;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    text-align: right;
+    text-align: left;
 }
 
 .gallery-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .gallery-button {
     display: inline-block;
-    align-self: flex-end;
     padding: 0.8rem 2rem;
     color: #000000 !important;
     border: 2px solid #009697;
@@ -1533,6 +1532,7 @@ a {
     transition: all 0.3s ease;
     margin-top: 1.5rem;
     font-weight: 600;
+    align-self: flex-start;
 }
 
 .gallery-button:hover {
@@ -1541,6 +1541,77 @@ a {
     color: white !important;
 }
 
+
+/* Ingredients Gallery Section */
+.ingredients-gallery {
+    padding: 6rem 0 2rem 0;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.ingredients-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ingredients-text {
+    order: 1;
+    padding: 1rem;
+}
+
+.ingredients-text h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+}
+
+.ingredients-text p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.ingredients-grid {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .ingredients-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 20px;
+    }
+    
+    .ingredients-text {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .ingredients-text h2,
+    .ingredients-text p {
+        text-align: center;
+    }
+    
+    .ingredients-grid {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
 
 /* Carousel styles */
 .carousel {
@@ -1598,6 +1669,40 @@ a {
     width: 80px;
     height: 3px;
     background-color: var(--primary-color);
+}
+
+/* YouTube Channel Section */
+.youtube-channel {
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.youtube-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff0000;
+    color: white !important;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.youtube-link i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.youtube-link:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .origin-item {
@@ -1777,7 +1882,7 @@ a {
 .gallery-button {
     display: block;
     max-width: 50%;
-    margin: 0rem auto 5rem;
+    /* margin: 0rem auto 5rem; */
     padding: 0.8rem 2rem;
     background: transparent;
     color: #000000;

@@ -17,8 +17,12 @@ sr.reveal('.about-text', { origin: 'left', delay: 200 });
 sr.reveal('.about-image', { origin: 'right', delay: 200 });
 
 //food gallery section
-sr.reveal('.gallery-grid', { origin: 'left', delay: 200 });
-sr.reveal('.gallery-text', { origin: 'right', delay: 200 });
+sr.reveal('.gallery-grid', { origin: 'left', delay: 300, distance: '200px' });
+sr.reveal('.gallery-text', { origin: 'right', delay: 300, distance: '200px' });
+
+//ingredients gallery section
+sr.reveal('.ingredients-grid', { origin: 'right', delay: 300, distance: '200px' });
+sr.reveal('.ingredients-text', { origin: 'left', delay: 300, distance: '200px' });
 
 // articles section
 sr.reveal('.dish-container .special-dish:nth-child(1) .dish-content', { 
