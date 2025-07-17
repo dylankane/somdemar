@@ -101,10 +101,6 @@ a {
     font-weight: 300;
 }
 
-/* Hero section needs relative positioning for absolute navbar */
-.hero {
-    position: relative;
-}
 
 /* FAB Menu */
 .fab-container {
@@ -278,16 +274,6 @@ a {
     z-index: 0;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    z-index: 0;
-}
-
 .hero-content {
     position: relative;
     z-index: 1;
@@ -319,8 +305,8 @@ a {
 /* sub Hero Section */
 
 .hero.sub-hero {
-    height: 60vh;
-    min-height: 350px;
+    height: 100vh;
+    min-height: 600px;
     background: var(--dish-10) no-repeat center center fixed;
     background-size: cover;
     display: flex;
@@ -328,6 +314,7 @@ a {
     justify-content: center;
     position: relative;
 }
+
 
 .hero.sub-hero h1 span {
     font-size: 5rem;
@@ -363,6 +350,8 @@ a {
 }
 
 .menu-header {
+    width: 90%;
+    margin: 0 auto;
     height: 400px;
     background: url('../assets/images/pulpo_plancha.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -572,6 +561,102 @@ a {
 .thumbnail:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Noches a Som de Mar Section */
+.noches-section {
+    padding: 5rem 0;
+    font-family: 'Quicksand', sans-serif;
+    background: url('../assets/images/night-sky-palm.png') center/cover no-repeat fixed;
+    position: relative;
+    margin: 6rem 0;
+}
+
+.noches-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.noches-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-transform: lowercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.noches-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #f5f5f5;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.noches-title {
+    position: relative;
+    z-index: 1;
+}
+
+.noches-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.noches-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust image widths */
+.noches-gallery .noches-image:first-child {
+    width: 40%;
+}
+
+.noches-gallery .noches-image:nth-child(2) {
+    width: 30%;
+}
+
+.noches-gallery .noches-image:last-child {
+    width: 20%;
+}
+
+@media (max-width: 768px) {
+    .noches-gallery {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .noches-gallery .noches-image {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    .noches-title {
+        font-size: 2rem;
+    }
+
+    .noches-text {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
 }
 
 /* ===== BUTTON STYLES ===== */
@@ -1484,7 +1569,281 @@ a {
     z-index: 1;
 }
 
-/* Specific carousel image styles with high specificity */
+
+/* Origins Section */
+.origins-section {
+    padding: 6rem 0;
+    background-color: #f8f8f8;
+}
+
+.gallery-section .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 12rem auto 2rem;
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.gallery-section .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.origin-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 0rem;
+    padding: 0 2rem;
+    gap: 3rem;
+}
+
+.origin-image {
+    flex: 0 0 35%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 0;
+}
+
+.origin-content {
+    flex: 0 0 60%;
+    padding: 1rem 0;
+}
+
+.origin-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.origin-content h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.origin-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Styles for Origins Section */
+@media (max-width: 1200px) {
+    .origin-image {
+        height: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .origin-item {
+        flex-direction: column;
+        margin-bottom: 5rem;
+        padding: 0 1.5rem;
+    }
+    
+    .origin-image,
+    .origin-content {
+        flex: 1 0 100%;
+        width: 100%;
+    }
+    
+    .origin-image {
+        height: 350px;
+        margin-bottom: 2rem;
+    }
+    
+    .origin-image,
+    .origin-content {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .origin-image {
+        height: 400px;
+        margin-bottom: 2rem;
+        flex: 0 0 auto;
+    }
+
+    .origin-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .origin-image {
+        height: 350px;
+    }
+    
+    .origin-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .origin-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Gallery Specific Styles */
+.gallery-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-section {
+    margin: 6rem 0 3rem 0;
+}
+
+/* Gallery Grid */
+.album {
+    padding: 4rem 0;
+    background: #f8f8f8;
+}
+
+.album .responsive-container-block.bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.album .responsive-container-block.img-cont {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+    height: 100%;
+}
+
+.album .img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    opacity: 1;
+    position: relative;
+    height: 224px;
+    padding-bottom: 0;
+}
+
+/* Big images take up 2x height + gap */
+.album .img.img-big {
+    height: 339px; /* (200px * 2) + 6px gap */
+}
+
+.album .img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-button {
+    display: block;
+    max-width: 50%;
+    margin: 0rem auto 5rem;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    color: #000000;
+    border: 2px solid #009697;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.gallery-button:hover {
+    background-color: #009697;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .album .responsive-container-block.bg {
+        flex-wrap: wrap;
+    }
+    
+    .album .responsive-container-block.img-cont {
+        flex: 0 0 calc(50% - 5px);
+        margin-bottom: 10px;
+        height: auto;
+    }
+    
+    .album .img {
+        height: 180px;
+    }
+    
+    .album .img.img-big {
+        height: 366px; /* (180px * 2) + 6px gap */
+    }
+}
+
+@media (max-width: 768px) {
+    .album .responsive-container-block.img-cont {
+        flex: 0 0 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    
+    .album .img {
+        flex: 0 0 calc(50% - 5px);
+        height: 160px;
+    }
+    
+    .album .img.img-big {
+        flex: 0 0 100%;
+        height: 326px; /* (160px * 2) + 6px gap */
+    }
+}
+
+@media (max-width: 480px) {
+    .album .img:not(.img-big) {
+        flex: 0 0 100%;
+        padding-bottom: 75%;
+    }
+}
+
 #food-gallery .gallery-grid .carousel .carousel-img {
     opacity: 0;
     transition: opacity 1.5s ease-in-out !important;
