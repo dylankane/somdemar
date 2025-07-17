@@ -26,17 +26,15 @@
             <span class="fab-icon"></span>
         </button>
         <nav class="fab-dropdown" id="fabDropdown">
-            <a href="#home">Inicio</a>
             <a href="#reserve">Reservar</a>
             <a href="#dishes">Nuestros Platos</a>
-            <a href="#contact">Contactanos</a>
-            <a href="#location">Ubicación</a>
-            <a href="#gallery">Galeria</a>
-            <a href="#blog">Blog</a>
+            <a href="#origins">Orígenes</a>
+            <a href="#contact">Ubicación y Contacto</a>
+            <a href="#blog">Crónicas</a>
         </nav>
     </div>
 
-    <!-- Navigation (now in page flow) -->
+    <!-- Navigation (now in page flow)-->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -182,7 +180,7 @@
     <!-- Location -->
     <section id="location" class="location">
         <div class="container">
-            <h2 class="section-title">Visítanos</h2>
+            <!-- <h2 class="section-title">Visítanos</h2> -->
             
             <!-- First Row: Three Images with La Zona Text -->
             <div class="location-row location-row-images">
@@ -277,10 +275,46 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Side Tab -->
+    <div class="side-tab" id="sideTab">
+        <span>#NOCHES</span>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-close">&times;</div>
+    </div>
+
+    <script>
+        // Side Tab and Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sideTab = document.getElementById('sideTab');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalClose = document.querySelector('.modal-close');
+
+            sideTab.addEventListener('click', function() {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            modalClose.addEventListener('click', function() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close modal when clicking outside content
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+
     <script src="js/scroll-effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/fab-menu.js"></script>
     <script src="js/hero-carousel.js"></script>
-    </body>
+</body>
 </html>
