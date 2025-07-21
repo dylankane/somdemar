@@ -2,7 +2,7 @@
     /* Image paths */
     --logo: url('../assets/images/som_de_mar_logo_light.png');
     --hero-bg: url('../assets/images/dish-2.jpg');
-    --restaurant-interior: url('../assets/images/staff-fun.jpg');
+    --staff-fun: url('../assets/images/staff-fun3.jpg');
     --location-bg: url('../assets/images/location-bg.jpg');
     --dish-1: url('../assets/images/dish-1.jpg');
     --dish-2: url('../assets/images/dish-2.jpg');
@@ -16,10 +16,6 @@
     --dish-10: url('../assets/images/arty_dish.jpeg');
     --banner-bg: url('../assets/images/patatas.jpg');
     --video-bg: url('../assets/videos/somdemarsmallcooking.mp4');
-    
-    /* Colors */
-    --primary-color: #009697;
-    --accent-color: #001F2D;
-    --text-color: #333;
-    --light-bg: #f5f5f5;
+    --modal-bg: url('../assets/images/modal-test3.jpg');
+    --modal-sm: url('../assets/images/modal-mobile.png');
 }

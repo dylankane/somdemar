@@ -20,7 +20,7 @@
 <body>
     <!-- FAB Menu -->
     <div class="fab-container">
-        <button class="fab-menu" id="fabMenu">
+        <button class="fab-button" id="fabButton">
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
@@ -57,7 +57,7 @@
                 <span class="mar">MAR</span>
             </h1>
             <p>Cocina De Mercado Y Arroces</p>
-            <a href="#" class="cta-button">Reservar Ahora</a>
+            <a href="#reserva.html" class="cta-button">Reservar Ahora</a>
         </div>
         <div class="hero-carousel">
             <div class="carousel-item active" style="background-image: url('assets/images/pulpo_plancha.jpg')"></div>
@@ -112,14 +112,46 @@
                     </div>
                 </div>
                 <div class="gallery-text">
-                    <h2>Nuestra Cocina</h2>
+                    <h2 class="section-title">Nuestra Cocina</h2>
                     <p>Descubra la pasión y el arte que hay detrás de cada plato en Som de Mar. Nuestra cocina es un homenaje a los sabores del mar, donde la frescura y la creatividad se unen para ofrecer una experiencia gastronómica inolvidable.</p>
                     <!-- <a href="#" class="gallery-button">Nuestros Platos</a> -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- Ingredients Gallery Section -->
+    <!-- Food Gallery Section -->
+    <section id="food-gallery" class="food-gallery">
+        <div class="container">
+            <div class="gallery-content">
+                <div class="gallery-text">
+                    <h2 class="section-title">Nuestros Ingredientes</h2>
+                    <p>En Som de Mar, seleccionamos cuidadosamente los ingredientes más frescos y de la más alta calidad. 
+                        Nuestros productos provienen directamente del Mediterráneo, asegurando autenticidad y sabor en cada bocado.
+                        Descubre la esencia de nuestra cocina a través de nuestras materias primas excepcionales.</p>
+                    <!-- <a href="#" class="gallery-button">Nuestros Platos</a> -->
+                </div>
+                <div class="gallery-grid">
+                    <div class="carousel" data-delay="6000">
+                        <img src="assets/images/raw-atun.jpg" class="carousel-img active">
+                        <img src="assets/images/raw-atun2.jpg" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="7000">
+                        <img src="assets/images/lemons.png" class="carousel-img active">
+                        <img src="assets/images/herbs.png" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="8000">
+                        <img src="assets/images/market.png" class="carousel-img active">
+                        <img src="assets/images/market2.png" class="carousel-img">
+                    </div>
+                    <div class="carousel" data-delay="6500">
+                        <img src="assets/images/fisherman.png" class="carousel-img active">
+                        <img src="assets/images/rice-field.png" class="carousel-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ingredients Gallery Section
     <section id="ingredients-gallery" class="ingredients-gallery">
         <div class="container">
             <div class="ingredients-content">
@@ -147,10 +179,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section>
         <div class="spacer">
-            <a href="#" class="reservar-button">Nuestros Platos</a>
+            <a href="#" class="standard-button">Nuestros Platos</a>
         </div>
         <div class="spacer">
         </div>
@@ -160,11 +192,11 @@
     <section class="video-banner">
         <div class="video-container">
           <video autoplay muted loop playsinline>
-            <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+            <source src="assets/videos/som-de-mar-video-cooking.mp4" type="video/mp4">
           </video>
         </div>
         <div class="video-overlay">
-            <div class="hero-content">
+            <div class="video title">
                 <h1>
                     <span class="som">SOM</span>
                     <span class="de">DE</span>
@@ -221,7 +253,7 @@
 
     <!-- Spacer -->
     <div class="spacer">
-        <a href="#" class="reservar-button">contactanos</a>
+        <a href="#" class="standard-button">contactanos</a>
     </div>
 
     <!-- Footer -->

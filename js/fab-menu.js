@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const fabMenu = document.getElementById('fabMenu');
+    const fabMenu = document.getElementById('fabButton');
     const fabDropdown = document.getElementById('fabDropdown');
 
     // Toggle dropdown menu
