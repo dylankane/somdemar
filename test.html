@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fixed Background Sections Demo (Scoped Video)</title>
+  <style>
+    /* Reset & box‑sizing */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      /* ensure a default white background so video only shows in transparent sections */
+      background: #fff;
+    }
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* fixed video */
+    .video-bg {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -1;  /* behind everything */
+    }
+
+    /* Overlay tint */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    /* Text/content layer */
+    .content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Normal filler sections (solid bg hides the video behind) */
+    .regular {
+      background: #fafafa;
+      color: #333;
+      padding: 4rem 2rem;
+    }
+    .regular img {
+      max-width: 50%;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* ===== Hero slider (fixed‑image slides) ===== */
+    .hero {
+      height: 100vh;
+    }
+    .hero__slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero__slide.active {
+      opacity: 1;
+    }
+
+    /* ===== 350px fixed‑image banner ===== */
+    .fixed-image {
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* ===== Video section ===== */
+    .video-section {
+      /* no background so the fixed video shows through */
+      height: 100vh;
+    }
+
+    /* Disable fixed attachment on small screens */
+    @media (max-width: 768px) {
+      .hero__slide,
+      .fixed-image {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- this lives at top‐level so it covers the viewport behind everything -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="assets/videos/som-de-mar-video-cooking.mp4" type="video/mp4">
+  </video>
+
+  <!-- Hero slider -->
+  <section class="hero">
+    <div class="hero__slide active" style="background-image:url('assets/images/pulpo_plancha.jpg')"></div>
+    <div class="hero__slide"       style="background-image:url('assets/images/postre.jpg')"></div>
+    <div class="hero__slide"       style="background-image:url('assets/images/arroz_negro.jpeg')"></div>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Welcome to My Site</h1>
+      <p>This is a full‑screen hero slider with a fixed background effect.</p>
+    </div>
+  </section>
+
+  <!-- Regular content -->
+  <section class="regular">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum.</p>
+    <img src="assets/images/arroz_negro.jpeg" alt="Example">
+  </section>
+
+  <!-- 350px fixed‑image banner -->
+  <section class="fixed-image" style="background-image:url('assets/images/pulpo_plancha.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Our Services</h2>
+      <p>Text overlayed on a fixed 350px‑high background.</p>
+    </div>
+  </section>
+
+  <!-- More regular content -->
+  <section class="regular">
+    <h2>Portfolio</h2>
+    <p>Praesent pharetra dui sit amet eros gravida, sed luctus massa fringilla.</p>
+    <img src="assets/images/arroz_negro.jpeg" alt="Project 1">
+  </section>
+
+  <!-- Video background section -->
+  <section class="video-section">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Experience the Motion</h2>
+      <p>Looping video background contained within this section.</p>
+    </div>
+  </section>
+
+  <!-- Additional regular content -->
+  <section class="regular">
+    <h2>More About Us</h2>
+    <p>Nulla facilisi. Integer at libero eget justo facilisis scelerisque.</p>
+    <img src="assets/images/arroz_negro.jpeg" alt="Example">
+  </section>
+
+  <script>
+    // Simple hero slider
+    (function(){
+      const slides = document.querySelectorAll('.hero__slide');
+      let idx = 0;
+      setInterval(() => {
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+      }, 5000);
+    })();
+  </script>
+
+</body>
+</html>

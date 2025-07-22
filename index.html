@@ -6,18 +6,22 @@
     <title>Som de Mar</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 </head>
 <body>
+
+    <!-- Video Background -->
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+    </video>
+      
     <!-- FAB Menu -->
     <div class="fab-container">
         <button class="fab-button" id="fabButton">
@@ -50,6 +54,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-item" style="background-image: url('assets/images/pulpo_plancha.jpg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/dish-2.jpg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/arroz_negro.jpeg'); opacity: 0;"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>
                 <span class="som">SOM</span>
@@ -59,12 +69,6 @@
             <p>Cocina De Mercado Y Arroces</p>
             <a href="#reserva.html" class="cta-button">Reservar Ahora</a>
         </div>
-        <div class="hero-carousel">
-            <div class="carousel-item active" style="background-image: url('assets/images/pulpo_plancha.jpg')"></div>
-            <div class="carousel-item" style="background-image: url('assets/images/postre.jpg')"></div>
-            <div class="carousel-item" style="background-image: url('assets/images/arroz_negro.jpeg')"></div>
-        </div>
-        <div class="hero-overlay"></div>
     </section>
 
     <!-- About Section -->
@@ -82,12 +86,17 @@
         </div>
     </section>
     
+
     <!-- Quote Banner -->
-    <section class="quote-banner">
+    <section class="quote-banner"
+         style="background-image:url('assets/images/patatas.jpg ');">
         <div class="quote-overlay">
-            <p class="quote-text">Todos los artes son maravillosos, y la cocina es uno de ellos. Así que disfruten de la comida.</p>
+            <p class="quote-text">
+                Todos los artes son maravillosos, y la cocina es uno de ellos. Así que disfruten de la comida.
+            </p>
         </div>
     </section>
+
 
     <!-- Food Gallery Section -->
     <section id="food-gallery" class="food-gallery">
@@ -119,6 +128,7 @@
             </div>
         </div>
     </section>
+
     <!-- Food Gallery Section -->
     <section id="food-gallery" class="food-gallery">
         <div class="container">
@@ -151,65 +161,18 @@
             </div>
         </div>
     </section>
-    <!-- Ingredients Gallery Section
-    <section id="ingredients-gallery" class="ingredients-gallery">
-        <div class="container">
-            <div class="ingredients-content">
-                <div class="ingredients-text">
-                    <h2>Nuestros Ingredientes</h2>
-                    <p>En Som de Mar, seleccionamos cuidadosamente los ingredientes más frescos y de la más alta calidad. Nuestros productos provienen directamente del Mediterráneo, asegurando autenticidad y sabor en cada bocado. Descubre la esencia de nuestra cocina a través de nuestras materias primas excepcionales.</p>
-                </div>
-                <div class="ingredients-grid">
-                    <div class="carousel" data-delay="6000">
-                        <img src="assets/images/raw-atun.jpg" class="carousel-img active">
-                        <img src="assets/images/raw-atun2.jpg" class="carousel-img">
-                    </div>
-                    <div class="carousel" data-delay="7000">
-                        <img src="assets/images/lemons.png" class="carousel-img active">
-                        <img src="assets/images/herbs.png" class="carousel-img">
-                    </div>
-                    <div class="carousel" data-delay="8000">
-                        <img src="assets/images/market.png" class="carousel-img active">
-                        <img src="assets/images/market2.png" class="carousel-img">
-                    </div>
-                    <div class="carousel" data-delay="6500">
-                        <img src="assets/images/fisherman.png" class="carousel-img active">
-                        <img src="assets/images/rice-field.png" class="carousel-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
-    <!-- <section>
-        <div class="spacer">
-            <a href="#" class="standard-button">Nuestros Platos</a>
-        </div>
-        <div class="spacer">
-        </div>
-    </section> -->
-
-    <!-- Video Background Section -->
-
-    <!-- <section class="bgvid-section">
-        <video class="bgvid-video" autoplay muted loop playsinline>
-            <source src="assets/videos/som-de-mar-video-cooking.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="bgvid-overlay"></div>
-        <div class="bgvid-textbox">
-            <h2>SOM DE MAR</h2>
-            <p>de Roberto Cereto</p>
-        </div>
-    </section> -->
-
+    <!-- Video Banner -->
     <section class="video-banner">
-        <video class="video-banner-video" autoplay muted loop playsinline>
-            <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- sticky version -->
+        <!-- <div class="video-wrapper">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+            </video>
+        </div>   -->
+        <!-- end of sticky version -->
         <div class="video-overlay"></div>
-        <div class="video-title">
+        <div class="video-content">
             <h2>
                 <span class="som">SOM</span>
                 <span class="de">DE</span>
@@ -219,31 +182,18 @@
         </div>
     </section>
 
-    <!-- <section class="video-banner">
-        <div class="video-container">
-            <video autoplay muted loop playsinline id="myVideo">
-                <source src="assets/videos/som-de-mar-video-cooking.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="video-overlay">
-            <div class="video-title">
-                <h1>
-                    <span class="som">SOM</span>
-                    <span class="de">DE</span>
-                    <span class="mar">MAR</span>
-                </h1>
-                <p>de Roberto Cereto</p>
-            </div>
-        </div>
-    </section> -->
+
 
     <!-- Spacer -->
-    <div class="spacer"></div>
+    <div class="spacer-small"></div>
 
     <!-- Location -->
     <section id="location" class="location">
         <div class="container">
+            <!-- Location Pin Icon -->
+            <div class="location-pin" aria-hidden="true">
+                <i class="fa-solid fa-location-dot" style="font-size: 5rem; color: var(--primary-color);"></i>
+            </div>
             <!-- <h2 class="section-title">Visítanos</h2> -->
             
             <!-- First Row: Three Images with La Zona Text -->
@@ -358,36 +308,10 @@
         <div class="modal-close">&times;</div>
     </div>
 
-    <script>
-        // Side Tab and Modal functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const sideTab = document.getElementById('sideTab');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalClose = document.querySelector('.modal-close');
-
-            sideTab.addEventListener('click', function() {
-                modalOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-
-            modalClose.addEventListener('click', function() {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            // Close modal when clicking outside content
-            modalOverlay.addEventListener('click', function(e) {
-                if (e.target === modalOverlay) {
-                    modalOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-    </script>
-
     <script src="js/scroll-effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/fab-menu.js"></script>
-    <script src="js/hero-carousel.js"></script>
+    <script src="js/som-carousel.js"></script>
+    <script src="js/noches-modal.js"></script>
 </body>
 </html>
