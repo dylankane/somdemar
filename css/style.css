@@ -510,7 +510,7 @@ a {
 .footer-main {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -580,8 +580,8 @@ a {
 }
 
 .social-footer {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+    /* margin-top: 1.5rem; */
+    padding-top: 1rem;
     border-top: 1px solid var(--primary-color);
     text-align: center;
     color: #ff0000; /* YouTube red */
@@ -596,7 +596,7 @@ a {
 }
 
 .footer-contact p {
-    margin: 0 0 1.2rem;
+    margin: 0 0 1rem;
     font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
@@ -855,7 +855,7 @@ a {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1183,8 +1183,8 @@ a {
 
 /* ===== Sub Hero Section ===== */
 
-.hero.sub-hero {
-    height: 100vh;
+/* .hero .sub-hero {
+    height: 50vh;
     min-height: 600px;
     background: var(--dish-10) no-repeat center center fixed;
     background-size: cover;
@@ -1192,11 +1192,14 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
+} */
+
+.sub-hero {
+    height: 60vh !important;
 }
-
-
-.hero.sub-hero h1 span {
-    font-size: 5rem;
+.sub-hero h1 span {
+    font-size: 4rem !important;
+    padding-bottom: 0.5rem !important;
 }
 
 /* ===== Origins Page ===== */
@@ -1211,7 +1214,7 @@ a {
     color: #333;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 12rem auto 2rem;
+    margin: 2rem auto 2rem;
     position: relative;
     display: block;
     text-align: center;
@@ -1386,7 +1389,7 @@ a {
 } */
 
 .gallery-section {
-    margin: 6rem 0 3rem 0;
+    margin: 3rem 0 3rem 0;
 }
 
 /* Gallery Grid */
@@ -1740,7 +1743,7 @@ a {
 
 /* Menu List Section */
 .menu-list {
-    margin-top: 10rem;
+    margin-top: 2rem;
     position: relative;
 }
 
@@ -1835,20 +1838,60 @@ a {
 
 /*Contact Page */
 
+.reservation-divider {
+    width: 33%;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 2.5rem auto 2.5rem auto;
+    border: none;
+    border-radius: 2px;
+    display: block;
+}
+
+
 /* Contact Form Styles */
+.reservation-info-section {
+    text-align: center;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--text-light);
+}
+
+.reservation-info-section h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-family: 'Poppins', serif;
+    font-size: 2rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.reservation-info-section p {
+    text-align: center;
+    font-family: 'Poppins', serif;
+}
+
 .contact-info-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    background: #f8f8f8;
+    background: var(--text-light);
+}
+
+.contact-info-section p {
+    font-family: 'Poppins', serif;
+    text-align: center;
 }
 
 .contact-info-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-family: 'Poppins', serif;
+    font-size: 2rem;
     color: var(--text-dark);
     margin-bottom: 2rem;
     text-align: center;
+    font-weight: 500;
 }
 
 .contact-info-grid {
@@ -1869,7 +1912,7 @@ a {
 }
 
 .contact-info-item i {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
     min-width: 30px;
 }
@@ -1877,10 +1920,11 @@ a {
 .contact-info-item h3 {
     font-family: 'Poppins', serif;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--text-dark);
     margin: 0;
     line-height: 1.5;
+    text-align: center;
 }
 
 .contact-info-item p {
@@ -1948,11 +1992,12 @@ a {
 }
 
 .message-button {
-    display: inline-block;
-    padding: 1rem;
+    /* display: inline-block;
+    padding: 1rem; */
     width: 100%;
     max-width: 100%;
-    border: 2px solid #009697;
+    margin: 1rem auto;
+    /* border: 2px solid #009697;
     text-align: center;
     transition: all 0.3s ease;
     font-weight: 600;
@@ -1962,7 +2007,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 1px;
     background-color: transparent;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 /* =============================
@@ -1989,7 +2034,8 @@ a {
 .starplate-crab img {
   width: 100%;
   display: block;
-  border-radius: 4px;
+  /* border-radius: 4px; */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
 
 .starplate-seafood {
@@ -2054,15 +2100,16 @@ a {
 .starplate-fish img {
   width: 100%;
   display: block;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  /* border-radius: 4px; */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
 
 .starplate-vertical {
   position: absolute;
-  left: -2.5rem;
+  left: -0.5rem;
   bottom: 15rem;
-  transform: rotate(90deg);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   transform-origin: left bottom;
   font-size: 1.5rem;
   color: var();
@@ -2070,6 +2117,8 @@ a {
   white-space: nowrap;
   z-index: 3;
   pointer-events: none;
+  color: var(--text-dark);
+  font-size: 1.8rem;
 }
 
 /* Responsive */

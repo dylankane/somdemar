@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos - Som de Mar</title>
+    <title>Som de Mar</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
     <!-- FAB Menu -->
     <div class="fab-container">
-        <button class="fab-menu" id="fabMenu">
+        <button class="fab-button" id="fabButton">
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
         </button>
         <nav class="fab-dropdown" id="fabDropdown">
-            <a href="index.html">Inicio</a>
-            <a href="#reserve">Reservar</a>
+            <a href="reserva.html">Reservar</a>
             <a href="nuestros-platos.html">Nuestros Platos</a>
-            <a href="contactanos.html">Contactanos</a>
-            <a href="index.html#location">Ubicación</a>
-            <a href="galeria.html">Galería</a>
-            <a href="blogs.html">Blog</a>
+            <a href="origenes.html">Orígenes</a>
+            <a href="index.html#location">Ubicación y Contacto</a>
+            <a href="cronicas.html">Crónicas</a>
         </nav>
     </div>
 
@@ -37,9 +37,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <div class="logo-image"></div>
-                </a>
+                <div class="logo-image"></div>
             </div>
             <div class="language-selector">
                 <a href="#" class="language-link active">ES</a>
@@ -51,13 +49,20 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero sub-hero">
+        <div class="hero-carousel">
+            <div class="carousel-item" style="background-image: url('assets/images/lemons.png'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/market.png'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/areil.jpeg'); opacity: 0;"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
+            <!-- <p>Cocina De Mercado Y Arroces</p> -->
             <h1>
                 <span class="som">CONTACTANOS</span>
             </h1>
-            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+            <!-- <p class="hero-firma">de Roberto Cereto</p> -->
+            <a href="reserva.html" class="cta-button">Reservar</a>
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
     <!-- Main Content -->
@@ -98,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="reservation-divider"></div>
                 <div class="contact-form-container">
                     <h2>Envíanos un Mensaje</h2>
                     <form id="contact-form" class="contact-form">
@@ -121,7 +127,7 @@
                             <label for="message">Mensaje</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="message-button">Enviar Mensaje</button>
+                        <button type="submit" class="message-button standard-button">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
@@ -135,12 +141,13 @@
                 <!-- Left Column - Navigation Links -->
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nuestros-platos.html">Nuestros Platos</a></li>
+                        <li><a href="#">Inicio</a></li>
                         <li><a href="#reserve">Reservar</a></li>
-                        <li><a href="contactanos.html">Contáctanos</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#location">Ubicación</a></li>
+                        <li><a href="#dishes">Nuestros Platos</a></li>
+                        <li><a href="origenes.html">Orígenes</a></li>
+                        <li><a href="#gallery">Galería</a></li>
                     </ul>
                 </div>
                 
@@ -164,6 +171,11 @@
                     <div class="contact-info">
                         <p>+34 123 456 789<br>info@somdemar.com</p>
                     </div>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -171,6 +183,9 @@
             <div class="footer-bottom">
                 <div class="developer-credit">
                     <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Legal</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 Som de Mar.
@@ -183,5 +198,8 @@
     <script src="js/scroll-effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/fab-menu.js"></script>
+    <script src="js/som-carousel.js"></script>
+    <script src="js/noches-modal.js"></script>
+</body>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Som de Mar</title>
+    <title>Nuestros Platos - Som de Mar</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
@@ -108,11 +108,11 @@
                         y gambas locales por su frescura y origen sostenible.</p>
                 </div>
                 <div class="starplate-fish">
-                  <!-- <div class="starplate-vertical">Origen e Historia</div> -->
                   <img src="assets/images/dish-1.jpg" alt="Two fresh fish on tray">
                 </div>
             </article>
 
+            <!-- thumnail feature -->
             <article class="special-dish">
                 <div class="dish-content">
                     <h2>Arroz Negro con Gambas</h2>
@@ -152,11 +152,6 @@
                         <h3>Origen e Historia</h3>
                         <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
                             Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
-                    </div>
-                    <div class="dish-section">
-                        <h3>Técnicas y Preparación</h3>
-                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
-                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
                     </div>
                 </div>
                 <div class="dish-images">
@@ -204,11 +199,11 @@
                         <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
                             Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
                     </div>
-                    <div class="dish-section">
+                    <!-- <div class="dish-section">
                         <h3>Técnicas y Preparación</h3>
                         <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
                             Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="dish-images-rect">
                     <img class="rect-img-large" src="assets/images/arty_dish.jpeg" alt="Rectangular Large">
@@ -231,11 +226,11 @@
                         <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
                             Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
                     </div>
-                    <div class="dish-section">
+                    <!-- <div class="dish-section">
                         <h3>Técnicas y Preparación</h3>
                         <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
                             Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
-                    </div>
+                    </div> -->
                 </div>
             </article>
             <div class="spacer">
@@ -303,12 +298,13 @@
                 <!-- Left Column - Navigation Links -->
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nuestros-platos.html">Nuestros Platos</a></li>
+                        <li><a href="#">Inicio</a></li>
                         <li><a href="#reserve">Reservar</a></li>
-                        <li><a href="contactanos.html">Contáctanos</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#location">Ubicación</a></li>
+                        <li><a href="#dishes">Nuestros Platos</a></li>
+                        <li><a href="origenes.html">Orígenes</a></li>
+                        <li><a href="#gallery">Galería</a></li>
                     </ul>
                 </div>
                 
@@ -332,6 +328,11 @@
                     <div class="contact-info">
                         <p>+34 123 456 789<br>info@somdemar.com</p>
                     </div>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -340,12 +341,25 @@
                 <div class="developer-credit">
                     <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
                 </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Legal</a>
+                </div>
                 <div class="copyright">
                     &copy; 2025 Som de Mar.
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Side Tab -->
+    <div class="side-tab" id="sideTab">
+        <span>#NOCHES</span>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-close">&times;</div>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/scroll-effects.js"></script>

@@ -6,11 +6,12 @@
     <title>Orígenes - Som de Mar</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/_variables.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -18,19 +19,17 @@
 <body>
     <!-- FAB Menu -->
     <div class="fab-container">
-        <button class="fab-menu" id="fabMenu">
+        <button class="fab-button" id="fabButton">
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
         </button>
         <nav class="fab-dropdown" id="fabDropdown">
-            <a href="index.html">Inicio</a>
-            <a href="#reserve">Reservar</a>
+            <a href="reserva.html">Reservar</a>
             <a href="nuestros-platos.html">Nuestros Platos</a>
-            <a href="contactanos.html">Contactanos</a>
-            <a href="index.html#location">Ubicación</a>
-            <a href="galeria.html">Galería</a>
-            <a href="blogs.html">Blog</a>
+            <a href="origenes.html">Orígenes</a>
+            <a href="index.html#location">Ubicación y Contacto</a>
+            <a href="cronicas.html">Crónicas</a>
         </nav>
     </div>
 
@@ -38,9 +37,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <div class="logo-image"></div>
-                </a>
+                <div class="logo-image"></div>
             </div>
             <div class="language-selector">
                 <a href="#" class="language-link active">ES</a>
@@ -51,14 +48,22 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero sub-hero">
-        <div class="hero-content">
-            <h1>
-                <span class="som">Orígenes</span>
-            </h1>
-            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+    <section id="home" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-item" style="background-image: url('assets/images/staff-fun.jpg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/pulpo_kinfe.jpg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/shop_front.jpg'); opacity: 0;"></div>
         </div>
         <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                <span class="nuestros">Nuestros</span>
+                <!-- <span class="de">DE</span> -->
+                <span class="platos">Orígenes</span>
+            </h1>
+            <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar.</p>
+            <a href="reserva.html" class="cta-button">Reservar Ahora</a>
+        </div>
     </section>
 
     <!-- Origins Content -->
@@ -102,6 +107,9 @@
                 </div>
             </div>
         </section>
+        <div class="spacer-small">
+            <a href="reserva.html" class="standard-button">Reservar Ahora</a>
+        </div>
 
         <!-- Gallery Section -->
         <section class="gallery-section">
@@ -146,11 +154,6 @@
                     </a>
                 </div>
             </div>
-        </section>
-        <section>
-            <div class="spacer-small">
-                <a href="reserva.html" class="standard-button">Reservar Ahora</a>
-            </div>
             <div class="spacer-small">
                 <a href="index.html" class="standard-button">Volver al Inicio</a>
             </div>
@@ -164,12 +167,13 @@
                 <!-- Left Column - Navigation Links -->
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nuestros-platos.html">Nuestros Platos</a></li>
+                        <li><a href="#">Inicio</a></li>
                         <li><a href="#reserve">Reservar</a></li>
-                        <li><a href="contactanos.html">Contáctanos</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#location">Ubicación</a></li>
+                        <li><a href="#dishes">Nuestros Platos</a></li>
+                        <li><a href="origenes.html">Orígenes</a></li>
+                        <li><a href="#gallery">Galería</a></li>
                     </ul>
                 </div>
                 
@@ -193,6 +197,11 @@
                     <div class="contact-info">
                         <p>+34 123 456 789<br>info@somdemar.com</p>
                     </div>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -201,6 +210,9 @@
                 <div class="developer-credit">
                     <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
                 </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Legal</a>
+                </div>
                 <div class="copyright">
                     &copy; 2025 Som de Mar.
                 </div>
@@ -208,31 +220,44 @@
         </div>
     </footer>
 
+    <!-- Side Tab -->
+    <div class="side-tab" id="sideTab">
+        <span>#NOCHES</span>
+    </div>
+    
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-close">&times;</div>
+    </div>
+
     <!-- JavaScript -->
     <script src="js/scroll-effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/fab-menu.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ensure all images are properly loaded
-            const images = document.querySelectorAll('.img');
-            images.forEach(img => {
-                // Force background image to be visible
-                const bg = img.style.backgroundImage;
-                if (bg && bg !== 'none') {
-                    img.style.backgroundImage = bg;
-                }
+    <script src="js/som-carousel.js"></script>
+    <script src="js/noches-modal.js"></script>
+
+    <!-- <script>
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         // Ensure all images are properly loaded
+    //         const images = document.querySelectorAll('.img');
+    //         images.forEach(img => {
+    //             // Force background image to be visible
+    //             const bg = img.style.backgroundImage;
+    //             if (bg && bg !== 'none') {
+    //                 img.style.backgroundImage = bg;
+    //             }
                 
-                // Add loaded class when image is loaded
-                const imgUrl = bg.replace('url("', '').replace('")', '').replace('url(', '').replace(')', '');
-                const tempImg = new Image();
-                tempImg.onload = function() {
-                    img.style.backgroundImage = `url(${imgUrl})`;
-                    img.style.opacity = '1';
-                };
-                tempImg.src = imgUrl;
-            });
-        });
-    </script>
+    //             // Add loaded class when image is loaded
+    //             const imgUrl = bg.replace('url("', '').replace('")', '').replace('url(', '').replace(')', '');
+    //             const tempImg = new Image();
+    //             tempImg.onload = function() {
+    //                 img.style.backgroundImage = `url(${imgUrl})`;
+    //                 img.style.opacity = '1';
+    //             };
+    //             tempImg.src = imgUrl;
+    //         });
+    //     });
+    // </script> -->
 </body>
 </html>
