@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Special Dishes - Arch & Circle Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .article {
+      display: flex;
+      background: #f5f5f5;
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+    .article-content {
+      flex: 2;
+      padding-right: 20px;
+    }
+    .article-content h2 {
+      margin-top: 0;
+    }
+    .article-content h3 {
+      margin: 15px 0 5px;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .article-content p {
+      line-height: 1.6;
+    }
+    .article-images {
+      flex: 1;
+      max-width: 100%;
+      position: relative;
+      min-height: 360px;
+    }
+    .arch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 75%;
+      width: 60%;
+      object-fit: cover;
+      z-index: 2;
+      /* maintain arch shape */
+      border-top-left-radius: 100% 50%;
+      border-top-right-radius: 100% 50%;
+    }
+    .circle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Medium screens: narrow text before images shrink */
+    @media (max-width: 1024px) {
+      .article-content {
+        max-width: 60%;
+      }
+    }
+
+    /* Small screens: stack images above text */
+    @media (max-width: 768px) {
+      .article {
+        flex-direction: column;
+      }
+      .article-images {
+        width: 100%;
+        margin-bottom: 20px;
+        min-height: auto;
+      }
+      .article-content {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Article 1 -->
+    <article class="article">
+      <div class="article-content">
+        <h2>Seared Salmon with Mango Salsa</h2>
+        <p class="description">
+          A fresh salmon fillet seared to golden perfection, topped with a vibrant mango salsa that balances sweetness and acidity.
+        </p>
+        <h3>Origins</h3>
+        <p>
+          This dish draws inspiration from coastal cuisines where seafood and tropical fruits are abundant. Mango salsa has roots in Caribbean cooking, blending indigenous fruits with local spices to create lively accompaniments.
+        </p>
+        <h3>Techniques</h3>
+        <p>
+          The salmon is seared on high heat to lock in moisture and develop a crisp crust. The salsa is made by finely dicing ripe mango, red onion, cilantro, and lime juice, ensuring each component remains fresh and vibrant.
+        </p>
+      </div>
+      <div class="article-images">
+        <img class="arch" src="https://picsum.photos/seed/arch1/600/400" alt="Seared Salmon Arch" />
+        <img class="circle" src="https://picsum.photos/seed/circle1/180/180" alt="Mango Salsa Circle" />
+      </div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="article">
+      <div class="article-content">
+        <h2>Truffle Mushroom Risotto</h2>
+        <p class="description">
+          A creamy arborio rice dish enriched with earthy wild mushrooms and the aromatic essence of truffle.
+        </p>
+        <h3>Origins</h3>
+        <p>
+          Hailing from Northern Italy—particularly the Piedmont and Lombardy regions—risotto is a staple of regional cuisine. Truffles, prized since antiquity, elevate this humble rice dish to gourmet status.
+        </p>
+        <h3>Techniques</h3>
+        <p>
+          Slow, constant stirring of arborio rice releases starches for that hallmark creaminess. Mushrooms are sautéed separately, then folded in with truffle oil or shavings just before serving to preserve their delicate aroma.
+        </p>
+      </div>
+      <div class="article-images">
+        <img class="arch" src="https://picsum.photos/seed/arch2/600/400" alt="Risotto Arch" />
+        <img class="circle" src="https://picsum.photos/seed/circle2/180/180" alt="Mushrooms Circle" />
+      </div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="article">
+      <div class="article-content">
+        <h2>Beef Wellington</h2>
+        <p class="description">
+          A succulent beef fillet coated in mushroom duxelles and pâté, then encased in buttery puff pastry.
+        </p>
+        <h3>Origins</h3>
+        <p>
+          Often attributed to Arthur Wellesley, the first Duke of Wellington, this luxurious preparation became popular in 19th‑century England, though its true origins may trace back earlier.
+        </p>
+        <h3>Techniques</h3>
+        <p>
+          The beef is first seared to seal in juices, then cooled before wrapping. Mushroom duxelles—a finely chopped, sautéed mix—is layered around the beef, followed by a thin pâté, and finally the pastry. Baking is timed precisely for a tender medium‑rare center.
+        </p>
+      </div>
+      <div class="article-images">
+        <img class="arch" src="https://picsum.photos/seed/arch3/600/400" alt="Beef Wellington Arch" />
+        <img class="circle" src="https://picsum.photos/seed/circle3/180/180" alt="Puff Pastry Circle" />
+      </div>
+    </article>
+
+    <!-- Article 4 -->
+    <article class="article">
+      <div class="article-content">
+        <h2>Duck Confit</h2>
+        <p class="description">
+          Tender duck leg slowly cooked in its own fat until meltingly soft, with a gloriously crisp skin.
+        </p>
+        <h3>Origins</h3>
+        <p>
+          A classic of French gastronomy, duck confit originates from Gascony in Southwestern France, where salting and slow‑cooking meat in fat preserved it before refrigeration.
+        </p>
+        <h3>Techniques</h3>
+        <p>
+          Duck legs are first cured with salt, garlic, and thyme, then submerged in rendered duck fat and cooked at low temperature for several hours. Before serving, the skin is crisped under high heat or in a skillet.
+        </p>
+      </div>
+      <div class="article-images">
+        <img class="arch" src="https://picsum.photos/seed/arch4/600/400" alt="Duck Confit Arch" />
+        <img class="circle" src="https://picsum.photos/seed/circle4/180/180" alt="Rendered Duck Fat Circle" />
+      </div>
+    </article>
+
+    <!-- Article 5 -->
+    <article class="article">
+      <div class="article-content">
+        <h2>Chocolate Lava Cake</h2>
+        <p class="description">
+          A decadent individual chocolate cake with a warm, molten center that spills out when you cut into it.
+        </p>
+        <h3>Origins</h3>
+        <p>
+          Popularized in the late 20th century by chef Jean‑Georges Vongerichten, chocolate lava cake combines the richness of soufflé with the decadent heart of fondant au chocolat.
+        </p>
+        <h3>Techniques</h3>
+        <p>
+          The batter is whipped to incorporate air, then baked at high temperature for a short time so the exterior sets while the center remains fluid. Precise timing is key to achieving the perfect “lava” flow.
+        </p>
+      </div>
+      <div class="article-images">
+        <img class="arch" src="https://picsum.photos/seed/arch5/600/400" alt="Lava Cake Arch" />
+        <img class="circle" src="https://picsum.photos/seed/circle5/180/180" alt="Molten Center Circle" />
+      </div>
+    </article>
+
+  </div>
+</body>
+</html>

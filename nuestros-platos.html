@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Platos</title>
+    <title>Som de Mar</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 </head>
 <body>
     <!-- FAB Menu -->
     <div class="fab-container">
-        <button class="fab-menu" id="fabMenu">
+        <button class="fab-button" id="fabButton">
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
             <span class="fab-icon"></span>
         </button>
         <nav class="fab-dropdown" id="fabDropdown">
-            <a href="index.html">Inicio</a>
             <a href="reserva.html">Reservar</a>
             <a href="nuestros-platos.html">Nuestros Platos</a>
-            <a href="contactanos.html">Contactanos</a>
-            <a href="index.html#location">Ubicación</a>
-            <a href="galeria.html">Galería</a>
-            <a href="blogs.html">Blog</a>
+            <a href="origenes.html">Orígenes</a>
+            <a href="index.html#location">Ubicación y Contacto</a>
+            <a href="cronicas.html">Crónicas</a>
         </nav>
     </div>
 
@@ -40,9 +36,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <div class="logo-image"></div>
-                </a>
+                <div class="logo-image"></div>
             </div>
             <div class="language-selector">
                 <a href="#" class="language-link active">ES</a>
@@ -53,23 +47,72 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero sub-hero nuestros-platos-hero">
-        <div class="hero-content">
-            <h1>
-                <span class="som">NUESTROS</span>
-                <span class="de">PLATOS</span>
-            </h1>
-            <a href="#reserva" class="cta-button">Reservar Ahora</a>
+    <section id="home" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-item" style="background-image: url('assets/images/arty_dish.jpeg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/gambas_plate.jpeg'); opacity: 0;"></div>
+            <div class="carousel-item" style="background-image: url('assets/images/postre.jpg'); opacity: 0;"></div>
         </div>
         <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                <span class="nuestros">Nuestros</span>
+                <!-- <span class="de">DE</span> -->
+                <span class="platos">Platos</span>
+            </h1>
+            <p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de Mar.</p>
+            <a href="reserva.html" class="cta-button">Reservar Ahora</a>
+        </div>
     </section>
 
     <!-- Main Content -->
     <main class="main">
-        <div class="section-title">
-            <h2>Platos Estrella</h2>
-        </div>
         <section class="container dish-container">
+
+            <div>
+                <h2 class="section-title">Platos Estrella</h2>
+            </div>
+
+            <!-- Star Plate Feature Section -->
+            <section class="starplate-feature-container">
+              <div class="starplate-crab">
+                <img src="assets/images/dish-2.jpg" alt="Fresh crab on ice">
+              </div>
+              <div class="starplate-seafood">
+                <h2>Arroz Negro</h2>
+                <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                    Un plato marinero intenso y equilibrado.</p>
+              </div>
+              <div class="starplate-details">
+                <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. Usamos arroz de Calasparra por su calidad, 
+                    y gambas locales por su frescura y origen sostenible.</p>
+              </div>
+              <div class="starplate-fish">
+                <div class="starplate-vertical">Origen e Historia</div>
+                <img src="assets/images/dish-1.jpg" alt="Two fresh fish on tray">
+              </div>
+            </section>
+
+            <article class="starplate-feature-container">
+                <div class="starplate-crab">
+                  <img src="assets/images/dish-2.jpg" alt="Fresh crab on ice">
+                </div>
+                <div class="starplate-seafood">
+                  <h2>Arroz Negro</h2>
+                  <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                    Un plato marinero intenso y equilibrado.</p>
+                </div>
+                <div class="starplate-details">
+                    <h2>Origen e Historia</h2>
+                    <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. Usamos arroz de Calasparra por su calidad, 
+                        y gambas locales por su frescura y origen sostenible.</p>
+                </div>
+                <div class="starplate-fish">
+                  <!-- <div class="starplate-vertical">Origen e Historia</div> -->
+                  <img src="assets/images/dish-1.jpg" alt="Two fresh fish on tray">
+                </div>
+            </article>
+
             <article class="special-dish">
                 <div class="dish-content">
                     <h2>Arroz Negro con Gambas</h2>
@@ -97,6 +140,7 @@
                     </div>
                 </div>
             </article>
+
             <article class="special-dish">
                 <div class="dish-content">
                     <h2>Arroz Negro con Gambas</h2>
@@ -124,6 +168,7 @@
                     </div>
                 </div>
             </article>
+
             <article class="special-dish">
                 <div class="dish-content">
                     <h2>Arroz Negro con Gambas</h2>
@@ -142,17 +187,59 @@
                             Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
                     </div>
                 </div>
-                <div class="dish-images">
-                    <div class="main-image" style="background-image: url('assets/images/arroz_negro.jpeg');"></div>
-                    <div class="thumbnails">
-                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
-                        <div class="thumbnail" style="background-image: url('assets/images/gambas_plate.jpeg');"></div>
-                        <div class="thumbnail" style="background-image: url('assets/images/atun_chop.jpeg');"></div>
+                <div class="dish-images-alt">
+                    <img class="circle-img" src="assets/images/arroz-hand.jpg" alt="Gambas Plate">
+                    <img class="arch-img" src="assets/images/stock-pot.jpg" alt="Arroz Negro">
+                </div>
+            </article>
+            <article class="special-dish">
+                <div class="dish-content">
+                    <h2>Arroz Negro con Gambas</h2>
+                    <div class="dish-section">
+                        <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                            Un plato marinero intenso y equilibrado.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Origen e Historia</h3>
+                        <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
+                            Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Técnicas y Preparación</h3>
+                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
+                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
+                    </div>
+                </div>
+                <div class="dish-images-rect">
+                    <img class="rect-img-large" src="assets/images/arty_dish.jpeg" alt="Rectangular Large">
+                    <img class="rect-img-small" src="assets/images/gambas_plate.jpeg" alt="Rectangular Small">
+                </div>
+            </article>
+            <article class="special-dish">
+                <div class="dish-images-rect">
+                    <img class="rect-img-large" src="assets/images/arty_dish.jpeg" alt="Rectangular Large">
+                    <img class="rect-img-small" src="assets/images/gambas_plate.jpeg" alt="Rectangular Small">
+                </div>
+                <div class="dish-content">
+                    <h2>Arroz Negro con Gambas</h2>
+                    <div class="dish-section">
+                        <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
+                            Un plato marinero intenso y equilibrado.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Origen e Historia</h3>
+                        <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. 
+                            Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
+                    </div>
+                    <div class="dish-section">
+                        <h3>Técnicas y Preparación</h3>
+                        <p>El arroz se cuece lentamente en caldo casero con azafrán y hierbas. 
+                            Las gambas se cocinan al vapor con romero y tomillo, y el plato se termina con aceite de oliva virgen y un toque de pimentón.</p>
                     </div>
                 </div>
             </article>
             <div class="spacer">
-                <a href="#" class="reservar-button">Reservar Ahora</a>
+                <a href="reserva.html" class="standard-button">Reservar Ahora</a>
             </div>
         </section>
             
@@ -205,7 +292,7 @@
             </div>
         </section>
         <div class="spacer">
-            <a href="#" class="reservar-button">Inicio</a>
+            <a href="index.html" class="standard-button">Inicio</a>
         </div>
     </main>
 
@@ -264,5 +351,7 @@
     <script src="js/scroll-effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/fab-menu.js"></script>
+    <script src="js/som-carousel.js"></script>
+    <script src="js/noches-modal.js"></script>
 </body>
 </html>
