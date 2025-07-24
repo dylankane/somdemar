@@ -65,7 +65,7 @@
       /* box-shadow: 0 2px 12px rgba(0,0,0,0.07); */
       overflow: hidden;
       min-height: 420px;
-      padding: 2rem;
+      padding: 2rem 4rem;
       gap: 0;
       box-sizing: border-box;
     }
@@ -118,29 +118,7 @@
       margin: 0;
       padding: 0;
     }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      z-index: 2;
-      padding: 0;
-      font-size: 1.8rem;
-      text-shadow: 0 0 8px rgba(0,0,0,0.6);
-    }
-    .carousel-arrow.left {
-      left: 12px;
-    }
-    .carousel-arrow.right {
-      right: 12px;
-    }
-    .carousel-arrow:hover {
-      background: rgba(0,0,0,0.45);
-      opacity: 1;
-    }
+
     .carousel-text {
       flex: 1 1 420px;
       display: flex;
@@ -180,21 +158,30 @@
     }
     /* Dot Navigation */
     .carousel-dots {
-      display: none;
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      display: flex;
       justify-content: center;
-      padding: 15px 0;
       gap: 10px;
+      z-index: 3;
+      padding: 10px 0;
+      background: transparent;
     }
     .carousel-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      border: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: #8d8d8d;
       padding: 0;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
     .carousel-dot.active {
-      background: #333;
+      background: #fff;
+      transform: scale(1.2);
     }
 
     @media (max-width: 900px) {
@@ -326,17 +313,15 @@
   <section class="carousel-article-container">
     <div class="carousel-media">
       <div class="carousel-wrapper">
-        <button class="carousel-arrow left" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
         <div class="carousel-slide active" data-type="image">
           <img src="assets/images/vieiras.png" alt="Dish Presentation" class="carousel-img">
         </div>
         <div class="carousel-slide" data-type="video">
           <video class="carousel-video" autoplay muted loop playsinline preload="auto" webkit-playsinline>
-            <source src="assets/videos/carousel-video.mp4" type="video/mp4">
+            <source src="assets/videos/food-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
-        <button class="carousel-arrow right" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
       </div>
       <div class="carousel-dots">
         <button class="carousel-dot active" aria-label="Go to slide 1"></button>
@@ -355,30 +340,82 @@
     </div>
   </section>
 
+
+
   <script>
     // Carousel logic
     const carouselSlides = document.querySelectorAll('.carousel-slide');
-    const leftArrow = document.querySelector('.carousel-arrow.left');
-    const rightArrow = document.querySelector('.carousel-arrow.right');
+    const dots = document.querySelectorAll('.carousel-dot');
     let currentIndex = 0;
     let autoCycle;
+    let videoPosition = 0;
+    let videoElement = null;
+    let positionUpdateInterval;
 
-    function showSlide(index) {
-      carouselSlides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        // Pause video if not active
-        if (slide.dataset.type === 'video') {
-          const vid = slide.querySelector('video');
-          if (vid) {
-            if (i === index) {
-              vid.play();
-            } else {
-              vid.pause();
-              vid.currentTime = 0;
-            }
+    // Debug logging
+    function logVideoPosition() {
+      console.log(`Video position: ${videoPosition.toFixed(2)}s`);
+    }
+
+    // Track video position continuously
+    function startTrackingVideoPosition() {
+      if (positionUpdateInterval) clearInterval(positionUpdateInterval);
+      
+      positionUpdateInterval = setInterval(() => {
+        if (videoElement && !videoElement.paused) {
+          videoPosition = videoElement.currentTime;
+          console.log(`Tracking position: ${videoPosition.toFixed(2)}s`);
+          // If near the end, loop back to start
+          if (videoElement.duration > 0 && videoPosition >= videoElement.duration - 0.1) {
+            videoPosition = 0;
+            videoElement.currentTime = 0;
+            console.log('Video looped back to start');
           }
         }
+      }, 100);
+    }
+    
+    function stopTrackingVideoPosition() {
+      if (positionUpdateInterval) {
+        clearInterval(positionUpdateInterval);
+        positionUpdateInterval = null;
+        console.log(`Stopped tracking at position: ${videoPosition.toFixed(2)}s`);
+      }
+    }
+    
+    function showSlide(index) {
+      console.log(`Switching to slide ${index}, current position: ${videoPosition.toFixed(2)}s`);
+      
+      // If we're on a video slide, store its position before switching
+      if (videoElement) {
+        videoPosition = videoElement.currentTime;
+        videoElement.pause();
+        stopTrackingVideoPosition();
+      }
+      
+      // Update active state for all slides
+      carouselSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
       });
+      
+      // Handle the newly activated slide
+      const activeSlide = carouselSlides[index];
+      
+      if (activeSlide.dataset.type === 'video') {
+        videoElement = activeSlide.querySelector('video');
+        if (videoElement) {
+          console.log(`Restoring video position to: ${videoPosition.toFixed(2)}s`);
+          videoElement.currentTime = videoPosition;
+          videoElement.play().catch(e => console.log('Video play failed:', e));
+          startTrackingVideoPosition();
+        }
+      }
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
       currentIndex = index;
     }
 
@@ -392,32 +429,45 @@
       showSlide(prev);
     }
 
+    function getSlideDuration(slideIndex) {
+      // 10 seconds for video, 4 seconds for image
+      return carouselSlides[slideIndex].dataset.type === 'video' ? 10000 : 4000;
+    }
+
     function startAutoCycle() {
-      autoCycle = setInterval(nextSlide, 4000);
+      // Start with the current slide's duration
+      const duration = getSlideDuration(currentIndex);
+      autoCycle = setTimeout(() => {
+        nextSlide();
+        startAutoCycle();
+      }, duration);
     }
     function stopAutoCycle() {
-      clearInterval(autoCycle);
+      clearTimeout(autoCycle);
     }
 
-    leftArrow.addEventListener('click', () => {
-      prevSlide();
-      stopAutoCycle();
-      startAutoCycle();
-    });
-    rightArrow.addEventListener('click', () => {
-      nextSlide();
-      stopAutoCycle();
-      startAutoCycle();
-    });
-
     // Pause auto cycle on hover (desktop)
-    document.querySelector('.carousel-wrapper').addEventListener('mouseenter', stopAutoCycle);
-    document.querySelector('.carousel-wrapper').addEventListener('mouseleave', startAutoCycle);
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    carouselWrapper.addEventListener('mouseenter', stopAutoCycle);
+    carouselWrapper.addEventListener('mouseleave', startAutoCycle);
+
+    // Add click handlers for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        if (index !== currentIndex) {
+          showSlide(index);
+          stopAutoCycle();
+          startAutoCycle();
+        }
+      });
+    });
 
     // Start
     showSlide(0);
     startAutoCycle();
   </script>
+
+
 
 </body>
 </html>
