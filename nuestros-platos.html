@@ -47,7 +47,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero secondary-hero">
         <div class="hero-carousel">
             <div class="carousel-item" style="background-image: url('assets/images/arty_dish.jpeg'); opacity: 0;"></div>
             <div class="carousel-item" style="background-image: url('assets/images/gambas_plate.jpeg'); opacity: 0;"></div>
@@ -61,67 +61,199 @@
                 <span class="platos">Platos</span>
             </h1>
             <p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de Mar.</p>
-            <a href="reserva.html" class="cta-button">Reservar Ahora</a>
+            <a href="reserva.html" class="cta-button">Reservar</a>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="main">
-        <section class="container dish-container">
+        <div class="dish-intro">
+            <p>Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esto es solo una muestra de lo que ofrecemos, que evoluciona con las estaciones y el mercado.</p>
+        </div>
+          <!-- Dish Cards Carousel Section -->
+        <section class="dish-cards-section">
+          <div>
+            <h2 class="section-title">Favoritos del Chef</h2>
+          </div>
+          <div class="cards-carousel">
+            <div class="cards-container">
+              <div class="cards-track" id="dishCardsTrack">
 
-            <div>
-                <h2 class="section-title">Platos Estrella</h2>
+                <!-- Card 1: Gambas a la Plancha -->
+                <div class="dish-card" data-dish="gambas">
+                  <div class="card-media">
+                    <div class="media-carousel" id="mediaCarousel1">
+                      <div class="media-slides">
+                        <div class="media-slide active">
+                          <img src="assets/images/vieiras.png" alt="Gambas a la Plancha" class="media-image">
+                        </div>
+                        <div class="media-slide">
+                          <video class="media-video" muted loop>
+                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div class="media-dots">
+                        <i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;" data-slide="0"></i>
+                        <i class="fa-solid fa-video media-dot" style="color: #f8f8f8;" data-slide="1"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="dish-title">Gambas a la Plancha</h3>
+                    <div class="title-line"></div>
+                    <p class="dish-description">Fresh prawns grilled to perfection with garlic, olive oil, and a hint of chili.</p>
+                    <h4 class="dish-subtitle">Preparation & Serving</h4>
+                    <p class="dish-details">Served with lemon wedges and crusty bread, this dish captures the essence of Mediterranean coastal cuisine.</p>
+                  </div>
+                </div>
+
+                <!-- Card 2: Paella Valenciana -->
+                <div class="dish-card" data-dish="paella">
+                  <div class="card-media">
+                    <div class="media-carousel" id="mediaCarousel2">
+                      <div class="media-slides">
+                        <div class="media-slide active">
+                          <img src="assets/images/vieiras.png" alt="Paella Valenciana" class="media-image">
+                        </div>
+                        <div class="media-slide">
+                          <video class="media-video" muted loop>
+                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div class="media-dots">
+                        <i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;" data-slide="0"></i>
+                        <i class="fa-solid fa-video media-dot" style="color: #f8f8f8;" data-slide="1"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="dish-title">Paella Valenciana</h3>
+                    <div class="title-line"></div>
+                    <p class="dish-description">Traditional Spanish rice dish with saffron, chicken, rabbit, beans, and vegetables.</p>
+                    <h4 class="dish-subtitle">Authentic Tradition</h4>
+                    <p class="dish-details">Cooked in our authentic paellera over an open flame, following centuries-old Valencian recipes.</p>
+                  </div>
+                </div>
+
+                <!-- Card 3: Pulpo a la Gallega (Center/Start) -->
+                <div class="dish-card" data-dish="pulpo">
+                  <div class="card-media">
+                    <div class="media-carousel" id="mediaCarousel3">
+                      <div class="media-slides">
+                        <div class="media-slide active">
+                          <img src="assets/images/vieiras.png" alt="Pulpo a la Gallega" class="media-image">
+                        </div>
+                        <div class="media-slide">
+                          <video class="media-video" muted loop>
+                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div class="media-dots">
+                        <i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;" data-slide="0"></i>
+                        <i class="fa-solid fa-video media-dot" style="color: #f8f8f8;" data-slide="1"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="dish-title">Pulpo a la Gallega</h3>
+                    <div class="title-line"></div>
+                    <p class="dish-description">Tender octopus served on wooden plates with boiled potatoes, paprika, and extra virgin olive oil.</p>
+                    <h4 class="dish-subtitle">Galician Heritage</h4>
+                    <p class="dish-details">A classic from Galicia, prepared with the finest Spanish paprika and served in traditional style.</p>
+                  </div>
+                </div>
+
+                <!-- Card 4: Jamón Ibérico -->
+                <div class="dish-card" data-dish="jamon">
+                  <div class="card-media">
+                    <div class="media-carousel" id="mediaCarousel4">
+                      <div class="media-slides">
+                        <div class="media-slide active">
+                          <img src="assets/images/vieiras.png" alt="Jamón Ibérico" class="media-image">
+                        </div>
+                        <div class="media-slide">
+                          <video class="media-video" muted loop>
+                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div class="media-dots">
+                        <i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;" data-slide="0"></i>
+                        <i class="fa-solid fa-video media-dot" style="color: #f8f8f8;" data-slide="1"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="dish-title">Jamón Ibérico</h3>
+                    <div class="title-line"></div>
+                    <p class="dish-description">Premium acorn-fed Iberian ham, aged for 36 months in Spanish cellars.</p>
+                    <h4 class="dish-subtitle">Artisan Selection</h4>
+                    <p class="dish-details">Served with aged Manchego cheese and quince paste, representing the finest of Spanish charcuterie.</p>
+                  </div>
+                </div>
+
+                <!-- Card 5: Crema Catalana -->
+                <div class="dish-card" data-dish="crema">
+                  <div class="card-media">
+                    <div class="media-carousel" id="mediaCarousel5">
+                      <div class="media-slides">
+                        <div class="media-slide active">
+                          <img src="assets/images/vieiras.png" alt="Crema Catalana" class="media-image">
+                        </div>
+                        <div class="media-slide">
+                          <video class="media-video" muted loop>
+                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div class="media-dots">
+                        <i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;" data-slide="0"></i>
+                        <i class="fa-solid fa-video media-dot" style="color: #f8f8f8;" data-slide="1"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="dish-title">Crema Catalana</h3>
+                    <div class="title-line"></div>
+                    <p class="dish-description">Traditional Catalan dessert with vanilla custard and caramelized sugar crust.</p>
+                    <h4 class="dish-subtitle">Sweet Tradition</h4>
+                    <p class="dish-details">Flavored with cinnamon and lemon zest, finished with a perfectly torched sugar top.</p>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <!-- Star Plate Feature Section -->
-            <article class="starplate-feature-container">
-                <div class="starplate-crab">
-                  <video src="assets/videos/food-video.mp4" autoplay muted loop playsinline alt="video of cooking"></video>
-                </div>
-                <div class="starplate-seafood">
-                  <h2>Arroz Negro</h2>
-                  <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. 
-                    Un plato marinero intenso y equilibrado.</p>
-                </div>
-                <div class="starplate-details">
-                  <h2>Origen e Historia</h2>
-                  <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. Usamos arroz de Calasparra por su calidad, 
-                      y gambas locales por su frescura y origen sostenible.</p>
-                </div>
-                <div class="starplate-fish">
-                  <img src="assets/images/dish-1.jpg" alt="Two fresh fish on tray">
-                </div>
-            </article>
-
-            <article class="starplate-feature-mobile">
-                <div class="starplate-crab-mobile">
-                  <video src="assets/videos/food-video.mp4" autoplay muted loop playsinline alt="video de cocina"></video>
-                </div>
-                <div class="starplate-fish-mobile">
-                  <img src="assets/images/dish-1.jpg" alt="Dos peces frescos en bandeja">
-                </div>
-                <div class="starplate-seafood-mobile">
-                  <h2>Arroz Negro</h2>
-                  <p>Arroz negro de Calasparra cocido en caldo de pescado con azafrán, acompañado de gambas frescas del puerto de Villajoyosa. Un plato marinero intenso y equilibrado.</p>
-                </div>
-                <div class="starplate-details-mobile">
-                  <h2>Origen e Historia</h2>
-                  <p>Típico de la costa mediterránea, este arroz tiene raíces alicantinas. Usamos arroz de Calasparra por su calidad, y gambas locales por su frescura y origen sostenible.</p>
-                </div>
-            </article>
-
-            <div class="spacer">
-                <a href="reserva.html" class="standard-button">Reservar Ahora</a>
+            <!-- Floating Navigation Arrows -->
+            <div class="cards-navigation">
+              <button class="nav-arrow nav-arrow-prev" id="prevCardBtn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="nav-arrow nav-arrow-next" id="nextCardBtn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
+          </div>
         </section>
-            
+
+        <div class="spacer-small">
+                <a href="reserva.html" class="standard-button">Reservar Ahora</a>
+        </div>
+
         <!-- Menu List -->
         <section class="menu-list">
             <div class="menu-header">
                 <div class="menu-overlay"></div>
                 <div class="container">
                     <h2>Otras Sugerencias del Chef </h2>
-                    <p class="menu-intro">Aquí tienes una lista de algunos de nuestros platos clásicos más queridos por nuestros clientes. Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esta es solo una muestra de lo que ofrecemos. No dudes en ponerte en contacto para conocer nuestras especialidades más recientes.</p>
                 </div>
             </div>
             <div class="menu-content">
@@ -244,5 +376,6 @@
     <script src="js/fab-menu.js"></script>
     <script src="js/som-carousel.js"></script>
     <script src="js/noches-modal.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 </html>

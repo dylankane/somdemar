@@ -8,6 +8,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Styles -->
@@ -170,13 +172,11 @@
 
     <!-- Video Banner -->
     <section class="video-banner">
-        <!-- sticky version -->
-        <!-- <div class="video-wrapper">
-            <video class="video-bg" autoplay muted loop playsinline>
-                <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
-            </video>
-        </div>   -->
-        <!-- end of sticky version -->
+        <!-- Mobile video (hidden on desktop) -->
+        <video class="video-banner-mobile" autoplay muted loop playsinline>
+            <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+        </video>
+        
         <div class="video-overlay"></div>
         <div class="video-content">
             <h2>
@@ -191,6 +191,12 @@
 
 
     <!-- Spacer -->
+    
+    <div class="youtube-channel">
+        <a href="https://www.youtube.com/your-channel" target="_blank" class="youtube-link">
+            <i class="fab fa-youtube"></i> Visita nuestro canal de YouTube
+        </a>
+    </div>
     <div class="spacer-small"></div>
 
     <!-- Location -->
