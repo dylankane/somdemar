@@ -31,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       slideTimer = setInterval(nextSlide, intervalTime);
     }
   
-    // Pause on hover
-    hero.addEventListener('mouseenter', () => clearInterval(slideTimer));
-    hero.addEventListener('mouseleave', () => startCarousel());
-  
     // Pause when tab is hidden, resume when visible
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) clearInterval(slideTimer);

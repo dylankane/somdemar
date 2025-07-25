@@ -159,15 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Initialize with a staggered delay based on carousel index
             setTimeout(startCarousel, index * 1000);
             
-            // Pause on hover
-            carousel.addEventListener('mouseenter', () => {
-                if (interval) clearInterval(interval);
-            });
-            
-            carousel.addEventListener('mouseleave', () => {
-                if (interval) clearInterval(interval);
-                interval = setInterval(nextImage, baseDelay);
-            });
+            // Hover pause functionality removed
         });
     }
     
