@@ -1,207 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Restaurant Special Dishes - Arch & Circle Layout</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f5f5f5;
-      color: #333;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .article {
-      display: flex;
-      background: #f5f5f5;
-      margin-bottom: 40px;
-      padding: 20px;
-    }
-    .article-content {
-      flex: 2;
-      padding-right: 20px;
-    }
-    .article-content h2 {
-      margin-top: 0;
-    }
-    .article-content h3 {
-      margin: 15px 0 5px;
-      font-size: 1.1em;
-      color: #555;
-    }
-    .article-content p {
-      line-height: 1.6;
-    }
-    .article-images {
-      flex: 1;
-      max-width: 100%;
-      position: relative;
-      min-height: 360px;
-    }
-    .arch {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 75%;
-      width: 60%;
-      object-fit: cover;
-      z-index: 2;
-      /* maintain arch shape */
-      border-top-left-radius: 100% 50%;
-      border-top-right-radius: 100% 50%;
-    }
-    .circle {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      z-index: 1;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hero Test - Som de Mar</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Medium screens: narrow text before images shrink */
-    @media (max-width: 1024px) {
-      .article-content {
-        max-width: 60%;
-      }
-    }
+        :root {
+            --primary-color: #009697;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+        }
 
-    /* Small screens: stack images above text */
-    @media (max-width: 768px) {
-      .article {
-        flex-direction: column;
-      }
-      .article-images {
-        width: 100%;
-        margin-bottom: 20px;
-        min-height: auto;
-      }
-      .article-content {
-        width: 100%;
-        padding-right: 0;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: transparent;
+            padding: 1.5rem 3rem;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background-image: url('assets/images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.25rem 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .language-link:hover {
+            color: var(--primary-color);
+        }
+
+        .language-link.active {
+            color: var(--text-light);
+            font-weight: 600;
+            border: 1px solid var(--primary-color);
+        }
+
+        .language-divider {
+            color: var(--text-light);
+            font-weight: 800;
+        }
+
+        /* FAB Menu */
+        .fab-container {
+            position: fixed;
+            z-index: 3;
+            top: 2rem;
+            right: 3rem;
+        }
+
+        .fab-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .fab-button:hover {
+            background: #007577;
+            transform: scale(1.05);
+        }
+
+        .fab-icon {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        /* Video Hero Section */
+        .video-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .nuestros {
+            display: block;
+            font-size: 0.7em;
+            opacity: 0.9;
+            margin-bottom: -0.2em;
+        }
+
+        .platos {
+            display: block;
+            font-size: 1em;
+            font-weight: 900;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #007577;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 150, 151, 0.3);
+        }
+
+        /* Video Controls */
+        .video-controls {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 4;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .video-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .content-section .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .content-section h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .content-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            padding: 0 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .video-controls {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .video-control-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Article 1 -->
-    <article class="article">
-      <div class="article-content">
-        <h2>Seared Salmon with Mango Salsa</h2>
-        <p class="description">
-          A fresh salmon fillet seared to golden perfection, topped with a vibrant mango salsa that balances sweetness and acidity.
-        </p>
-        <h3>Origins</h3>
-        <p>
-          This dish draws inspiration from coastal cuisines where seafood and tropical fruits are abundant. Mango salsa has roots in Caribbean cooking, blending indigenous fruits with local spices to create lively accompaniments.
-        </p>
-        <h3>Techniques</h3>
-        <p>
-          The salmon is seared on high heat to lock in moisture and develop a crisp crust. The salsa is made by finely dicing ripe mango, red onion, cilantro, and lime juice, ensuring each component remains fresh and vibrant.
-        </p>
-      </div>
-      <div class="article-images">
-        <img class="arch" src="https://picsum.photos/seed/arch1/600/400" alt="Seared Salmon Arch" />
-        <img class="circle" src="https://picsum.photos/seed/circle1/180/180" alt="Mango Salsa Circle" />
-      </div>
-    </article>
+    <!-- FAB Menu -->
+    <div class="fab-container">
+        <button class="fab-button" id="fabButton">
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+            <span class="fab-icon"></span>
+        </button>
+    </div>
 
-    <!-- Article 2 -->
-    <article class="article">
-      <div class="article-content">
-        <h2>Truffle Mushroom Risotto</h2>
-        <p class="description">
-          A creamy arborio rice dish enriched with earthy wild mushrooms and the aromatic essence of truffle.
-        </p>
-        <h3>Origins</h3>
-        <p>
-          Hailing from Northern Italy—particularly the Piedmont and Lombardy regions—risotto is a staple of regional cuisine. Truffles, prized since antiquity, elevate this humble rice dish to gourmet status.
-        </p>
-        <h3>Techniques</h3>
-        <p>
-          Slow, constant stirring of arborio rice releases starches for that hallmark creaminess. Mushrooms are sautéed separately, then folded in with truffle oil or shavings just before serving to preserve their delicate aroma.
-        </p>
-      </div>
-      <div class="article-images">
-        <img class="arch" src="https://picsum.photos/seed/arch2/600/400" alt="Risotto Arch" />
-        <img class="circle" src="https://picsum.photos/seed/circle2/180/180" alt="Mushrooms Circle" />
-      </div>
-    </article>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-image"></div>
+                </a>
+            </div>
+            <div class="language-selector">
+                <a href="#" class="language-link active">ES</a>
+                <span class="language-divider">|</span>
+                <a href="#" class="language-link">EN</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Article 3 -->
-    <article class="article">
-      <div class="article-content">
-        <h2>Beef Wellington</h2>
-        <p class="description">
-          A succulent beef fillet coated in mushroom duxelles and pâté, then encased in buttery puff pastry.
-        </p>
-        <h3>Origins</h3>
-        <p>
-          Often attributed to Arthur Wellesley, the first Duke of Wellington, this luxurious preparation became popular in 19th‑century England, though its true origins may trace back earlier.
-        </p>
-        <h3>Techniques</h3>
-        <p>
-          The beef is first seared to seal in juices, then cooled before wrapping. Mushroom duxelles—a finely chopped, sautéed mix—is layered around the beef, followed by a thin pâté, and finally the pastry. Baking is timed precisely for a tender medium‑rare center.
-        </p>
-      </div>
-      <div class="article-images">
-        <img class="arch" src="https://picsum.photos/seed/arch3/600/400" alt="Beef Wellington Arch" />
-        <img class="circle" src="https://picsum.photos/seed/circle3/180/180" alt="Puff Pastry Circle" />
-      </div>
-    </article>
+    <!-- Video Hero Section -->
+    <section class="video-hero">
+        <video class="video-background" autoplay muted loop playsinline id="heroVideo">
+            <!-- Add your video sources here -->
+            <source src="assets/videos/compessed-hero-video.mp4" type="video/mp4">
+            <source src="assets/videos/compessed-hero-video.webm" type="video/webm">
+            <!-- Fallback for browsers that don't support video -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>
+                <span class="nuestros">Nuestros</span>
+                <span class="platos">Platos</span>
+            </h1>
+            <p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de Mar.</p>
+            <a href="reserva.html" class="cta-button">Reservar</a>
+        </div>
 
-    <!-- Article 4 -->
-    <article class="article">
-      <div class="article-content">
-        <h2>Duck Confit</h2>
-        <p class="description">
-          Tender duck leg slowly cooked in its own fat until meltingly soft, with a gloriously crisp skin.
-        </p>
-        <h3>Origins</h3>
-        <p>
-          A classic of French gastronomy, duck confit originates from Gascony in Southwestern France, where salting and slow‑cooking meat in fat preserved it before refrigeration.
-        </p>
-        <h3>Techniques</h3>
-        <p>
-          Duck legs are first cured with salt, garlic, and thyme, then submerged in rendered duck fat and cooked at low temperature for several hours. Before serving, the skin is crisped under high heat or in a skillet.
-        </p>
-      </div>
-      <div class="article-images">
-        <img class="arch" src="https://picsum.photos/seed/arch4/600/400" alt="Duck Confit Arch" />
-        <img class="circle" src="https://picsum.photos/seed/circle4/180/180" alt="Rendered Duck Fat Circle" />
-      </div>
-    </article>
+        <!-- Video Controls -->
+        <div class="video-controls">
+            <button class="video-control-btn" id="playPauseBtn" title="Play/Pause">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="video-control-btn" id="muteBtn" title="Mute/Unmute">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </section>
 
-    <!-- Article 5 -->
-    <article class="article">
-      <div class="article-content">
-        <h2>Chocolate Lava Cake</h2>
-        <p class="description">
-          A decadent individual chocolate cake with a warm, molten center that spills out when you cut into it.
-        </p>
-        <h3>Origins</h3>
-        <p>
-          Popularized in the late 20th century by chef Jean‑Georges Vongerichten, chocolate lava cake combines the richness of soufflé with the decadent heart of fondant au chocolat.
-        </p>
-        <h3>Techniques</h3>
-        <p>
-          The batter is whipped to incorporate air, then baked at high temperature for a short time so the exterior sets while the center remains fluid. Precise timing is key to achieving the perfect “lava” flow.
-        </p>
-      </div>
-      <div class="article-images">
-        <img class="arch" src="https://picsum.photos/seed/arch5/600/400" alt="Lava Cake Arch" />
-        <img class="circle" src="https://picsum.photos/seed/circle5/180/180" alt="Molten Center Circle" />
-      </div>
-    </article>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Video Hero Test</h2>
+            <p>
+                Esta es una página de prueba para el nuevo concepto de hero con video de fondo. 
+                El video se reproduce automáticamente en bucle y sin sonido por defecto. 
+                Los usuarios pueden controlar la reproducción y el audio usando los botones en la esquina inferior derecha.
+            </p>
+        </div>
+    </section>
 
-  </div>
+    <script>
+        // Video control functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const muteBtn = document.getElementById('muteBtn');
+            const playPauseIcon = playPauseBtn.querySelector('i');
+            const muteIcon = muteBtn.querySelector('i');
+
+            // Play/Pause functionality
+            playPauseBtn.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    playPauseIcon.className = 'fas fa-pause';
+                } else {
+                    video.pause();
+                    playPauseIcon.className = 'fas fa-play';
+                }
+            });
+
+            // Mute/Unmute functionality
+            muteBtn.addEventListener('click', function() {
+                if (video.muted) {
+                    video.muted = false;
+                    muteIcon.className = 'fas fa-volume-up';
+                } else {
+                    video.muted = true;
+                    muteIcon.className = 'fas fa-volume-mute';
+                }
+            });
+
+            // Handle video loading errors gracefully
+            video.addEventListener('error', function() {
+                console.log('Video failed to load. You may need to add actual video files.');
+                // Hide video controls if video fails to load
+                document.querySelector('.video-controls').style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>

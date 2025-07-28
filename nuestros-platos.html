@@ -51,9 +51,39 @@
     <!-- Hero Section -->
     <section id="home" class="hero secondary-hero">
         <div class="hero-carousel">
-            <div class="carousel-item" style="opacity: 0;"></div>
-            <div class="carousel-item" style="opacity: 0;"></div>
-            <div class="carousel-item" style="opacity: 0;"></div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/portrait-banner-platos.png">
+                    <img 
+                        src="assets/images/platos-banner1.jpeg" 
+                        alt="Nuestros platos especiales - Som de Mar"
+                        loading="eager"
+                        class="hero-image"
+                    >
+                </picture>
+            </div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/porttrait-platos2-dish.jpg">
+                    <img 
+                        src="assets/images/arroz-plato.jpeg" 
+                        alt="Arroz especial de Som de Mar"
+                        loading="lazy"
+                        class="hero-image"
+                    >
+                </picture>
+            </div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/cake-portrait.jpg">
+                    <img 
+                        src="assets/images/lamp-cropped.jpg" 
+                        alt="Ambiente acogedor de Som de Mar"
+                        loading="lazy"
+                        class="hero-image"
+                    >
+                </picture>
+            </div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -68,10 +98,12 @@
     </section>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="platos-main">
+      <section class="dish-intro-section">
         <div class="dish-intro">
             <p>Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esto es solo una muestra de lo que ofrecemos, que evoluciona con las estaciones y el mercado.</p>
         </div>
+      </section>
           <!-- Dish Cards Carousel Section -->
         <section class="dish-cards-section">
           <div>

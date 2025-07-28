@@ -12,20 +12,57 @@ const nextBtn = document.getElementById('nextCardBtn');
 function moveToCard(cardIndex) {
   currentCard = cardIndex;
   
+  // Get actual card dimensions
+  const cards = track.querySelectorAll('.dish-card');
+  if (cards.length === 0) return;
+  
+  const container = track.parentElement;
+  const containerStyle = window.getComputedStyle(container);
+  const containerPaddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+  const containerPaddingRight = parseFloat(containerStyle.paddingRight) || 0;
+  const containerWidth = container.offsetWidth;
+  const availableWidth = containerWidth - containerPaddingLeft - containerPaddingRight;
+  
+  const cardWidth = cards[0].offsetWidth;
+  const cardStyle = window.getComputedStyle(cards[0]);
+  const marginLeft = parseFloat(cardStyle.marginLeft);
+  const marginRight = parseFloat(cardStyle.marginRight);
+  const totalCardWidth = cardWidth + marginLeft + marginRight;
+  
   let moveDistance;
-  let maxIndex;
   
   if (window.innerWidth <= 768) {
-    // Mobile: 1 card centered with peeks, move by card width + margins
-    moveDistance = cardIndex * 80; // 75vw card + 5vw total margins
-    maxIndex = totalCards - 1;
+    // Mobile: Put the center of the active card in the exact center of the container
+    const containerCenter = availableWidth / 2;
+    const cardCenter = cardWidth / 2;
+    const cardLeftPosition = cardIndex * totalCardWidth + marginLeft;
+    const cardCenterPosition = cardLeftPosition + cardCenter;
+    
+    // Move the track so the card's center aligns with container's center
+    moveDistance = cardCenterPosition - containerCenter;
+    
+    console.log('Mobile centering:', { 
+      containerWidth, 
+      availableWidth, 
+      containerCenter,
+      cardWidth, 
+      cardCenter,
+      cardLeftPosition,
+      cardCenterPosition,
+      cardIndex, 
+      moveDistance 
+    });
   } else {
-    // Desktop: 2 cards visible, move by single card width
-    moveDistance = cardIndex * 43; // 40vw card + 3vw margin
-    maxIndex = totalCards - 2; // Stop when 2 cards are visible
+    // Desktop: Simple left alignment, move by card width
+    moveDistance = cardIndex * totalCardWidth;
+    console.log('Desktop alignment:', { cardIndex, totalCardWidth, moveDistance });
   }
   
-  track.style.transform = `translateX(-${moveDistance}vw)`;
+  // Calculate max index - how many cards we can scroll through
+  const visibleCards = Math.floor(containerWidth / totalCardWidth);
+  const maxIndex = Math.max(0, totalCards - visibleCards);
+  
+  track.style.transform = `translateX(${-moveDistance}px)`;
   
   // Update button states
   prevBtn.disabled = currentCard === 0;
@@ -34,9 +71,31 @@ function moveToCard(cardIndex) {
   nextBtn.style.opacity = currentCard >= maxIndex ? '0.5' : '1';
 }
 
+// Calculate max index based on current screen size and card layout
+function getMaxIndex() {
+  const cards = track.querySelectorAll('.dish-card');
+  if (cards.length === 0) return 0;
+  
+  const container = track.parentElement;
+  const containerStyle = window.getComputedStyle(container);
+  const containerPaddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+  const containerPaddingRight = parseFloat(containerStyle.paddingRight) || 0;
+  const containerWidth = container.offsetWidth;
+  const availableWidth = containerWidth - containerPaddingLeft - containerPaddingRight;
+  
+  const cardWidth = cards[0].offsetWidth;
+  const cardStyle = window.getComputedStyle(cards[0]);
+  const marginLeft = parseFloat(cardStyle.marginLeft);
+  const marginRight = parseFloat(cardStyle.marginRight);
+  const totalCardWidth = cardWidth + marginLeft + marginRight;
+  
+  const visibleCards = Math.floor(availableWidth / totalCardWidth);
+  return Math.max(0, totalCards - visibleCards);
+}
+
 // Next button
 function nextCard() {
-  const maxIndex = window.innerWidth <= 768 ? totalCards - 1 : totalCards - 2;
+  const maxIndex = getMaxIndex();
   if (currentCard < maxIndex) {
     moveToCard(currentCard + 1);
   }
@@ -131,8 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize media carousels
   initMediaCarousels();
   
-  // Set initial state
-  moveToCard(0);
+  // Set initial state with small delay to ensure DOM is ready
+  setTimeout(() => {
+    moveToCard(0);
+  }, 100);
   
   // Handle window resize
   window.addEventListener('resize', () => {

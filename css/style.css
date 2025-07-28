@@ -28,6 +28,7 @@ html, body {
 }
 
 main {
+    position: relative;
     width: 100%;
     background-color: var(--text-light);
 }
@@ -54,9 +55,9 @@ h2, h3, h4, h5, h6 {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.4;
     color: var(--text-dark);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 a {
@@ -65,7 +66,7 @@ a {
 
 .section-title {
     color: var(--text-dark);
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
 
@@ -481,16 +482,25 @@ a {
 
 .carousel-item {
     position: absolute;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
 
 .carousel-item.active {
@@ -509,7 +519,7 @@ a {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: var(--text-light);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     padding: 2rem;
@@ -558,7 +568,7 @@ a {
 
 .hero .hero-firma {
     font-family: 'Playwrite AU QLD', cursive;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 200;           
     color: var(--text-light);                   
     margin-top: 1rem;
@@ -571,10 +581,10 @@ a {
 
 /* === Hero Section Responsive Styles === */
 
-/* Remove fixed positioning for small screens */
+/* Hero responsive styles */
 @media (max-width: 768px) {
-    .carousel-item {
-      background-attachment: scroll; /* Remove fixed positioning for mobile */
+    .hero-image {
+        position: static; /* Disable fixed positioning on mobile */
     }
 
     .hero .hero-firma {
@@ -604,8 +614,8 @@ a {
   }
   
   @media (max-width: 480px) {
-    .carousel-item {
-      background-attachment: scroll;
+    .hero-image {
+        position: static; /* Disable fixed positioning on small mobile */
     }
 
     .hero .hero-firma {
@@ -852,7 +862,7 @@ a {
 /* About Section */
 .about {
     padding: 8rem 4rem 8rem;
-    /* position: relative; */
+    position: relative;
 }
 
 .about-content {
@@ -869,9 +879,14 @@ a {
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     background-color: #f5f5f5;
-    background-image: var(--staff-fun);
-    background-size: cover;
-    background-position: center;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 @media (max-width: 880px) {
@@ -908,6 +923,7 @@ a {
 /* Food Gallery Section */
 .food-gallery {
     padding: 8rem 4rem;
+    position: relative;
 }
 
 .gallery-content {
@@ -1074,8 +1090,8 @@ a {
     background-position: center;
     background-attachment: fixed;
     width: 100%;
-    height: 350px;
-    min-height: 400px;
+    height: 300px;
+    /* min-height: 400px; */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1100,7 +1116,7 @@ a {
     font-family: 'Anton', sans-serif;
     /* font-size: clamp(1.1rem, 5vw, 2.5rem); */
     /* line-height: 1.5; */
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     /* font-weight: 50; */
     color: var(--text-light);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
@@ -1108,20 +1124,19 @@ a {
 }
 
 /* Video banner */
-.video-bg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100vw;
-    min-height: 100vh;
+.video-banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -1;
-  }
+    z-index: 0;
+}
   
 .video-banner {
     position: relative;
-    height: 100vh;
+    height: 75vh;
     width: 100%;
     overflow: hidden;
     background: transparent;
@@ -1130,6 +1145,8 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+
 /* Sticky version */
 /* .video-wrapper {
     position: sticky;
@@ -1207,49 +1224,37 @@ a {
 
 .video-banner span {
     display: block;
-    font-size: 8rem;
+    font-size: 6rem;
     letter-spacing: 2px;
     position: relative;
     color: var(--text-light);
     margin-top: -0.5rem;
 }
 
+.video-banner .de {
+    font-size: 4rem;
+}
+
 .video-banner p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-light);
 }
 
-/* Hide mobile video on desktop */
-.video-banner-mobile {
-    display: none;
-}
 
-/* Video Banner Mobile Styles - Hide global video and add contained video */
+
+/* Video Banner Mobile Styles */
 @media (max-width: 768px) {
-    .video-bg {
-        display: none; /* Hide the global fixed video on mobile */
-    }
     
     .video-banner {
         position: relative;
-        height: 100vh;
+        height: 75vh;
         width: 100%;
         overflow: hidden;
         background: #000; /* Fallback background */
     }
     
-    /* Mobile video element within banner */
-    .video-banner-mobile {
-        display: block; /* Show on mobile */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
+
     .video-banner span {
         font-size: 5rem;
     }
@@ -1587,7 +1592,7 @@ a {
 
 .origin-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     position: relative;
@@ -1605,9 +1610,9 @@ a {
 }
 
 .origin-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
+    /* font-size: 1rem; */
+    /* line-height: 1.8; */
+    color: var(--text-dark);
     margin-bottom: 1.5rem;
 }
 
@@ -1679,7 +1684,7 @@ a {
 /* === Galleria section ===*/
 .gallery-section .section-title {
     font-family: 'Anton', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--text-dark);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1708,7 +1713,8 @@ a {
 }
 
 .gallery-section {
-    margin: 3rem 0 3rem 0;
+    margin: 0 auto;
+    padding: 3rem 0;
 }
 
 /* Gallery Grid */
@@ -1828,8 +1834,9 @@ a {
 .youtube-channel {
     text-align: center;
     margin: 0 auto;
-    padding: 2rem 2rem;
+    padding: 0;
     background-color: var(--text-light);
+    position: relative;
 }
 
 .youtube-link {
@@ -1837,14 +1844,14 @@ a {
     align-items: center;
     background-color: #ff0000;
     color: white !important;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     letter-spacing: 1px;
 }
 
@@ -1861,10 +1868,18 @@ a {
 
 /* === Nuestros Platos Page === */
 
+.platos-main {
+    padding-top: 4rem;
+}
+
+.dish-intro-section {
+    position: relative;
+}
+
 .dish-intro {
     text-align: center;
     width: 50%;
-    margin: 3rem auto;
+    margin: 0 auto;
     font-family: 'Poppins', serif;
     color: var(--text-dark);
 }
@@ -1886,7 +1901,8 @@ a {
     max-width: 1400px;
     margin: 3rem auto;
     padding: 0 2rem;
-    padding-bottom: 0; /* Remove bottom padding since we have margin on container */
+    padding-bottom: 0;
+    position: relative;
 }
 
 .dish-cards-section .section-title {
@@ -1894,17 +1910,19 @@ a {
     text-align: center;
 }
 
+
+
 .cards-carousel {
     position: relative;
 }
 
 .cards-container {
     position: relative;
-    width: 100vw;
+    width: 90%;
     min-height: 600px;
     overflow: hidden;
-    margin-left: calc(-50vw + 50%);
-    /* margin-bottom: 120px; */
+    margin: 0 auto;
+    /* padding: 0 2rem; */
 }
 
 .cards-track {
@@ -1915,27 +1933,27 @@ a {
 }
 
 .dish-card {
-    flex: 0 0 40vw;
-    margin: 0 1.5vw; /* Only horizontal margins, align to top */
+    flex: 0 0 350px;
+    margin: 0 1rem; /* Changed from 2vw to 1rem for consistent spacing */
     background: var(--text-light);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    align-self: flex-start; /* Ensure alignment to top */
+    align-self: flex-start;
 }
 
-.dish-card:hover {
+/* .dish-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-}
+} */
   
 /* Card Media Section */
 .card-media {
-    height: 400px; /* Fixed height for media section */
+    height: 300px;
     position: relative;
     overflow: hidden;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
 .media-carousel {
@@ -2020,9 +2038,9 @@ a {
 
 .dish-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   /* font-weight: 700; */
-  color: #333;
+  color: var(--text-dark);
   margin-bottom: 0.8rem;
   line-height: 1.2;
 }
@@ -2030,24 +2048,24 @@ a {
 .title-line {
   width: 33%;
   height: 2px;
-  background-color: #009697;
+  background-color: var(--primary-color);
   margin-bottom: 1.2rem;
 }
 
 .dish-description {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  /* font-family: 'Playfair Display', serif;
+  font-size: 1rem; */
   /* font-weight: 400; */
-  line-height: 1.5;
-  color: #666;
+  /* line-height: 1.5; */
+  /* color: #666; */
   margin-bottom: 1.5rem;
 }
 
 .dish-subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* font-weight: 600; */
-  color: #333;
+  color: var(--text-dark);
   margin-bottom: 0.8rem;
   line-height: 1.3;
 }
@@ -2129,11 +2147,9 @@ a {
   opacity: 0.9;
 }
 
-/* Desktop peek effect */
+/* Desktop styles */
 @media (min-width: 769px) {
-  .cards-track {
-    padding-left: 8.5vw; /* Center the 2 cards with gap in middle */
-  }
+  /* No additional track styles needed - JS handles positioning */
 }
 
 /* Mobile Styles */
@@ -2146,12 +2162,12 @@ a {
   .cards-container {
     min-height: 500px;
     touch-action: pan-x;
-    margin-bottom: 100px; /* Smaller margin for mobile */
+    margin-bottom: 20px; /* Smaller margin for mobile */
+    padding: 0 1rem; /* Smaller padding for mobile */
   }
   
   .cards-track {
     cursor: grab;
-    padding-left: 12.5vw; /* Center the main card with peeks on sides */
   }
   
   .cards-track:active {
@@ -2159,12 +2175,12 @@ a {
   }
   
   .dish-card {
-    flex: 0 0 75vw; /* Narrower cards to show peeks */
+    flex: 0 0 300px; /* Narrower cards to show peeks */
     /* margin: 0 2.5vw; Smaller margins for peek effect */
   }
   
   .card-media {
-    height: 300px; /* Smaller fixed height for mobile */
+    height: 250px; /* Smaller fixed height for mobile */
   }
   
   .card-content {
@@ -2211,6 +2227,7 @@ a {
   .cards-container {
     min-height: 400px;
     margin-bottom: 80px;
+    width:100%;
   }
   
   .dish-card {
@@ -2300,7 +2317,7 @@ a {
 }
 
 .menu-list h3 {
-    font-size: 1.5rem;
+    /* font-size: 1.4rem; */
     color: var(--text-dark);
     margin-bottom: 2rem;
     position: relative;
@@ -2318,8 +2335,8 @@ a {
 
 .menu-list p {
     font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
+    /* line-height: 1.6; */
+    color: var(--text-dark);
 }
 
 /* === Menu Section Responsive Styles === */

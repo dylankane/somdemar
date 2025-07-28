@@ -21,11 +21,7 @@
 </head>
 <body>
 
-    <!-- Video Background -->
-    <video class="video-bg" autoplay muted loop playsinline>
-        <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
-    </video>
-      
+
     <!-- FAB Menu -->
     <div class="fab-container">
         <button class="fab-button" id="fabButton">
@@ -61,13 +57,27 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-carousel">
-            <div class="carousel-item" style="opacity: 0;"></div>
-            <div class="carousel-item" style="opacity: 0;"></div>
-            <div class="carousel-item" style="opacity: 0;"></div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-1.jpg">
+                    <img src="assets/images/home-hero-1.jpg" alt="Gambas a la plancha con pulpo - Som de Mar" loading="eager" class="hero-image">
+                </picture>
+            </div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-2.jpg">
+                    <img src="assets/images/home-hero-2.jpg" alt="Plato especial de Som de Mar" loading="lazy" class="hero-image">
+                </picture>
+            </div>
+            <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-3.jpg">
+                    <img src="assets/images/home-hero-3.png" alt="Vieiras frescas - Som de Mar" loading="lazy" class="hero-image">
+                </picture>
+            </div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <!-- <p>Cocina De Mercado Y Arroces</p> -->
             <h1>
                 <span class="som">SOM</span>
                 <span class="de">DE</span>
@@ -89,7 +99,14 @@
                     <!-- <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar. Nuestro compromiso con la calidad y la excelencia nos lleva a seleccionar cuidadosamente cada ingrediente, desde las capturas del puerto local hasta los productos de nuestros distribuidores exclusivos.</p>
                     <p>Nuestro objetivo es alcanzar excelencia, combinando técnicas tradicionales con innovación culinaria para ofrecer una experiencia gastronómica inigualable.</p> -->
                 </div>
-                <div class="about-image" aria-label="Interior del restaurante"></div>
+                <div class="about-image">
+                    <img 
+                        src="assets/images/staff-kitchen-fun.jpg" 
+                        alt="Equipo de Som de Mar en la cocina"
+                        loading="lazy"
+                        class="about-img"
+                    >
+                </div>
             </div>
             <div class="about-overlay"></div>
         </div>
@@ -98,7 +115,7 @@
 
     <!-- Quote Banner -->
     <section class="quote-banner"
-         style="background-image:url('assets/images/patatas-angle.jpeg');">
+         style="background-image:url('assets/images/quote-banner-patatas.jpeg');">
         <div class="quote-overlay">
             <p class="quote-text">
                 Todos los artes son maravillosos, y la cocina es uno de ellos. Así que disfruten de la comida.
@@ -178,8 +195,7 @@
 
     <!-- Video Banner -->
     <section class="video-banner">
-        <!-- Mobile video (hidden on desktop) -->
-        <video class="video-banner-mobile" autoplay muted loop playsinline>
+        <video class="video-banner-video" autoplay muted loop playsinline>
             <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
         </video>
         
@@ -198,7 +214,7 @@
     <div class="spacer-small"></div>
     <div class="youtube-channel">
         <a href="https://www.youtube.com/your-channel" target="_blank" class="youtube-link">
-            <i class="fab fa-youtube"></i> Visita nuestro canal de YouTube
+            <i class="fab fa-youtube"></i>Síguenos en YouTube
         </a>
     </div>
     <div class="spacer-small"></div>
@@ -208,7 +224,7 @@
         <div class="container location-container">
             <!-- Location Pin Icon -->
             <div class="location-pin" aria-hidden="true">
-                <i class="fa-solid fa-location-dot" style="font-size: 5rem; color: var(--primary-color);"></i>
+                <i class="fa-solid fa-location-dot" style="font-size: 4rem; color: var(--primary-color);"></i>
             </div>
             <!-- <h2 class="section-title">Visítanos</h2> -->
             
@@ -216,7 +232,7 @@
             <div class="location-row location-row-images">
                 <div class="location-images">
                     <div class="location-images-top">
-                        <div class="location-image" style="background-image: url('assets/images/areil.jpeg')"></div>
+                        <div class="location-image" style="background-image: url('assets/images/aerial-view.jpg')"></div>
                         <div class="location-image" style="background-image: url('assets/images/shop_front.jpg')"></div>
                     </div>
                     <div class="location-images-bottom">
