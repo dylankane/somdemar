@@ -54,7 +54,9 @@
         <div class="hero-carousel">
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/roberto-kitchen-portrait.webp" type="image/webp">
                     <source media="(max-width: 768px)" srcset="assets/images/roberto-kitchen-portrait.png">
+                    <source srcset="assets/images/roberto-kitchen.webp" type="image/webp">
                     <img 
                         src="assets/images/roberto-kitchen.png" 
                         alt="Roberto en la cocina - Som de Mar"
@@ -65,7 +67,9 @@
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/pulpo_kinfe.webp" type="image/webp">
                     <source media="(max-width: 768px)" srcset="assets/images/pulpo_kinfe.jpg">
+                    <source srcset="assets/images/somdemar-sign-bw.webp" type="image/webp">
                     <img 
                         src="assets/images/somdemar-sign-bw.jpg" 
                         alt="Letrero Som de Mar"
@@ -76,7 +80,9 @@
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/staff-fun3.webp" type="image/webp">
                     <source media="(max-width: 768px)" srcset="assets/images/staff-fun3.jpg">
+                    <source srcset="assets/images/pulpo_kinfe.webp" type="image/webp">
                     <img 
                         src="assets/images/pulpo_kinfe.jpg" 
                         alt="Preparación de pulpo - Som de Mar"
@@ -104,7 +110,17 @@
             <div class="container">
                 <!-- Villajoyosa Section -->
                 <div class="origin-item">
-                    <div class="origin-image" style="background-image: url('./assets/images/villajoyosa-vintage.jpg')" aria-label="Villajoyosa"></div>
+                    <div class="origin-image">
+                        <picture>
+                            <source srcset="assets/images/origins/villajoyosa-vintage.webp" type="image/webp">
+                            <img 
+                                src="assets/images/origins/villajoyosa-vintage.jpg" 
+                                alt="Villajoyosa - Pueblo costero con tradición pesquera"
+                                loading="lazy"
+                                class="origin-img"
+                            >
+                        </picture>
+                    </div>
                     <div class="origin-content">
                         <h2>Villajoyosa</h2>
                         <p>Nuestra historia comienza en el corazón de Villajoyosa, un pueblo costero con una rica tradición pesquera. Aquí, entre las olas del Mediterráneo y el aroma a sal, descubrimos nuestra pasión por los sabores del mar. La herencia marinera de este lugar único se refleja en cada uno de nuestros platos, creados con el mismo respeto y cariño que los pescadores locales tienen por su oficio.</p>
@@ -117,12 +133,32 @@
                         <h2>Inspiración</h2>
                         <p>Inspirados por la riqueza de la costa alicantina, nuestra cocina es un homenaje a los sabores auténticos del Mediterráneo. Cada plato cuenta una historia de tradición e innovación, donde los ingredientes locales son los verdaderos protagonistas. Nuestros chefs se nutren de la cultura gastronómica local para crear experiencias culinarias que despiertan los sentidos.</p>
                     </div>
-                    <div class="origin-image" style="background-image: url('./assets/images/father-son-paint.png')" aria-label="Inspiración"></div>
+                    <div class="origin-image">
+                        <picture>
+                            <source srcset="assets/images/origins/father-son-paint-740x1000.webp" type="image/webp">
+                            <img 
+                                src="assets/images/origins/father-son-paint.png" 
+                                alt="Inspiración - Padre e hijo pintando"
+                                loading="lazy"
+                                class="origin-img"
+                            >
+                        </picture>
+                    </div>
                 </div>
 
                 <!-- Experience Section -->
                 <div class="origin-item">
-                    <div class="origin-image" style="background-image: url('./assets/images/experience-origin.jpeg')" aria-label="Experiencia"></div>
+                    <div class="origin-image">
+                        <picture>
+                            <source srcset="assets/images/origins/experience-origin-740x1000.webp" type="image/webp">
+                            <img 
+                                src="assets/images/origins/experience-origin.jpeg" 
+                                alt="Experiencia - Más de una década sirviendo comensales"
+                                loading="lazy"
+                                class="origin-img"
+                            >
+                        </picture>
+                    </div>
                     <div class="origin-content">
                         <h2>Experiencia</h2>
                         <p>Con más de una década de experiencia, hemos servido a miles de comensales que buscan autenticidad y excelencia. Cada servicio es una oportunidad para superarnos, para convertir una simple comida en un recuerdo inolvidable. Nuestro compromiso con la calidad y la satisfacción del cliente es el pilar fundamental de nuestro restaurante.</p>
@@ -135,7 +171,17 @@
                         <h2>Som de Mar</h2>
                         <p>Hoy, Som de Mar es más que un restaurante; es un sueño hecho realidad. Un lugar donde la pasión por la gastronomía se encuentra con el amor por el mar Mediterráneo. Nuestro compromiso es ofrecer una experiencia auténtica, donde cada bocado cuente una historia de tradición, calidad y dedicación. Te invitamos a ser parte de esta historia y a disfrutar de los auténticos sabores del mar con nosotros.</p>
                     </div>
-                    <div class="origin-image" style="background-image: url('./assets/images/roberto-kitchen-portrait.png')" aria-label="Som de Mar"></div>
+                    <div class="origin-image">
+                        <picture>
+                            <source srcset="assets/images/origins/roberto-kitchen-portrait-740x1000.webp" type="image/webp">
+                            <img 
+                                src="assets/images/origins/roberto-kitchen-portrait.png" 
+                                alt="Som de Mar - Roberto en la cocina del restaurante"
+                                loading="lazy"
+                                class="origin-img"
+                            >
+                        </picture>
+                    </div>
                 </div>
             </div>
         </section>
