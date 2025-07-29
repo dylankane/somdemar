@@ -1,118 +1,90 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Video handling
-const video = document.querySelector('.background-video');
-const fallback = document.querySelector('.video-fallback');
-
-if (video) {
-    // Try to play the video
-    const playPromise = video.play();
-    
-    // If play fails, show fallback
-    if (playPromise !== undefined) {
-        playPromise.catch(error => {
-            console.log('Video playback failed, showing fallback:', error);
-            if (fallback) fallback.classList.add('show');
-        });
-    }
-    
-    // If video can play, ensure fallback is hidden
-    video.addEventListener('canplay', () => {
-        if (fallback) fallback.classList.remove('show');
-    });
-    
-    // If video errors, show fallback
-    video.addEventListener('error', () => {
-        console.error('Video error, showing fallback');
-        if (fallback) fallback.classList.add('show');
-    });
-}
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-const hero = document.querySelector('.hero');
-
-// Function to update navbar state
-function updateNavbar() {
-    // Prevent multiple updates
-    if (navbar._isUpdating) return;
-    navbar._isUpdating = true;
-    
-    const heroHeight = hero.offsetHeight;
-    const scrollPosition = window.scrollY;
-    
-    // Clear any pending updates
-    if (navbar._timeout) {
-        clearTimeout(navbar._timeout);
-    }
-    
-    // Add a small delay to prevent rapid updates
-    navbar._timeout = setTimeout(() => {
-        if (scrollPosition > heroHeight) {
-            navbar.style.background = '#000';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.style.background = 'transparent';
-            navbar.style.boxShadow = 'none';
-            navbar.classList.remove('scrolled');
-        }
-        navbar._isUpdating = false;
-    }, 100);
-}
-
-// Add scroll and load event listeners
-window.addEventListener('scroll', () => {
-    updateNavbar();
-});
-
-// Initial check on page load
-window.addEventListener('load', () => {
-    updateNavbar();
-});
-
-// Update on resize
-window.addEventListener('resize', () => {
-    updateNavbar();
-});
-
-// Add smooth fade for images
-const images = document.querySelectorAll('img');
-images.forEach(img => {
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.5s ease';
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
+// Shared carousel functions (defined once, reused for all carousels)
+function createNextImageFunction(images, getCurrentIndex, setCurrentIndex) {
+    return function() {
+        const current = getCurrentIndex();
+        const currentImg = images[current];
+        const nextIndex = (current + 1) % images.length;
+        const nextImg = images[nextIndex];
+        
+        // Smooth fade transition using requestAnimationFrame
+        const duration = 2000; // 2 seconds
+        const startTime = performance.now();
+        
+        function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Smooth easing function (ease-in-out)
+            const easeInOut = progress < 0.5 
+                ? 2 * progress * progress 
+                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+            
+            // Fade out current, fade in next
+            currentImg.style.opacity = 1 - easeInOut;
+            nextImg.style.opacity = easeInOut;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                // Animation complete - update classes
+                currentImg.classList.remove('active');
+                nextImg.classList.add('active');
+                setCurrentIndex(nextIndex);
             }
-        });
-    });
-    
-    observer.observe(img);
-});
+        }
+        
+        requestAnimationFrame(animate);
+    };
+}
 
-// Initialize carousels when the DOM is fully loaded
+function createCarouselController(nextImageFn, baseDelay) {
+    let interval = null;
+    
+    const start = () => {
+        if (interval) clearInterval(interval);
+        setTimeout(() => {
+            nextImageFn();
+            interval = setInterval(nextImageFn, baseDelay);
+        }, 1000);
+    };
+    
+    const stop = () => {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+    };
+    
+    return { start, stop };
+}
+
+function setupViewportDetection(carousel, controller, index) {
+    const gallerySection = carousel.closest('.food-gallery');
+    if (gallerySection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(controller.start, index * 1000);
+                } else {
+                    controller.stop();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(gallerySection);
+    } else {
+        setTimeout(controller.start, index * 1000);
+    }
+}
+
+// Initialize carousels when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Carousel functionality
     function initCarousels() {
         document.querySelectorAll('.carousel').forEach((carousel, index) => {
             const images = carousel.querySelectorAll('.carousel-img');
-            if (images.length <= 1) return; // No need for carousel with 0 or 1 image
+            if (images.length <= 1) return;
             
-            // Make sure only the first image is active initially
+            // Initialize images
             images.forEach((img, imgIndex) => {
                 if (imgIndex === 0) {
                     img.classList.add('active');
@@ -123,52 +95,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            let current = 0;
-            // Use data-delay attribute or fallback to staggered delays based on index
+            // Carousel state
+            let currentIndex = 0;
             const baseDelay = parseInt(carousel.dataset.delay, 10) || 6000 + (index * 1000);
-            let interval;
             
-            function nextImage() {
-                const currentImg = images[current];
-                const nextIndex = (current + 1) % images.length;
-                const nextImg = images[nextIndex];
-                
-                // Start fade out current image
-                currentImg.style.opacity = '0';
-                
-                // After fade out completes, update classes and fade in next image
-                setTimeout(() => {
-                    currentImg.classList.remove('active');
-                    nextImg.classList.add('active');
-                    nextImg.style.opacity = '1';
-                    current = nextIndex;
-                }, 1500); // Match this with the CSS transition duration
-            }
+            // Create shared functions for this carousel
+            const nextImage = createNextImageFunction(
+                images,
+                () => currentIndex,
+                (newIndex) => currentIndex = newIndex
+            );
             
-            // Start carousel after a small delay
-            const startCarousel = () => {
-                if (interval) clearInterval(interval);
-                // Add a small delay before starting the first transition
-                setTimeout(() => {
-                    nextImage();
-                    // Set up the interval for subsequent transitions
-                    interval = setInterval(nextImage, baseDelay);
-                }, 1000);
-            };
-            
-            // Initialize with a staggered delay based on carousel index
-            setTimeout(startCarousel, index * 1000);
-            
-            // Hover pause functionality removed
+            const controller = createCarouselController(nextImage, baseDelay);
+            setupViewportDetection(carousel, controller, index);
         });
     }
     
-    // Initialize carousels
     initCarousels();
-    
-    // Re-initialize if new carousels are added dynamically
-    if (typeof MutationObserver !== 'undefined') {
-        const observer = new MutationObserver(initCarousels);
-        observer.observe(document.body, { childList: true, subtree: true });
-    }
 });
