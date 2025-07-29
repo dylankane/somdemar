@@ -50,6 +50,18 @@ sr.reveal('.dish-container .special-dish:nth-child(3) .dish-images', {
     delay: 200
 });
 
+// Dish Cards Carousel Section
+sr.reveal('.dish-cards-section .section-title', { 
+    origin: 'top', 
+    delay: 300, 
+    distance: '60px' 
+});
+sr.reveal('.cards-container', { 
+    origin: 'right', 
+    delay: 400, 
+    distance: '150px',
+    duration: 1500
+});
 
 // Location section animations
 sr.reveal('.location .section-title', { origin: 'top', distance: '30px' });

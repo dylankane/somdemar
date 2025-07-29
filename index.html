@@ -59,20 +59,20 @@
         <div class="hero-carousel">
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-1.jpg">
-                    <img src="assets/images/home-hero-1.jpg" alt="Gambas a la plancha con pulpo - Som de Mar" loading="eager" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-1.jpg">
+                    <img src="assets/images/index/home-hero-1.jpg" alt="Gambas a la plancha con pulpo - Som de Mar" loading="eager" class="hero-image">
                 </picture>
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-2.jpg">
-                    <img src="assets/images/home-hero-2.jpg" alt="Plato especial de Som de Mar" loading="lazy" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-2.jpg">
+                    <img src="assets/images/index/home-hero-2.jpg" alt="Plato especial de Som de Mar" loading="lazy" class="hero-image">
                 </picture>
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/home-hero-mobile-3.jpg">
-                    <img src="assets/images/home-hero-3.png" alt="Vieiras frescas - Som de Mar" loading="lazy" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-3.jpg">
+                    <img src="assets/images/index/home-hero-3.png" alt="Vieiras frescas - Som de Mar" loading="lazy" class="hero-image">
                 </picture>
             </div>
         </div>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="about-image">
                     <img 
-                        src="assets/images/staff-kitchen-fun.jpg" 
+                        src="assets/images/index/staff-kitchen-fun.jpg" 
                         alt="Equipo de Som de Mar en la cocina"
                         loading="lazy"
                         class="about-img"
@@ -114,14 +114,27 @@
     
 
     <!-- Quote Banner -->
-    <section class="quote-banner"
-         style="background-image:url('assets/images/quote-banner-patatas.jpeg');">
+    <section class="quote-banner" style="
+        /* Desktop: transparent to show fixed hero behind */
+        background: transparent;
+    ">
         <div class="quote-overlay">
             <p class="quote-text">
                 Todos los artes son maravillosos, y la cocina es uno de ellos. Así que disfruten de la comida.
             </p>
         </div>
     </section>
+    
+    <style>
+        /* Responsive quote banner background */
+        @media (max-width: 768px) {
+            .quote-banner {
+                /* background: url('assets/images/banner-shop-front.png') no-repeat center center !important; */
+                background: url('assets/images/index/close-arroz-banner.jpg') no-repeat center center !important;
+                background-size: cover !important;
+            }
+        }
+    </style>
 
 
     <!-- Food Gallery Section -->
@@ -131,34 +144,34 @@
                 <div class="gallery-grid">
                     <div class="carousel" data-delay="6000">
                         <picture>
-                            <img src="assets/images/pulpo_plancha.jpg" class="carousel-img active" loading="eager" alt="Pulpo a la plancha">
+                            <img src="assets/images/index/pulpo_plancha.jpg" class="carousel-img active" loading="eager" alt="Pulpo a la plancha">
                         </picture>
                         <picture>
-                            <img src="assets/images/pulpo_kinfe.jpg" class="carousel-img" loading="lazy" alt="Pulpo con cuchillo">
+                            <img src="assets/images/index/pulpo_kinfe.jpg" class="carousel-img" loading="lazy" alt="Pulpo con cuchillo">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="7000">
                         <picture>
-                            <img src="assets/images/postre.jpg" class="carousel-img active" loading="eager" alt="Postre Som de Mar">
+                            <img src="assets/images/index/postre.jpg" class="carousel-img active" loading="eager" alt="Postre Som de Mar">
                         </picture>
                         <picture>
-                            <img src="assets/images/postre_close.jpg" class="carousel-img" loading="lazy" alt="Postre detalle">
+                            <img src="assets/images/index/postre_close.jpg" class="carousel-img" loading="lazy" alt="Postre detalle">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="8000">
                         <picture>
-                            <img src="assets/images/gambas_plate.jpeg" class="carousel-img active" loading="eager" alt="Plato de gambas">
+                            <img src="assets/images/index/gambas_plate.jpeg" class="carousel-img active" loading="eager" alt="Plato de gambas">
                         </picture>
                         <picture>
-                            <img src="assets/images/arty_dish.jpeg" class="carousel-img" loading="lazy" alt="Plato artístico">
+                            <img src="assets/images/index/arty_dish.jpeg" class="carousel-img" loading="lazy" alt="Plato artístico">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="6500">
                         <picture>
-                            <img src="assets/images/arroz_negro.jpeg" class="carousel-img active" loading="eager" alt="Arroz negro">
+                            <img src="assets/images/index/arroz_negro.jpeg" class="carousel-img active" loading="eager" alt="Arroz negro">
                         </picture>
                         <picture>
-                            <img src="assets/images/atun_chop.jpeg" class="carousel-img" loading="lazy" alt="Atún cortado">
+                            <img src="assets/images/index/atun_chop.jpeg" class="carousel-img" loading="lazy" alt="Atún cortado">
                         </picture>
                     </div>
                 </div>
@@ -190,34 +203,34 @@
                 <div class="gallery-grid">
                     <div class="carousel" data-delay="6000">
                         <picture>
-                            <img src="assets/images/raw-atun.jpg" class="carousel-img active" loading="eager" alt="Atún fresco crudo">
+                            <img src="assets/images/index/raw-atun.jpg" class="carousel-img active" loading="eager" alt="Atún fresco crudo">
                         </picture>
                         <picture>
-                            <img src="assets/images/raw-atun2.jpg" class="carousel-img" loading="lazy" alt="Atún crudo preparación">
+                            <img src="assets/images/index/raw-atun2.jpg" class="carousel-img" loading="lazy" alt="Atún crudo preparación">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="7000">
                         <picture>
-                            <img src="assets/images/lemons.png" class="carousel-img active" loading="eager" alt="Limones frescos">
+                            <img src="assets/images/index/lemons.png" class="carousel-img active" loading="eager" alt="Limones frescos">
                         </picture>
                         <picture>
-                            <img src="assets/images/herbs.png" class="carousel-img" loading="lazy" alt="Hierbas aromáticas">
+                            <img src="assets/images/index/herbs.png" class="carousel-img" loading="lazy" alt="Hierbas aromáticas">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="8000">
                         <picture>
-                            <img src="assets/images/market.png" class="carousel-img active" loading="eager" alt="Mercado de ingredientes">
+                            <img src="assets/images/index/market.png" class="carousel-img active" loading="eager" alt="Mercado de ingredientes">
                         </picture>
                         <picture>
-                            <img src="assets/images/market2.png" class="carousel-img" loading="lazy" alt="Mercado productos frescos">
+                            <img src="assets/images/index/market2.png" class="carousel-img" loading="lazy" alt="Mercado productos frescos">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="6500">
                         <picture>
-                            <img src="assets/images/fisherman.png" class="carousel-img active" loading="eager" alt="Pescador tradicional">
+                            <img src="assets/images/index/fisherman.png" class="carousel-img active" loading="eager" alt="Pescador tradicional">
                         </picture>
                         <picture>
-                            <img src="assets/images/rice-field.png" class="carousel-img" loading="lazy" alt="Campo de arroz">
+                            <img src="assets/images/index/rice.png" class="carousel-img" loading="lazy" alt="Campo de arroz">
                         </picture>
                     </div>
                 </div>
@@ -228,7 +241,7 @@
     <!-- Video Banner -->
     <section class="video-banner">
         <video class="video-banner-video" autoplay muted loop playsinline>
-            <source src="assets/videos/somdemarsmallcooking.mp4" type="video/mp4">
+            <source src="assets/videos/index/somdemarsmallcooking.mp4" type="video/mp4">
         </video>
         
         <div class="video-overlay"></div>
@@ -266,20 +279,20 @@
                     <div class="location-images-top">
                         <div class="location-image">
                             <picture>
-                                <img src="assets/images/aerial.jpeg" alt="Vista aérea de Villajoyosa" loading="lazy">
+                                <img src="assets/images/index/aerial.jpeg" alt="Vista aérea de Villajoyosa" loading="lazy">
                             </picture>
                         </div>
                         <div class="location-image">
                             <picture>
-                                <img src="assets/images/shop_front.jpg" alt="Fachada del restaurante Som de Mar" loading="lazy">
+                                <img src="assets/images/index/shop_front.jpeg" alt="Fachada del restaurante Som de Mar" loading="lazy">
                             </picture>
                         </div>
                     </div>
                     <div class="location-images-bottom">
                         <div class="location-image">
                             <video class="video-drone" autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/drone-loop2.webm" type="video/webm">
-                                <source src="assets/videos/drone-loop2.mp4" type="video/mp4">
+                                <source src="assets/videos/index/drone-loop2.webm" type="video/webm">
+                                <source src="assets/videos/index/drone-loop2.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>

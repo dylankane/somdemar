@@ -49,58 +49,67 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero secondary-hero">
-        <div class="hero-carousel">
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/portrait-banner-platos.png">
-                    <img 
-                        src="assets/images/platos-banner1.jpeg" 
-                        alt="Nuestros platos especiales - Som de Mar"
-                        loading="eager"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/porttrait-platos2-dish.jpg">
-                    <img 
-                        src="assets/images/arroz-plato.jpeg" 
-                        alt="Arroz especial de Som de Mar"
-                        loading="lazy"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/cake-portrait.jpg">
-                    <img 
-                        src="assets/images/lamp-cropped.jpg" 
-                        alt="Ambiente acogedor de Som de Mar"
-                        loading="lazy"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>
-                <span class="nuestros">Nuestros</span>
-                <!-- <span class="de">DE</span> -->
-                <span class="platos">Platos</span>
-            </h1>
-            <p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de Mar.</p>
-            <a href="reserva.html" class="cta-button">Reservar</a>
-        </div>
+    <section class="hero video-hero">
+      <video 
+        class="video-background" 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        preload="metadata"
+        poster="assets/images/video-poster-platos.jpg"
+        id="heroVideo"
+      >
+          <!-- Mobile-optimized video (smaller file size) -->
+          <source 
+            src="assets/videos/som-de-mar-video-cooking.mp4" 
+            type="video/mp4" 
+            media="(max-width: 768px)"
+          >
+          <source 
+            src="assets/videos/som-de-mar-video-cooking.webm" 
+            type="video/webm" 
+            media="(max-width: 768px)"
+          >
+          <!-- Desktop video -->
+          <source 
+            src="assets/videos/compessed-hero-video.mp4" 
+            type="video/mp4"
+          >
+          <source 
+            src="assets/videos/compessed-hero-video.webm" 
+            type="video/webm"
+          >
+          <!-- Fallback for browsers that don't support video -->
+          Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content video-hero-content">
+          <h1>
+              <span class="nuestros">Nuestros</span>
+              <!-- <span class="de">DE</span> -->
+              <span class="platos">Platos</span>
+          </h1>
+          <p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de Mar.</p>
+          <a href="reserva.html" class="cta-button">Reservar</a>
+      </div>
+
+      <!-- Video Controls -->
+      <div class="video-controls">
+        <button class="video-control-btn" id="playPauseBtn" title="Play/Pause">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="video-control-btn" id="muteBtn" title="Mute/Unmute">
+          <i class="fas fa-volume-up"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Main Content -->
     <main class="platos-main">
       <section class="dish-intro-section">
         <div class="dish-intro">
+          <h2 class="section-title">El Menú</h2>
             <p>Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esto es solo una muestra de lo que ofrecemos, que evoluciona con las estaciones y el mercado.</p>
         </div>
       </section>
@@ -119,11 +128,27 @@
                     <div class="media-carousel" id="mediaCarousel1">
                       <div class="media-slides">
                         <div class="media-slide active">
-                          <img src="assets/images/vieiras.png" alt="Gambas a la Plancha" class="media-image">
+                          <picture>
+                            <source srcset="assets/images/platos/vieiras-500x500.webp" type="image/webp">
+                            <img 
+                              src="assets/images/platos/vieiras.png" 
+                              alt="Gambas a la Plancha - Fresh prawns grilled to perfection" 
+                              class="media-image"
+                              loading="lazy"
+                              decoding="async"
+                            >
+                          </picture>
                         </div>
                         <div class="media-slide">
-                          <video class="media-video" muted loop>
-                            <source src="assets/videos/food-video.mp4" type="video/mp4">
+                          <video 
+                            class="media-video" 
+                            muted 
+                            loop 
+                            preload="none"
+                            poster="assets/images/platos/vieiras-500x500.webp"
+                          >
+                            <!-- <source data-src="assets/videos/food-video.webm" type="video/webm"> -->
+                            <source data-src="assets/videos/food-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -149,11 +174,27 @@
                     <div class="media-carousel" id="mediaCarousel2">
                       <div class="media-slides">
                         <div class="media-slide active">
-                          <img src="assets/images/gambones-dish.png" alt="Paella Valenciana" class="media-image">
+                          <picture>
+                            <source srcset="assets/images/platos/gambones-dish-500x500.webp" type="image/webp">
+                            <img 
+                              src="assets/images/platos/gambones-dish.png" 
+                              alt="Gambones - Premium Spanish prawns with authentic preparation" 
+                              class="media-image"
+                              loading="lazy"
+                              decoding="async"
+                            >
+                          </picture>
                         </div>
                         <div class="media-slide">
-                          <video class="media-video" muted loop>
-                            <source src="assets/videos/gambones2.mp4" type="video/mp4">
+                          <video 
+                            class="media-video" 
+                            muted 
+                            loop 
+                            preload="none"
+                            poster="assets/images/platos/gambones-dish-500x500.webp"
+                          >
+                            <!-- <source data-src="assets/videos/gambones2.webm" type="video/webm"> -->
+                            <source data-src="assets/videos/gambones2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -179,11 +220,27 @@
                     <div class="media-carousel" id="mediaCarousel3">
                       <div class="media-slides">
                         <div class="media-slide active">
-                          <img src="assets/images/pulpo-smaoke-dish.png" alt="Pulpo a la Gallega" class="media-image">
+                          <picture>
+                            <source srcset="assets/images/platos/pulpo-smoke-dish-500x500.webp" type="image/webp">
+                            <img 
+                              src="assets/images/platos/pulpo-smoke-dish.png" 
+                              alt="Pulpo Humo - Tender smoked octopus with Galician tradition" 
+                              class="media-image"
+                              loading="lazy"
+                              decoding="async"
+                            >
+                          </picture>
                         </div>
                         <div class="media-slide">
-                          <video class="media-video" muted loop>
-                            <source src="assets/videos/pulpo-smoke2.mp4" type="video/mp4">
+                          <video 
+                            class="media-video" 
+                            muted 
+                            loop 
+                            preload="none"
+                            poster="assets/images/platos/pulpo-smoke-dish-500x500.webp"
+                          >
+                            <!-- <source data-src="assets/videos/pulpo-smoke2.webm" type="video/webm"> -->
+                            <source data-src="assets/videos/pulpo-smoke2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -209,11 +266,27 @@
                     <div class="media-carousel" id="mediaCarousel4">
                       <div class="media-slides">
                         <div class="media-slide active">
-                          <img src="assets/images/lamb-dish.png" alt="Cordero" class="media-image">
+                          <picture>
+                            <source srcset="assets/images/platos/lamb-dish-500x500.webp" type="image/webp">
+                            <img 
+                              src="assets/images/lamb-dish.png" 
+                              alt="Cordero - Premium lamb prepared with traditional Spanish techniques" 
+                              class="media-image"
+                              loading="lazy"
+                              decoding="async"
+                            >
+                          </picture>
                         </div>
                         <div class="media-slide">
-                          <video class="media-video" muted loop>
-                            <source src="assets/videos/lamb-video2.mp4" type="video/mp4">
+                          <video 
+                            class="media-video" 
+                            muted 
+                            loop 
+                            preload="none"
+                            poster="assets/images/platos/lamb-dish-500x500.webp"
+                          >
+                            <!-- <source data-src="assets/videos/lamb-video2.webm" type="video/webm"> -->
+                            <source data-src="assets/videos/lamb-video2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -239,11 +312,27 @@
                     <div class="media-carousel" id="mediaCarousel5">
                       <div class="media-slides">
                         <div class="media-slide active">
-                          <img src="assets/images/ostras-dish.png" alt="Crema Catalana" class="media-image">
+                          <picture>
+                            <source srcset="assets/images/platos/ostras-dish-500x500.webp" type="image/webp">
+                            <img 
+                              src="assets/images/ostras-dish.png" 
+                              alt="Ostras - Fresh oysters prepared with Mediterranean flair" 
+                              class="media-image"
+                              loading="lazy"
+                              decoding="async"
+                            >
+                          </picture>
                         </div>
                         <div class="media-slide">
-                          <video class="media-video" muted loop>
-                            <source src="assets/videos/ostras-video.mp4" type="video/mp4">
+                          <video 
+                            class="media-video" 
+                            muted 
+                            loop 
+                            preload="none"
+                            poster="assets/images/platos/ostras-dish-500x500.webp"
+                          >
+                            <!-- <source data-src="assets/videos/ostras-video.webm" type="video/webm"> -->
+                            <source data-src="assets/videos/ostras-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -411,5 +500,6 @@
     <script src="js/som-carousel.js"></script>
     <script src="js/noches-modal.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/video-hero.js"></script>
 </body>
 </html>

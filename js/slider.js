@@ -69,6 +69,9 @@ function moveToCard(cardIndex) {
   nextBtn.disabled = currentCard >= maxIndex;
   prevBtn.style.opacity = currentCard === 0 ? '0.5' : '1';
   nextBtn.style.opacity = currentCard >= maxIndex ? '0.5' : '1';
+  
+  // Load videos for current and adjacent cards
+  loadVideosForCard(cardIndex);
 }
 
 // Calculate max index based on current screen size and card layout
@@ -176,6 +179,36 @@ function handleTouchEnd() {
   }
 }
 
+// Lazy loading functionality for videos
+function lazyLoadVideo(video) {
+  const dataSrc = video.getAttribute('data-src');
+  if (dataSrc && !video.src) {
+    const sources = video.querySelectorAll('source[data-src]');
+    sources.forEach(source => {
+      const srcData = source.getAttribute('data-src');
+      if (srcData) {
+        source.src = srcData;
+        source.removeAttribute('data-src');
+      }
+    });
+    
+    video.load(); // Reload video with new sources
+    video.removeAttribute('data-src');
+  }
+}
+
+// Load videos for visible cards and adjacent cards
+function loadVideosForCard(cardIndex) {
+  const cards = track.querySelectorAll('.dish-card');
+  
+  // Load videos for current card and adjacent cards (preload)
+  for (let i = Math.max(0, cardIndex - 1); i <= Math.min(cards.length - 1, cardIndex + 1); i++) {
+    const card = cards[i];
+    const videos = card.querySelectorAll('video[data-src]');
+    videos.forEach(lazyLoadVideo);
+  }
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
   // Add button event listeners
@@ -193,6 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set initial state with small delay to ensure DOM is ready
   setTimeout(() => {
     moveToCard(0);
+    // Load videos for initial card
+    loadVideosForCard(0);
   }, 100);
   
   // Handle window resize
@@ -200,5 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset to first card and recalculate on resize
     currentCard = 0;
     moveToCard(0);
+    loadVideosForCard(0);
   });
 });
