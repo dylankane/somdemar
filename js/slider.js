@@ -132,8 +132,13 @@ function initMediaCarousels() {
           const video = slide.querySelector('.media-video');
           if (video) {
             if (slideIndex === index) {
-              // Play video if this slide is now active
-              video.play().catch(e => console.log('Video autoplay prevented'));
+              // Ensure video is loaded before playing
+              lazyLoadVideo(video);
+              
+              // Wait a moment for the video to load, then play
+              setTimeout(() => {
+                video.play().catch(e => console.log('Video autoplay prevented:', e));
+              }, 100);
             } else {
               // Pause video if this slide is not active
               video.pause();
@@ -181,19 +186,25 @@ function handleTouchEnd() {
 
 // Lazy loading functionality for videos
 function lazyLoadVideo(video) {
-  const dataSrc = video.getAttribute('data-src');
-  if (dataSrc && !video.src) {
-    const sources = video.querySelectorAll('source[data-src]');
+  const sources = video.querySelectorAll('source[data-src]');
+  
+  // Check if any sources have data-src attributes (meaning they haven't been loaded yet)
+  if (sources.length > 0) {
+    let hasDataSrc = false;
+    
     sources.forEach(source => {
       const srcData = source.getAttribute('data-src');
       if (srcData) {
         source.src = srcData;
         source.removeAttribute('data-src');
+        hasDataSrc = true;
       }
     });
     
-    video.load(); // Reload video with new sources
-    video.removeAttribute('data-src');
+    // Only reload if we actually set new sources
+    if (hasDataSrc) {
+      video.load(); // Reload video with new sources
+    }
   }
 }
 
@@ -204,8 +215,14 @@ function loadVideosForCard(cardIndex) {
   // Load videos for current card and adjacent cards (preload)
   for (let i = Math.max(0, cardIndex - 1); i <= Math.min(cards.length - 1, cardIndex + 1); i++) {
     const card = cards[i];
-    const videos = card.querySelectorAll('video[data-src]');
-    videos.forEach(lazyLoadVideo);
+    // Find videos that have source elements with data-src attributes
+    const videos = card.querySelectorAll('video');
+    videos.forEach(video => {
+      const dataSrcSources = video.querySelectorAll('source[data-src]');
+      if (dataSrcSources.length > 0) {
+        lazyLoadVideo(video);
+      }
+    });
   }
 }
 
