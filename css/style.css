@@ -1119,6 +1119,15 @@ a {
     margin: 0;
 }
 
+/* Responsive quote banner background */
+@media (max-width: 768px) {
+    .quote-banner {
+        /* background: url('assets/images/banner-shop-front.png') no-repeat center center !important; */
+        background: url('assets/images/index/close-arroz-banner.jpg') no-repeat center center !important;
+        background-size: cover !important;
+    }
+}
+
 /* Video banner */
 .video-banner-video {
     position: absolute;
