@@ -1,180 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fixed Background Sections Demo (Scoped Video)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexible Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
-    /* Reset & box‑sizing */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
+    * {
       box-sizing: border-box;
     }
+
     body {
+      margin: 0;
+      padding: 4rem;
       font-family: sans-serif;
-      line-height: 1.6;
-      /* ensure a default white background so video only shows in transparent sections */
-      background: #fff;
+      display: flex;
+      justify-content: center;
     }
-    section {
-      position: relative;
+
+    .video-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      height: 80vh;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .video-gallery-row {
+      display: flex;
+      gap: 3px;
       overflow: hidden;
     }
 
-    /* fixed video */
-    .video-bg {
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100vw;
-      min-height: 100vh;
-      object-fit: cover;
-      z-index: -1;  /* behind everything */
+    .video-row {
+      flex: 0 0 50%;
+      position: relative;
     }
 
-    /* Overlay tint */
-    .overlay {
+    .video-gallery-row.three {
+      flex: 0 0 25%;
+    }
+
+    .video-gallery-row.two {
+      flex: 0 0 25%;
+    }
+
+    .video-gallery-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-gallery-row img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-gallery-row.three > div {
+      flex: 1 1 33.333%;
+    }
+
+    .video-gallery-row.two > div {
+      flex: 1 1 50%;
+    }
+
+    .video-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
       z-index: 1;
     }
 
-    /* Text/content layer */
-    .content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
+    .video-text {
+      color: white;
       text-align: center;
-      padding: 2rem;
+      z-index: 2;
+      line-height: 1;
     }
 
-    /* Normal filler sections (solid bg hides the video behind) */
-    .regular {
-      background: #fafafa;
-      color: #333;
-      padding: 4rem 2rem;
-    }
-    .regular img {
-      max-width: 50%;
-      display: block;
-      margin: 1rem auto;
+    .video-text .line1,
+    .video-text .line3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 6vw;
+      letter-spacing: 2px;
     }
 
-    /* ===== Hero slider (fixed‑image slides) ===== */
-    .hero {
-      height: 100vh;
-    }
-    .hero__slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .hero__slide.active {
-      opacity: 1;
+    .video-text .line2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 4.5vw;
+      letter-spacing: 1px;
     }
 
-    /* ===== 350px fixed‑image banner ===== */
-    .fixed-image {
-      height: 350px;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+    .video-text .subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2vw;
+      margin-top: 1rem;
     }
 
-    /* ===== Video section ===== */
-    .video-section {
-      /* no background so the fixed video shows through */
-      height: 100vh;
-    }
+    /* Responsive logic below 800px */
+    @media (max-width: 800px) {
+      .video-gallery-row.three .img-2 {
+        display: none;
+      }
 
-    /* Disable fixed attachment on small screens */
-    @media (max-width: 768px) {
-      .hero__slide,
-      .fixed-image {
-        background-attachment: scroll;
+      .video-gallery-row.three .img-1,
+      .video-gallery-row.three .img-3 {
+        flex: 1 1 50%;
       }
     }
   </style>
 </head>
-
 <body>
+<section>
+  <div class="video-gallery">
 
-  <!-- this lives at top‐level so it covers the viewport behind everything -->
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="assets/videos/som-de-mar-video-cooking.mp4" type="video/mp4">
-  </video>
-
-  <!-- Hero slider -->
-  <section class="hero">
-    <div class="hero__slide active" style="background-image:url('assets/images/pulpo_plancha.jpg')"></div>
-    <div class="hero__slide"       style="background-image:url('assets/images/postre.jpg')"></div>
-    <div class="hero__slide"       style="background-image:url('assets/images/arroz_negro.jpeg')"></div>
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Welcome to My Site</h1>
-      <p>This is a full‑screen hero slider with a fixed background effect.</p>
+    <!-- Row of 3 images -->
+    <div class="video-gallery-row three">
+      <div class="img-1">
+        <picture>
+          <source srcset="assets/images/index/arty_dish-500x500.webp" type="image/webp">
+          <img src="assets/images/index/arty_dish.jpeg" alt="Arty Dish">
+        </picture>
+      </div>
+      <div class="img-2">
+        <picture>
+          <source srcset="assets/images/index/lemons-500x500.webp" type="image/webp">
+          <img src="assets/images/index/lemons.png" alt="Lemons">
+        </picture>
+      </div>
+      <div class="img-3">
+        <picture>
+          <source srcset="assets/images/index/gambas_plate-500x500.webp" type="image/webp">
+          <img src="assets/images/index/gambas_plate.jpeg" alt="Gambas Plate">
+        </picture>
+      </div>
     </div>
-  </section>
 
-  <!-- Regular content -->
-  <section class="regular">
-    <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum.</p>
-    <img src="assets/images/arroz_negro.jpeg" alt="Example">
-  </section>
-
-  <!-- 350px fixed‑image banner -->
-  <section class="fixed-image" style="background-image:url('assets/images/pulpo_plancha.jpg')">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Our Services</h2>
-      <p>Text overlayed on a fixed 350px‑high background.</p>
+    <!-- Video row -->
+    <div class="video-gallery-row video-row">
+      <video class="video-gallery-video" autoplay muted loop playsinline>
+        <source src="assets/videos/index/cooking-montage.webm" type="video/webm">
+        <source src="assets/videos/index/cooking-montage.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        <div class="video-text">
+          <div class="line1">SOM</div>
+          <div class="line2">DE</div>
+          <div class="line3">MAR</div>
+          <div class="subtitle">de Roberto Cereto</div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- More regular content -->
-  <section class="regular">
-    <h2>Portfolio</h2>
-    <p>Praesent pharetra dui sit amet eros gravida, sed luctus massa fringilla.</p>
-    <img src="assets/images/arroz_negro.jpeg" alt="Project 1">
-  </section>
-
-  <!-- Video background section -->
-  <section class="video-section">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Experience the Motion</h2>
-      <p>Looping video background contained within this section.</p>
+    <!-- Row of 2 images -->
+    <div class="video-gallery-row two">
+      <div>
+        <picture>
+          <source srcset="assets/images/index/lemons-500x500.webp" type="image/webp">
+          <img src="assets/images/index/lemons.png" alt="Lemons Again">
+        </picture>
+      </div>
+      <div>
+        <picture>
+          <source srcset="assets/images/index/gambas_plate-500x500.webp" type="image/webp">
+          <img src="assets/images/index/gambas_plate.jpeg" alt="Gambas Again">
+        </picture>
+      </div>
     </div>
-  </section>
 
-  <!-- Additional regular content -->
-  <section class="regular">
-    <h2>More About Us</h2>
-    <p>Nulla facilisi. Integer at libero eget justo facilisis scelerisque.</p>
-    <img src="assets/images/arroz_negro.jpeg" alt="Example">
-  </section>
-
-  <script>
-    // Simple hero slider
-    (function(){
-      const slides = document.querySelectorAll('.hero__slide');
-      let idx = 0;
-      setInterval(() => {
-        slides[idx].classList.remove('active');
-        idx = (idx + 1) % slides.length;
-        slides[idx].classList.add('active');
-      }, 5000);
-    })();
-  </script>
-
+  </div>
+</section>
 </body>
 </html>

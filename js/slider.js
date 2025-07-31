@@ -153,22 +153,50 @@ function initMediaCarousels() {
 
 // Touch/Swipe functionality
 let touchStartX = 0;
+let touchStartY = 0;
 let touchEndX = 0;
+let touchEndY = 0;
 let isSwiping = false;
+let isHorizontalSwipe = false;
 
 function handleTouchStart(e) {
   touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
   isSwiping = true;
+  isHorizontalSwipe = false;
 }
 
 function handleTouchMove(e) {
   if (!isSwiping) return;
+  
   touchEndX = e.touches[0].clientX;
+  touchEndY = e.touches[0].clientY;
+  
+  const deltaX = Math.abs(touchEndX - touchStartX);
+  const deltaY = Math.abs(touchEndY - touchStartY);
+  
+  // Determine if this is a horizontal or vertical gesture
+  // Only prevent default if it's clearly a horizontal swipe
+  if (deltaX > deltaY && deltaX > 10) {
+    // This is a horizontal swipe - prevent vertical scrolling
+    isHorizontalSwipe = true;
+    e.preventDefault();
+  } else if (deltaY > deltaX && deltaY > 10) {
+    // This is a vertical scroll - allow it and stop tracking
+    isSwiping = false;
+    isHorizontalSwipe = false;
+  }
 }
 
 function handleTouchEnd() {
-  if (!isSwiping) return;
+  if (!isSwiping || !isHorizontalSwipe) {
+    isSwiping = false;
+    isHorizontalSwipe = false;
+    return;
+  }
+  
   isSwiping = false;
+  isHorizontalSwipe = false;
   
   const swipeDistance = touchStartX - touchEndX;
   const minSwipeDistance = 50; // Minimum distance for a swipe
@@ -234,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Add touch event listeners to the track
   track.addEventListener('touchstart', handleTouchStart, { passive: true });
-  track.addEventListener('touchmove', handleTouchMove, { passive: true });
+  track.addEventListener('touchmove', handleTouchMove, { passive: false });
   track.addEventListener('touchend', handleTouchEnd, { passive: true });
   
   // Initialize media carousels
