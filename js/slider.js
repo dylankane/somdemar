@@ -158,49 +158,44 @@ let touchEndX = 0;
 let touchEndY = 0;
 let isSwiping = false;
 let isHorizontalSwipe = false;
+let touchMoveCount = 0;
 
 function handleTouchStart(e) {
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
   isSwiping = true;
   isHorizontalSwipe = false;
+  touchMoveCount = 0;
 }
-
-// function handleTouchMove(e) {
-//   if (!isSwiping) return;
-  
-//   touchEndX = e.touches[0].clientX;
-//   touchEndY = e.touches[0].clientY;
-  
-//   const deltaX = Math.abs(touchEndX - touchStartX);
-//   const deltaY = Math.abs(touchEndY - touchStartY);
-  
-//   if (deltaX > deltaY && deltaX > 10) {
-//     isHorizontalSwipe = true;
-//     e.preventDefault();
-//   } else if (deltaY > deltaX && deltaY > 10) {
-//     isSwiping = false;
-//     isHorizontalSwipe = false;
-//   }
-// }
 
 function handleTouchMove(e) {
   if (!isSwiping) return;
-
+  
   touchEndX = e.touches[0].clientX;
   touchEndY = e.touches[0].clientY;
-
-  const deltaX = touchEndX - touchStartX;
-  const deltaY = touchEndY - touchStartY;
-
-  // Only act if swipe is clearly horizontal
-  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-    isHorizontalSwipe = true;
-    e.preventDefault(); // block vertical scroll only during horizontal swipe
-  } else {
-    // allow vertical scroll and stop further tracking
-    isSwiping = false;
-    isHorizontalSwipe = false;
+  touchMoveCount++;
+  
+  const deltaX = Math.abs(touchEndX - touchStartX);
+  const deltaY = Math.abs(touchEndY - touchStartY);
+  
+  // Only make a decision after a few move events to avoid false positives
+  if (touchMoveCount > 2) {
+    if (deltaX > deltaY && deltaX > 15) {
+      // Clear horizontal swipe - prevent default and handle it
+      isHorizontalSwipe = true;
+      e.preventDefault();
+      e.stopPropagation();
+    } else if (deltaY > deltaX && deltaY > 15) {
+      // Clear vertical scroll - stop tracking and allow default behavior
+      isSwiping = false;
+      isHorizontalSwipe = false;
+      return;
+    }
+  }
+  
+  // If we haven't determined direction yet, don't prevent anything
+  if (!isHorizontalSwipe && touchMoveCount <= 2) {
+    return;
   }
 }
 
@@ -208,11 +203,13 @@ function handleTouchEnd() {
   if (!isSwiping || !isHorizontalSwipe) {
     isSwiping = false;
     isHorizontalSwipe = false;
+    touchMoveCount = 0;
     return;
   }
   
   isSwiping = false;
   isHorizontalSwipe = false;
+  touchMoveCount = 0;
   
   const swipeDistance = touchStartX - touchEndX;
   const minSwipeDistance = 50; // Minimum distance for a swipe
