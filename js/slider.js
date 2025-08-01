@@ -151,21 +151,17 @@ function initMediaCarousels() {
   });
 }
 
-// Touch/Swipe functionality
+// Touch/Swipe functionality - Allow both horizontal and vertical gestures
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndX = 0;
 let touchEndY = 0;
 let isSwiping = false;
-let isHorizontalSwipe = false;
-let touchMoveCount = 0;
 
 function handleTouchStart(e) {
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
   isSwiping = true;
-  isHorizontalSwipe = false;
-  touchMoveCount = 0;
 }
 
 function handleTouchMove(e) {
@@ -173,49 +169,29 @@ function handleTouchMove(e) {
   
   touchEndX = e.touches[0].clientX;
   touchEndY = e.touches[0].clientY;
-  touchMoveCount++;
   
-  const deltaX = Math.abs(touchEndX - touchStartX);
-  const deltaY = Math.abs(touchEndY - touchStartY);
-  
-  // Only make a decision after a few move events to avoid false positives
-  if (touchMoveCount > 2) {
-    if (deltaX > deltaY && deltaX > 15) {
-      // Clear horizontal swipe - prevent default and handle it
-      isHorizontalSwipe = true;
-      e.preventDefault();
-      e.stopPropagation();
-    } else if (deltaY > deltaX && deltaY > 15) {
-      // Clear vertical scroll - stop tracking and allow default behavior
-      isSwiping = false;
-      isHorizontalSwipe = false;
-      return;
-    }
-  }
-  
-  // If we haven't determined direction yet, don't prevent anything
-  if (!isHorizontalSwipe && touchMoveCount <= 2) {
-    return;
-  }
+  // Don't prevent any default behavior - allow both horizontal and vertical scrolling
+  // We'll handle horizontal swipes on touchend without interfering with vertical scrolling
 }
 
 function handleTouchEnd() {
-  if (!isSwiping || !isHorizontalSwipe) {
-    isSwiping = false;
-    isHorizontalSwipe = false;
-    touchMoveCount = 0;
+  if (!isSwiping) {
     return;
   }
   
   isSwiping = false;
-  isHorizontalSwipe = false;
-  touchMoveCount = 0;
   
-  const swipeDistance = touchStartX - touchEndX;
-  const minSwipeDistance = 50; // Minimum distance for a swipe
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = Math.abs(touchEndY - touchStartY);
+  const absDeltaX = Math.abs(deltaX);
   
-  if (Math.abs(swipeDistance) > minSwipeDistance) {
-    if (swipeDistance > 0) {
+  // Only trigger horizontal navigation if:
+  // 1. Horizontal movement is significant (>50px)
+  // 2. Horizontal movement is greater than vertical movement (primarily horizontal gesture)
+  const minSwipeDistance = 50;
+  
+  if (absDeltaX > minSwipeDistance && absDeltaX > deltaY) {
+    if (deltaX < 0) {
       // Swiped left - go to next card
       nextCard();
     } else {
@@ -223,6 +199,12 @@ function handleTouchEnd() {
       prevCard();
     }
   }
+  
+  // Reset values
+  touchStartX = 0;
+  touchStartY = 0;
+  touchEndX = 0;
+  touchEndY = 0;
 }
 
 // Lazy loading functionality for videos
@@ -273,9 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', prevCard);
   nextBtn.addEventListener('click', nextCard);
   
-  // Add touch event listeners to the track
+  // Add touch event listeners to the track (all passive since we don't prevent defaults)
   track.addEventListener('touchstart', handleTouchStart, { passive: true });
-  track.addEventListener('touchmove', handleTouchMove, { passive: false });
+  track.addEventListener('touchmove', handleTouchMove, { passive: true });
   track.addEventListener('touchend', handleTouchEnd, { passive: true });
   
   // Initialize media carousels
