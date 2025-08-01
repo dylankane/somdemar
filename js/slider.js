@@ -151,46 +151,51 @@ function initMediaCarousels() {
   });
 }
 
-// Touch/Swipe functionality - Allow both horizontal and vertical gestures
-let touchStartX = 0;
-let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
-let isSwiping = false;
+// Pointer-based swipe functionality - Better compatibility with scrolling
+let pointerStartX = 0;
+let pointerStartY = 0;
+let pointerEndX = 0;
+let pointerEndY = 0;
+let isPointerDown = false;
+let pointerId = null;
 
-function handleTouchStart(e) {
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-  isSwiping = true;
+function handlePointerDown(e) {
+  // Only handle primary pointer (first finger)
+  if (pointerId !== null) return;
+  
+  pointerId = e.pointerId;
+  pointerStartX = e.clientX;
+  pointerStartY = e.clientY;
+  isPointerDown = true;
+  
+  // Capture this pointer to track it even if it moves outside the element
+  e.target.setPointerCapture(e.pointerId);
 }
 
-function handleTouchMove(e) {
-  if (!isSwiping) return;
+function handlePointerMove(e) {
+  if (!isPointerDown || e.pointerId !== pointerId) return;
   
-  touchEndX = e.touches[0].clientX;
-  touchEndY = e.touches[0].clientY;
+  pointerEndX = e.clientX;
+  pointerEndY = e.clientY;
   
-  // Don't prevent any default behavior - allow both horizontal and vertical scrolling
-  // We'll handle horizontal swipes on touchend without interfering with vertical scrolling
+  // Don't prevent default - allow normal scrolling
 }
 
-function handleTouchEnd() {
-  if (!isSwiping) {
-    return;
-  }
+function handlePointerUp(e) {
+  if (!isPointerDown || e.pointerId !== pointerId) return;
   
-  isSwiping = false;
+  isPointerDown = false;
   
-  const deltaX = touchEndX - touchStartX;
-  const deltaY = Math.abs(touchEndY - touchStartY);
+  const deltaX = pointerEndX - pointerStartX;
+  const deltaY = Math.abs(pointerEndY - pointerStartY);
   const absDeltaX = Math.abs(deltaX);
   
   // Only trigger horizontal navigation if:
-  // 1. Horizontal movement is significant (>50px)
-  // 2. Horizontal movement is greater than vertical movement (primarily horizontal gesture)
-  const minSwipeDistance = 50;
+  // 1. Horizontal movement is significant (>60px)
+  // 2. Horizontal movement is much greater than vertical movement
+  const minSwipeDistance = 60;
   
-  if (absDeltaX > minSwipeDistance && absDeltaX > deltaY) {
+  if (absDeltaX > minSwipeDistance && absDeltaX > deltaY * 1.5) {
     if (deltaX < 0) {
       // Swiped left - go to next card
       nextCard();
@@ -201,10 +206,11 @@ function handleTouchEnd() {
   }
   
   // Reset values
-  touchStartX = 0;
-  touchStartY = 0;
-  touchEndX = 0;
-  touchEndY = 0;
+  pointerId = null;
+  pointerStartX = 0;
+  pointerStartY = 0;
+  pointerEndX = 0;
+  pointerEndY = 0;
 }
 
 // Lazy loading functionality for videos
@@ -255,10 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', prevCard);
   nextBtn.addEventListener('click', nextCard);
   
-  // Add touch event listeners to the track (all passive since we don't prevent defaults)
-  track.addEventListener('touchstart', handleTouchStart, { passive: true });
-  track.addEventListener('touchmove', handleTouchMove, { passive: true });
-  track.addEventListener('touchend', handleTouchEnd, { passive: true });
+  // Add pointer event listeners (better compatibility with scrolling)
+  track.addEventListener('pointerdown', handlePointerDown, { passive: true });
+  track.addEventListener('pointermove', handlePointerMove, { passive: true });
+  track.addEventListener('pointerup', handlePointerUp, { passive: true });
+  track.addEventListener('pointercancel', handlePointerUp, { passive: true });
   
   // Initialize media carousels
   initMediaCarousels();
