@@ -151,66 +151,35 @@ function initMediaCarousels() {
   });
 }
 
-// Pointer-based swipe functionality - Better compatibility with scrolling
-let pointerStartX = 0;
-let pointerStartY = 0;
-let pointerEndX = 0;
-let pointerEndY = 0;
-let isPointerDown = false;
-let pointerId = null;
+// Simple horizontal swipe detection - doesn't interfere with vertical scrolling
+let startX = 0;
+let startY = 0;
 
-function handlePointerDown(e) {
-  // Only handle primary pointer (first finger)
-  if (pointerId !== null) return;
-  
-  pointerId = e.pointerId;
-  pointerStartX = e.clientX;
-  pointerStartY = e.clientY;
-  isPointerDown = true;
-  
-  // Capture this pointer to track it even if it moves outside the element
-  e.target.setPointerCapture(e.pointerId);
+function handleTouchStart(e) {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
 }
 
-function handlePointerMove(e) {
-  if (!isPointerDown || e.pointerId !== pointerId) return;
+function handleTouchEnd(e) {
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
   
-  pointerEndX = e.clientX;
-  pointerEndY = e.clientY;
-  
-  // Don't prevent default - allow normal scrolling
-}
-
-function handlePointerUp(e) {
-  if (!isPointerDown || e.pointerId !== pointerId) return;
-  
-  isPointerDown = false;
-  
-  const deltaX = pointerEndX - pointerStartX;
-  const deltaY = Math.abs(pointerEndY - pointerStartY);
+  const deltaX = endX - startX;
+  const deltaY = endY - startY;
   const absDeltaX = Math.abs(deltaX);
+  const absDeltaY = Math.abs(deltaY);
   
-  // Only trigger horizontal navigation if:
-  // 1. Horizontal movement is significant (>60px)
-  // 2. Horizontal movement is much greater than vertical movement
-  const minSwipeDistance = 60;
-  
-  if (absDeltaX > minSwipeDistance && absDeltaX > deltaY * 1.5) {
-    if (deltaX < 0) {
-      // Swiped left - go to next card
-      nextCard();
-    } else {
+  // Only trigger if it's clearly a horizontal swipe
+  // Horizontal movement > 50px AND horizontal > vertical
+  if (absDeltaX > 50 && absDeltaX > absDeltaY) {
+    if (deltaX > 0) {
       // Swiped right - go to previous card
       prevCard();
+    } else {
+      // Swiped left - go to next card
+      nextCard();
     }
   }
-  
-  // Reset values
-  pointerId = null;
-  pointerStartX = 0;
-  pointerStartY = 0;
-  pointerEndX = 0;
-  pointerEndY = 0;
 }
 
 // Lazy loading functionality for videos
@@ -261,11 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', prevCard);
   nextBtn.addEventListener('click', nextCard);
   
-  // Add pointer event listeners (better compatibility with scrolling)
-  track.addEventListener('pointerdown', handlePointerDown, { passive: true });
-  track.addEventListener('pointermove', handlePointerMove, { passive: true });
-  track.addEventListener('pointerup', handlePointerUp, { passive: true });
-  track.addEventListener('pointercancel', handlePointerUp, { passive: true });
+  // Simple touch events - only touchstart and touchend, no touchmove
+  track.addEventListener('touchstart', handleTouchStart, { passive: true });
+  track.addEventListener('touchend', handleTouchEnd, { passive: true });
   
   // Initialize media carousels
   initMediaCarousels();
