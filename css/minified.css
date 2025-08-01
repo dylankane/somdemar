@@ -2104,7 +2104,7 @@ a {
 
     .cards-container {
         min-height: 500px;
-        touch-action: pan-x;
+
         margin-bottom: 20px;
         padding: 0 1rem;
     }

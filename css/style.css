@@ -2363,7 +2363,6 @@ a {
   
   .cards-container {
     min-height: 500px;
-    touch-action: pan-x;
     margin-bottom: 20px; /* Smaller margin for mobile */
     padding: 0 1rem; /* Smaller padding for mobile */
   }
