@@ -166,25 +166,40 @@ function handleTouchStart(e) {
   isHorizontalSwipe = false;
 }
 
+// function handleTouchMove(e) {
+//   if (!isSwiping) return;
+  
+//   touchEndX = e.touches[0].clientX;
+//   touchEndY = e.touches[0].clientY;
+  
+//   const deltaX = Math.abs(touchEndX - touchStartX);
+//   const deltaY = Math.abs(touchEndY - touchStartY);
+  
+//   if (deltaX > deltaY && deltaX > 10) {
+//     isHorizontalSwipe = true;
+//     e.preventDefault();
+//   } else if (deltaY > deltaX && deltaY > 10) {
+//     isSwiping = false;
+//     isHorizontalSwipe = false;
+//   }
+// }
+
 function handleTouchMove(e) {
   if (!isSwiping) return;
-  
+
   touchEndX = e.touches[0].clientX;
   touchEndY = e.touches[0].clientY;
-  
-  const deltaX = Math.abs(touchEndX - touchStartX);
-  const deltaY = Math.abs(touchEndY - touchStartY);
-  
-  // Determine if this is a horizontal or vertical gesture
-  // Only prevent default if it's clearly a horizontal swipe
-  if (deltaX > deltaY && deltaX > 10) {
-    // This is a horizontal swipe - prevent vertical scrolling
+
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  const angle = Math.abs(Math.atan2(deltaY, deltaX) * (180 / Math.PI));
+
+  if (angle < 30 && Math.abs(deltaX) > 10) {
     isHorizontalSwipe = true;
     e.preventDefault();
-  } else if (deltaY > deltaX && deltaY > 10) {
-    // This is a vertical scroll - allow it and stop tracking
+  } else if (angle >= 30) {
     isSwiping = false;
-    isHorizontalSwipe = false;
   }
 }
 
