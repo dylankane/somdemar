@@ -193,13 +193,14 @@ function handleTouchMove(e) {
   const deltaX = touchEndX - touchStartX;
   const deltaY = touchEndY - touchStartY;
 
-  const angle = Math.abs(Math.atan2(deltaY, deltaX) * (180 / Math.PI));
-
-  if (angle < 30 && Math.abs(deltaX) > 10) {
+  // Only act if swipe is clearly horizontal
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
     isHorizontalSwipe = true;
-    e.preventDefault();
-  } else if (angle >= 30) {
+    e.preventDefault(); // block vertical scroll only during horizontal swipe
+  } else {
+    // allow vertical scroll and stop further tracking
     isSwiping = false;
+    isHorizontalSwipe = false;
   }
 }
 
