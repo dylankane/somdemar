@@ -117,36 +117,68 @@ function initMediaCarousels() {
     const dots = carousel.querySelectorAll('.media-dot');
     const slides = carousel.querySelectorAll('.media-slide');
     
+    // Function to toggle media (used by both dots and media clicks)
+    function toggleToMedia(targetIndex) {
+      // Remove active from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      // Add active to selected slide and dot
+      slides[targetIndex].classList.add('active');
+      dots[targetIndex].classList.add('active');
+      
+      // Handle video playback
+      slides.forEach((slide, slideIndex) => {
+        const video = slide.querySelector('.media-video');
+        if (video) {
+          if (slideIndex === targetIndex) {
+            // Ensure video is loaded before playing
+            lazyLoadVideo(video);
+            
+            // Wait a moment for the video to load, then play
+            setTimeout(() => {
+              video.play().catch(e => console.log('Video autoplay prevented:', e));
+            }, 100);
+          } else {
+            // Pause video if this slide is not active
+            video.pause();
+            video.currentTime = 0; // Reset to beginning
+          }
+        }
+      });
+    }
+    
+    // Add click listeners to dots (existing functionality)
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        // Remove active from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-        
-        // Add active to selected slide and dot
-        slides[index].classList.add('active');
-        dot.classList.add('active');
-        
-        // Handle video playback
-        slides.forEach((slide, slideIndex) => {
-          const video = slide.querySelector('.media-video');
-          if (video) {
-            if (slideIndex === index) {
-              // Ensure video is loaded before playing
-              lazyLoadVideo(video);
-              
-              // Wait a moment for the video to load, then play
-              setTimeout(() => {
-                video.play().catch(e => console.log('Video autoplay prevented:', e));
-              }, 100);
-            } else {
-              // Pause video if this slide is not active
-              video.pause();
-              video.currentTime = 0; // Reset to beginning
-            }
-          }
-        });
+        toggleToMedia(index);
       });
+    });
+    
+    // Add click listeners to media elements (new functionality)
+    slides.forEach((slide, slideIndex) => {
+      const mediaImage = slide.querySelector('.media-image');
+      const mediaVideo = slide.querySelector('.media-video');
+      
+      // Add click listener to image
+      if (mediaImage) {
+        mediaImage.addEventListener('click', () => {
+          // Find the next media index (toggle between image and video)
+          const currentActiveIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+          const nextIndex = currentActiveIndex === 0 ? 1 : 0; // Toggle between 0 (image) and 1 (video)
+          toggleToMedia(nextIndex);
+        });
+      }
+      
+      // Add click listener to video
+      if (mediaVideo) {
+        mediaVideo.addEventListener('click', () => {
+          // Find the next media index (toggle between image and video)
+          const currentActiveIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+          const nextIndex = currentActiveIndex === 0 ? 1 : 0; // Toggle between 0 (image) and 1 (video)
+          toggleToMedia(nextIndex);
+        });
+      }
     });
   });
 }
