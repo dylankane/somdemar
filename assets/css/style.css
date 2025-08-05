@@ -14,9 +14,9 @@
     --text-light: #f8f8f8;
     --light-contrast: #fff;
     --transition: all 0.3s ease;
-    --logo: url('../assets/images/som_de_mar_logo_light.png');
-    --modal-bg: url('../assets/images/nochemodal2.png');
-    --modal-sm: url('../assets/images/modal-mobile.png');
+    --logo: url('/assets/images/logos/som_de_mar_logo_light.png');
+    --modal-bg: url('/assets/images/noches-modal/nochemodal2.png');
+    --modal-sm: url('/assets/images/noches-modal/modal-mobile.png');
 }
 
 html {
@@ -562,7 +562,6 @@ a {
 .hero p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    margin-bottom: 4rem;
     color: var(--text-light);
     width: 75%;
     margin: 4rem auto;
@@ -658,6 +657,69 @@ a {
         margin: 3rem auto;
     }
   }
+
+  /* === Sub Hero Section === */
+
+/* .hero.sub-hero p {
+    margin: 0 auto;
+} */
+
+.sub-hero {
+    height: 60vh;
+}
+
+.sub-hero h1 span {
+    font-size: 4rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Sub-hero uses a single background image instead of carousel */
+.sub-hero .hero-carousel {
+    display: none;
+}
+
+.sub-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.sub-hero .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.sub-hero p {
+    margin: 0 auto;
+}
+
+/* Responsive adjustments for sub-hero */
+@media (max-width: 768px) {
+    .sub-hero {
+        height: 50vh !important;
+    }
+    
+    .sub-hero h1 span {
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub-hero {
+        height: 45vh !important;
+    }
+    
+    .sub-hero h1 span {
+        font-size: 2.5rem !important;
+    }
+}
+
   
 
 /* ===== FOOTER ===== */
@@ -699,6 +761,13 @@ a {
 }
 
 /* Logo */
+.footer-logo {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+    
 .footer-logo h1 {
     font-family: 'Anton', sans-serif;
     font-size: 4.5rem;
@@ -1111,7 +1180,7 @@ a {
 /* Responsive quote banner background */
 @media (max-width: 768px) {
     .quote-banner {
-        background-image: url('../assets/images/index/close-arroz-banner.webp');
+        background-image: url('/assets/images/index/close-arroz-banner.webp');
         background-position: center center;
         background-size: cover;
     }
@@ -1668,14 +1737,6 @@ a {
     }
 }
 
-/* sub hero */
-.sub-hero {
-    height: 60vh !important;
-}
-.sub-hero h1 span {
-    font-size: 4rem !important;
-    padding-bottom: 0.5rem !important;
-}
 
 /* ===== Origins Page ===== */
 .origins-section {
@@ -2418,8 +2479,7 @@ a {
     width: 90%;
     margin: 0 auto;
     height: 200px;
-    /* background: url('../assets/images/patatas.jpg') no-repeat center center fixed; */
-    background: url('../assets/images/platos/patatas-banner.webp') no-repeat center 60%;
+    background: url('/assets/images/platos/patatas-banner.webp') no-repeat center 60%;
     background-size: cover;
     position: relative;
     display: flex;
@@ -2777,6 +2837,7 @@ a {
     margin: 1rem 0;
 }
 
+
 @media (max-width: 768px) {
     .contact-info-grid {
         grid-template-columns: 1fr;
@@ -2804,8 +2865,58 @@ a {
 }
 
 @media (max-width: 480px) {
-
     .contact-container {
         padding: 0;
     }
+}
+
+/* === 404 Page === */
+
+.container-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+    padding: 2rem;
+}
+
+.container-404 h2 {
+    font-weight: 100;
+    font-family: 'Poppins';
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* === Legal Page === */
+
+.legal-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 4rem;
+}
+
+.legal-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-family: 'Poppins', serif;
+    color: var(--text-dark);
+}
+
+.legal-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', serif;
+    color: var(--text-dark);
+}
+
+.legal-text {
+    padding-bottom: 2.5rem;
+    font-family: 'Poppins', serif;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-dark);
 }

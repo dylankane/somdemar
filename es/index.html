@@ -4,86 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Som de Mar</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
 
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 <body>
-
-
-    <!-- FAB Menu -->
-    <div class="fab-container">
-        <button class="fab-button" id="fabButton">
-            <span class="fab-icon"></span>
-            <span class="fab-icon"></span>
-            <span class="fab-icon"></span>
-        </button>
-        <nav class="fab-dropdown" id="fabDropdown">
-            <a href="reserva.html">Reservar</a>
-            <a href="nuestros-platos.html">Nuestros Platos</a>
-            <a href="orígenes.html">Orígenes</a>
-            <a href="index.html#location">Ubicación y Contacto</a>
-            <a href="cronicas.html">Crónicas</a>
-        </nav>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <div class="logo-image"></div>
-                </a>
-            </div>
-            <div class="language-selector">
-                <a href="#" class="language-link active">ES</a>
-                <span class="language-divider">|</span>
-                <a href="#" class="language-link">EN</a>
-            </div>
+    <header>
+        <!-- FAB Menu -->
+        <div class="fab-container">
+            <button class="fab-button" id="fabButton">
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+            </button>
+            <nav class="fab-dropdown" id="fabDropdown">
+                <a href="/es/reserva">Reservar</a>
+                <a href="/es/nuestros-platos">Nuestros Platos</a>
+                <a href="/es/orígenes">Orígenes</a>
+                <a href="/es/#location">Ubicación y Contacto</a>
+            </nav>
         </div>
-    </nav>
+    
+    
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/es/">
+                        <div class="logo-image"></div>
+                    </a>
+                </div>
+                <div class="language-selector">
+                    <a href="/es/" class="language-link active">ES</a>
+                    <span class="language-divider">|</span>
+                    <a href="/en/" class="language-link">EN</a>
+                    <span class="language-divider">|</span>
+                    <a href="/fr/" class="language-link">FR</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-carousel">
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-1.webp" type="image/webp">
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-1.jpg">
-                    <source srcset="assets/images/index/home-hero-1.webp" type="image/webp">
-                    <img src="assets/images/index/home-hero-1.jpg" alt="Gambas a la plancha con pulpo - Som de Mar" loading="eager" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-1.webp" type="image/webp">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-1.jpg">
+                    <source srcset="/assets/images/index/home-hero-1.webp" type="image/webp">
+                    <img src="/assets/images/index/home-hero-1.jpg" alt="Gambas a la plancha con pulpo - Som de Mar" loading="eager" class="hero-image">
                 </picture>
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-2.webp" type="image/webp">
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-2.jpg">
-                    <source srcset="assets/images/index/home-hero-2.webp" type="image/webp">
-                    <img src="assets/images/index/home-hero-2.jpg" alt="Plato especial de Som de Mar" loading="eager" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-2.webp" type="image/webp">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-2.jpg">
+                    <source srcset="/assets/images/index/home-hero-2.webp" type="image/webp">
+                    <img src="/assets/images/index/home-hero-2.jpg" alt="Plato especial de Som de Mar" loading="eager" class="hero-image">
                 </picture>
             </div>
             <div class="carousel-item" style="opacity: 0;">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-3.webp" type="image/webp">
-                    <source media="(max-width: 768px)" srcset="assets/images/index/home-hero-mobile-3.jpg">
-                    <source srcset="assets/images/index/home-hero-3.webp" type="image/webp">
-                    <img src="assets/images/index/home-hero-3.png" alt="Vieiras frescas - Som de Mar" loading="lazy" class="hero-image">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-3.webp" type="image/webp">
+                    <source media="(max-width: 768px)" srcset="/assets/images/index/home-hero-mobile-3.jpg">
+                    <source srcset="/assets/images/index/home-hero-3.webp" type="image/webp">
+                    <img src="/assets/images/index/home-hero-3.png" alt="Vieiras frescas - Som de Mar" loading="lazy" class="hero-image">
                 </picture>
             </div>
         </div>
@@ -95,7 +93,7 @@
                 <span class="mar">MAR</span>
             </h1>
             <p class="hero-firma">de Roberto Cereto</p>
-            <a href="reserva.html" class="cta-button">Reservar Ahora</a>
+            <a href="/es/reserva" class="cta-button">Reservar Ahora</a>
         </div>
     </section>
 
@@ -107,14 +105,12 @@
                     <h2 class="section-title">La Experiencia Som de Mar</h2>
                     <p>En Som de Mar, transformamos los mejores productos del mar en experiencias gastronómicas memorables. 
                         Seleccionamos cada ingrediente con esmero y fusionamos tradición e innovación para rendir homenaje al sabor auténtico del Mediterráneo.</p>
-                    <!-- <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar. Nuestro compromiso con la calidad y la excelencia nos lleva a seleccionar cuidadosamente cada ingrediente, desde las capturas del puerto local hasta los productos de nuestros distribuidores exclusivos.</p>
-                    <p>Nuestro objetivo es alcanzar excelencia, combinando técnicas tradicionales con innovación culinaria para ofrecer una experiencia gastronómica inigualable.</p> -->
                 </div>
                 <div class="about-image">
                     <picture>
-                        <source srcset="assets/images/index/staff-kitchen-fun-750x750.webp" type="image/webp">
+                        <source srcset="/assets/images/index/staff-kitchen-fun-750x750.webp" type="image/webp">
                         <img 
-                            src="assets/images/index/staff-kitchen-fun.jpg" 
+                            src="/assets/images/index/staff-kitchen-fun.jpg" 
                             alt="Equipo de Som de Mar en la cocina"
                             loading="lazy"
                             class="about-img"
@@ -143,42 +139,42 @@
                 <div class="gallery-grid">
                     <div class="carousel" data-delay="6000">
                         <picture>
-                            <source srcset="assets/images/index/pulpo_plancha-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/pulpo_plancha.jpg" class="carousel-img active" loading="lazy" alt="Pulpo a la plancha">
+                            <source srcset="/assets/images/index/pulpo_plancha-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/pulpo_plancha.jpg" class="carousel-img active" loading="lazy" alt="Pulpo a la plancha">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/pulpo_kinfe-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/pulpo_kinfe.jpg" class="carousel-img" loading="lazy" alt="Pulpo con cuchillo">
+                            <source srcset="/assets/images/index/pulpo_kinfe-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/pulpo_kinfe.jpg" class="carousel-img" loading="lazy" alt="Pulpo con cuchillo">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="7000">
                         <picture>
-                            <source srcset="assets/images/index/postre-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/postre.jpg" class="carousel-img active" loading="lazy" alt="Postre Som de Mar">
+                            <source srcset="/assets/images/index/postre-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/postre.jpg" class="carousel-img active" loading="lazy" alt="Postre Som de Mar">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/postre_close-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/postre_close.jpg" class="carousel-img" loading="lazy" alt="Postre detalle">
+                            <source srcset="/assets/images/index/postre_close-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/postre_close.jpg" class="carousel-img" loading="lazy" alt="Postre detalle">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="8000">
                         <picture>
-                            <source srcset="assets/images/index/gambas_plate-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/gambas_plate.jpeg" class="carousel-img active" loading="lazy" alt="Plato de gambas">
+                            <source srcset="/assets/images/index/gambas_plate-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/gambas_plate.jpeg" class="carousel-img active" loading="lazy" alt="Plato de gambas">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/arty_dish-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/arty_dish.jpeg" class="carousel-img" loading="lazy" alt="Plato artístico">
+                            <source srcset="/assets/images/index/arty_dish-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/arty_dish.jpeg" class="carousel-img" loading="lazy" alt="Plato artístico">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="6500">
                         <picture>
-                            <source srcset="assets/images/index/arroz_negro-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/arroz_negro.jpeg" class="carousel-img active" loading="lazy" alt="Arroz negro">
+                            <source srcset="/assets/images/index/arroz_negro-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/arroz_negro.jpeg" class="carousel-img active" loading="lazy" alt="Arroz negro">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/atun_chop-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/atun_chop.jpeg" class="carousel-img" loading="lazy" alt="Atún cortado">
+                            <source srcset="/assets/images/index/atun_chop-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/atun_chop.jpeg" class="carousel-img" loading="lazy" alt="Atún cortado">
                         </picture>
                     </div>
                 </div>
@@ -210,42 +206,42 @@
                 <div class="gallery-grid">
                     <div class="carousel" data-delay="6000">
                         <picture>
-                            <source srcset="assets/images/index/raw-atun-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/raw-atun.jpg" class="carousel-img active" loading="lazy" alt="Atún fresco crudo">
+                            <source srcset="/assets/images/index/raw-atun-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/raw-atun.jpg" class="carousel-img active" loading="lazy" alt="Atún fresco crudo">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/raw-atun2-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/raw-atun2.jpg" class="carousel-img" loading="lazy" alt="Atún crudo preparación">
+                            <source srcset="/assets/images/index/raw-atun2-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/raw-atun2.jpg" class="carousel-img" loading="lazy" alt="Atún crudo preparación">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="7000">
                         <picture>
-                            <source srcset="assets/images/index/lemons-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/lemons.png" class="carousel-img active" loading="lazy" alt="Limones frescos">
+                            <source srcset="/assets/images/index/lemons-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/lemons.png" class="carousel-img active" loading="lazy" alt="Limones frescos">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/herbs-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/herbs.png" class="carousel-img" loading="lazy" alt="Hierbas aromáticas">
+                            <source srcset="/assets/images/index/herbs-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/herbs.png" class="carousel-img" loading="lazy" alt="Hierbas aromáticas">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="8000">
                         <picture>
-                            <source srcset="assets/images/index/market-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/market.png" class="carousel-img active" loading="lazy" alt="Mercado de ingredientes">
+                            <source srcset="/assets/images/index/market-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/market.png" class="carousel-img active" loading="lazy" alt="Mercado de ingredientes">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/market2-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/market2.png" class="carousel-img" loading="lazy" alt="Mercado productos frescos">
+                            <source srcset="/assets/images/index/market2-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/market2.png" class="carousel-img" loading="lazy" alt="Mercado productos frescos">
                         </picture>
                     </div>
                     <div class="carousel" data-delay="6500">
                         <picture>
-                            <source srcset="assets/images/index/fisherman-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/fisherman.png" class="carousel-img active" loading="lazy" alt="Pescador tradicional">
+                            <source srcset="/assets/images/index/fisherman-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/fisherman.png" class="carousel-img active" loading="lazy" alt="Pescador tradicional">
                         </picture>
                         <picture>
-                            <source srcset="assets/images/index/rice-500x500.webp" type="image/webp">
-                            <img src="assets/images/index/rice.png" class="carousel-img" loading="lazy" alt="Campo de arroz">
+                            <source srcset="/assets/images/index/rice-500x500.webp" type="image/webp">
+                            <img src="/assets/images/index/rice.png" class="carousel-img" loading="lazy" alt="Campo de arroz">
                         </picture>
                     </div>
                 </div>
@@ -267,20 +263,20 @@
             <div class="video-gallery-row three">
                 <div class="img-1">
                     <picture>
-                        <source srcset="assets/images/gallery/platos-banner1-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/arty_dish.jpeg" alt="Arty Dish">
+                        <source srcset="/assets/images/gallery/platos-banner1-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/arty_dish.jpeg" alt="Arty Dish">
                     </picture>
                 </div>
                 <div class="img-2">
                     <picture>
-                        <source srcset="assets/images/gallery/gambas-pan-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/lemons.png" alt="Lemons">
+                        <source srcset="/assets/images/gallery/gambas-pan-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/lemons.png" alt="Lemons">
                     </picture>
                 </div>
                 <div class="img-3">
                     <picture>
-                        <source srcset="assets/images/gallery/spoon-dish-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/gambas_plate.jpeg" alt="Gambas Plate">
+                        <source srcset="/assets/images/gallery/spoon-dish-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/gambas_plate.jpeg" alt="Gambas Plate">
                     </picture>
                 </div>
             </div>
@@ -288,8 +284,8 @@
             <!-- Video row -->
             <div class="video-gallery-row video-row">
                 <video class="video-gallery-video" autoplay muted loop playsinline>
-                    <source src="assets/videos/index/cooking-montage.webm" type="video/webm">
-                    <source src="assets/videos/index/cooking-montage.mp4" type="video/mp4">
+                    <source src="/assets/videos/index/cooking-montage.webm" type="video/webm">
+                    <source src="/assets/videos/index/cooking-montage.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay">
@@ -308,63 +304,25 @@
             <div class="video-gallery-row three">
                 <div class="img-1">
                     <picture>
-                        <source srcset="assets/images/gallery/patatas-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/arty_dish.jpeg" alt="Arty Dish">
+                        <source srcset="/assets/images/gallery/patatas-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/arty_dish.jpeg" alt="Arty Dish">
                     </picture>
                 </div>
                 <div class="img-2">
                     <picture>
-                        <source srcset="assets/images/gallery/arroz-plato-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/lemons.png" alt="Lemons">
+                        <source srcset="/assets/images/gallery/arroz-plato-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/lemons.png" alt="Lemons">
                     </picture>
                 </div>
                 <div class="img-3">
                     <picture>
-                        <source srcset="assets/images/index/gambas_plate-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/gambas_plate.jpeg" alt="Gambas Plate">
+                        <source srcset="/assets/images/index/gambas_plate-500x500.webp" type="image/webp">
+                        <img src="/assets/images/index/gambas_plate.jpeg" alt="Gambas Plate">
                     </picture>
                 </div>
             </div>
-      
-            <!-- Row of 2 images -->
-            <!-- <div class="video-gallery-row two">
-                <div>
-                    <picture>
-                        <source srcset="assets/images/index/lemons-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/lemons.png" alt="Lemons Again">
-                    </picture>
-                </div>
-                <div>
-                    <picture>
-                        <source srcset="assets/images/index/gambas_plate-500x500.webp" type="image/webp">
-                        <img src="assets/images/index/gambas_plate.jpeg" alt="Gambas Again">
-                    </picture>
-                </div>
-            </div> -->
-      
         </div>
     </section>
-      
-
-    <!-- Video Banner -->
-    <!-- <section class="video-banner">
-        <div class="video-banner-container">
-            <video class="video-banner-video" autoplay muted loop playsinline>
-                <source src="assets/videos/index/cooking-montage.webm" type="video/webm">
-                <source src="assets/videos/index/cooking-montage.mp4" type="video/mp4">
-            </video>
-            
-            <div class="video-overlay"></div>
-            <div class="video-content">
-                <h2>
-                    <span class="som">SOM</span>
-                    <span class="de">DE</span>
-                    <span class="mar">MAR</span>
-                </h2>
-                <p>de Roberto Cereto</p>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Spacer -->
     <div class="spacer-small"></div>
@@ -376,7 +334,6 @@
             <div class="location-pin" aria-hidden="true">
                 <i class="fa-solid fa-location-dot" style="font-size: 4rem; color: var(--primary-color);"></i>
             </div>
-            <!-- <h2 class="section-title">Visítanos</h2> -->
             
             <!-- First Row: Three Images with La Zona Text -->
             <div class="location-row location-row-images">
@@ -384,22 +341,22 @@
                     <div class="location-images-top">
                         <div class="location-image">
                             <picture>
-                                <source srcset="assets/images/index/aerial-500x500.webp" type="image/webp">
-                                <img src="assets/images/index/aerial.jpeg" alt="Vista aérea de Villajoyosa" loading="lazy">
+                                <source srcset="/assets/images/index/aerial-500x500.webp" type="image/webp">
+                                <img src="/assets/images/index/aerial.jpeg" alt="Vista aérea de Villajoyosa" loading="lazy">
                             </picture>
                         </div>
                         <div class="location-image">
                             <picture>
-                                <source srcset="assets/images/index/shop-front-banner-500x500.webp" type="image/webp">
-                                <img src="assets/images/index/shop-front-banner.png" alt="Fachada del restaurante Som de Mar" loading="lazy">
+                                <source srcset="/assets/images/index/shop-front-banner-500x500.webp" type="image/webp">
+                                <img src="/assets/images/index/shop-front-banner.png" alt="Fachada del restaurante Som de Mar" loading="lazy">
                             </picture>
                         </div>
                     </div>
                     <div class="location-images-bottom">
                         <div class="location-image">
                             <video class="video-drone" autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/index/drone-loop-2.webm" type="video/webm">
-                                <source src="assets/videos/index/drone-loop-2.mp4" type="video/mp4">
+                                <source src="/assets/videos/index/drone-loop-2.webm" type="video/webm">
+                                <source src="/assets/videos/index/drone-loop-2.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -453,13 +410,13 @@
                 </div>
                 
                 <!-- Center Column - Logo -->
-                <div class="footer-logo">
+                <a href="/es/" class="footer-logo">
                     <h1>
                         <span class="som">SOM</span>
                         <span class="de">DE</span>
                         <span class="mar">MAR</span>
                     </h1>
-                </div>
+                </a>
                 
                 <!-- Right Column - Contact Info -->
                 <div class="footer-contact">
@@ -506,10 +463,10 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/scroll-effects.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/fab-menu.js"></script>
-    <script src="js/som-carousel.js"></script>
-    <script src="js/noches-modal.js"></script>
+    <script src="/assets/js/scroll-effects.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/fab-menu.js"></script>
+    <script src="/assets/js/som-carousel.js"></script>
+    <script src="/assets/js/noches-modal.js"></script>
 </body>
 </html>

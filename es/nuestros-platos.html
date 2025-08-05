@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Platos - Som de Mar</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
 
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton:wght@400&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -41,15 +41,17 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
+                <a href="/es/">
                     <div class="logo-image"></div>
                 </a>
             </div>
             <div class="language-selector">
-                <a href="#" class="language-link active">ES</a>
-                <span class="language-divider">|</span>
-                <a href="#" class="language-link">EN</a>
-            </div>
+              <a href="/es/nuestros-platos" class="language-link active">ES</a>
+              <span class="language-divider">|</span>
+              <a href="/en/nuestros-platos" class="language-link">EN</a>
+              <span class="language-divider">|</span>
+              <a href="/fr/nuestros-platos" class="language-link">FR</a>
+          </div>
         </div>
     </nav>
 
@@ -62,27 +64,27 @@
         loop 
         playsinline 
         preload="metadata"
-        poster="assets/images/platos/vieiras-500x500.webp"
+        poster="/assets/images/platos/vieiras-500x500.webp"
         id="heroVideo"
       >
           <!-- Mobile-optimized video (smaller file size) -->
           <source 
-            src="assets/videos/platos/compessed-hero-video-9x16.webm" 
+            src="/assets/videos/platos/compessed-hero-video-9x16.webm" 
             type="video/webm" 
             media="(max-width: 768px)"
           >
           <source 
-            src="assets/videos/platos/compessed-hero-video.mp4" 
+            src="/assets/videos/platos/compessed-hero-video.mp4" 
             type="video/mp4" 
             media="(max-width: 768px)"
           >
           <!-- Desktop video -->
           <source 
-            src="assets/videos/platos/compessed-hero-video.webm" 
+            src="/assets/videos/platos/compessed-hero-video.webm" 
             type="video/webm"
           >
           <source 
-            src="assets/videos/platos/compessed-hero-video.mp4" 
+            src="/assets/videos/platos/compessed-hero-video.mp4" 
             type="video/mp4"
           >
           <!-- Fallback for browsers that don't support video -->
@@ -118,7 +120,7 @@
             <p>Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esto es solo una muestra de lo que ofrecemos, que evoluciona con las estaciones y el mercado.</p>
         </div>
       </section>
-          <!-- Dish Cards Carousel Section -->
+        <!-- Dish Cards Carousel Section -->
         <section class="dish-cards-section">
           <div>
             <h2 class="section-title">Favoritos del Chef</h2>
@@ -134,9 +136,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="assets/images/platos/vieiras-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/vieiras-500x500.webp" type="image/webp">
                             <img 
-                              src="assets/images/platos/vieiras.png" 
+                              src="/assets/images/platos/vieiras.png" 
                               alt="Gambas a la Plancha - Fresh prawns grilled to perfection" 
                               class="media-image"
                               loading="lazy"
@@ -150,10 +152,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="assets/images/platos/vieiras-500x500.webp"
+                            poster="/assets/images/platos/vieiras-500x500.webp"
                           >
-                            <source data-src="assets/videos/platos/vieira-video.webm" type="video/webm">
-                            <source data-src="assets/videos/platos/vieira-video.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/vieira-video.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/vieira-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -180,9 +182,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="assets/images/platos/gambones-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/gambones-dish-500x500.webp" type="image/webp">
                             <img 
-                              src="assets/images/platos/gambones-dish.png" 
+                              src="/assets/images/platos/gambones-dish.png" 
                               alt="Gambones - Premium Spanish prawns with authentic preparation" 
                               class="media-image"
                               loading="lazy"
@@ -196,10 +198,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="assets/images/platos/gambones-dish-500x500.webp"
+                            poster="/assets/images/platos/gambones-dish-500x500.webp"
                           >
-                            <source data-src="assets/videos/platos/gambones2.webm" type="video/webm">
-                            <source data-src="assets/videos/platos/gambones2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/gambones2.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/gambones2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -226,9 +228,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="assets/images/platos/pulpo-smoke-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/pulpo-smoke-dish-500x500.webp" type="image/webp">
                             <img 
-                              src="assets/images/platos/pulpo-smoke-dish.png" 
+                              src="/assets/images/platos/pulpo-smoke-dish.png" 
                               alt="Pulpo Humo - Tender smoked octopus with Galician tradition" 
                               class="media-image"
                               loading="lazy"
@@ -242,10 +244,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="assets/images/platos/pulpo-smoke-dish-500x500.webp"
+                            poster="/assets/images/platos/pulpo-smoke-dish-500x500.webp"
                           >
-                            <source data-src="assets/videos/platos/pulpo-smoke2.webm" type="video/webm">
-                            <source data-src="assets/videos/platos/pulpo-smoke2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/pulpo-smoke2.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/pulpo-smoke2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -272,9 +274,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="assets/images/platos/lamb-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/lamb-dish-500x500.webp" type="image/webp">
                             <img 
-                              src="assets/images/lamb-dish.png" 
+                              src="/assets/images/lamb-dish.png" 
                               alt="Cordero - Premium lamb prepared with traditional Spanish techniques" 
                               class="media-image"
                               loading="lazy"
@@ -288,10 +290,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="assets/images/platos/lamb-dish-500x500.webp"
+                            poster="/assets/images/platos/lamb-dish-500x500.webp"
                           >
-                            <source data-src="assets/videos/platos/lamb-video2.webm" type="video/webm">
-                            <source data-src="assets/videos/platos/lamb-video2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/lamb-video2.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/lamb-video2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -318,9 +320,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="assets/images/platos/ostras-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/ostras-dish-500x500.webp" type="image/webp">
                             <img 
-                              src="assets/images/ostras-dish.png" 
+                              src="/assets/images/ostras-dish.png" 
                               alt="Ostras - Fresh oysters prepared with Mediterranean flair" 
                               class="media-image"
                               loading="lazy"
@@ -334,10 +336,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="assets/images/platos/ostras-dish-500x500.webp"
+                            poster="/assets/images/platos/ostras-dish-500x500.webp"
                           >
-                            <source data-src="assets/videos/platos/ostras-video2.webm" type="video/webm">
-                            <source data-src="assets/videos/platos/ostras-video2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/ostras-video2.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/ostras-video2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -430,63 +432,63 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-main">
-                <!-- Left Column - Navigation Links -->
-                <div class="footer-nav">
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#reserve">Reservar</a></li>
-                        <li><a href="#contact">Contáctanos</a></li>
-                        <li><a href="#location">Ubicación</a></li>
-                        <li><a href="#dishes">Nuestros Platos</a></li>
-                        <li><a href="origenes.html">Orígenes</a></li>
-                        <li><a href="#gallery">Galería</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Center Column - Logo -->
-                <div class="footer-logo">
-                    <h1>
-                        <span class="som">SOM</span>
-                        <span class="de">DE</span>
-                        <span class="mar">MAR</span>
-                    </h1>
-                </div>
-                
-                <!-- Right Column - Contact Info -->
-                <div class="footer-contact">
-                    <div class="contact-address">
-                        <p>Calle del Mar, 12<br>Villajoyosa, Alicante</p>
-                    </div>
-                    <div class="contact-hours">
-                        <p>Lunes - Domingo<br>13:00 - 16:00<br>19:30 - 23:00</p>
-                    </div>
-                    <div class="contact-info">
-                        <p>+34 123 456 789<br>info@somdemar.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Footer Bottom Bar -->
-            <div class="footer-bottom">
-                <div class="developer-credit">
-                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
-                </div>
-                <div class="footer-legal">
-                    <a href="#" class="legal-link">Legal</a>
-                </div>
-                <div class="copyright">
-                    &copy; 2025 Som de Mar.
-                </div>
-            </div>
-        </div>
-    </footer>
+      <div class="container">
+          <div class="footer-main">
+              <!-- Left Column - Navigation Links -->
+              <div class="footer-nav">
+                  <ul>
+                      <li><a href="#">Inicio</a></li>
+                      <li><a href="#reserve">Reservar</a></li>
+                      <li><a href="#contact">Contáctanos</a></li>
+                      <li><a href="#location">Ubicación</a></li>
+                      <li><a href="#dishes">Nuestros Platos</a></li>
+                      <li><a href="origenes.html">Orígenes</a></li>
+                      <li><a href="#gallery">Galería</a></li>
+                  </ul>
+              </div>
+              
+              <!-- Center Column - Logo -->
+              <a href="/es/" class="footer-logo">
+                  <h1>
+                      <span class="som">SOM</span>
+                      <span class="de">DE</span>
+                      <span class="mar">MAR</span>
+                  </h1>
+              </a>
+              
+              <!-- Right Column - Contact Info -->
+              <div class="footer-contact">
+                  <div class="contact-address">
+                      <p>Calle del Mar, 12<br>Villajoyosa, Alicante</p>
+                  </div>
+                  <div class="contact-hours">
+                      <p>Lunes - Domingo<br>13:00 - 16:00<br>19:30 - 23:00</p>
+                  </div>
+                  <div class="contact-info">
+                      <p>+34 123 456 789<br>info@somdemar.com</p>
+                  </div>
+                  <div class="social-links">
+                      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
+                      <i class="fa-brands fa-youtube"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Footer Bottom Bar -->
+          <div class="footer-bottom">
+              <div class="developer-credit">
+                  <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+              </div>
+              <div class="footer-legal">
+                  <a href="#" class="legal-link">Legal</a>
+              </div>
+              <div class="copyright">
+                  &copy; 2025 Som de Mar.
+              </div>
+          </div>
+      </div>
+  </footer>
 
     <!-- Side Tab -->
     <div class="side-tab" id="sideTab">
@@ -499,12 +501,12 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/scroll-effects.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/fab-menu.js"></script>
-    <script src="js/som-carousel.js"></script>
-    <script src="js/noches-modal.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/video-hero.js"></script>
+    <script src="/assets/js/scroll-effects.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/fab-menu.js"></script>
+    <script src="/assets/js/som-carousel.js"></script>
+    <script src="/assets/js/noches-modal.js"></script>
+    <script src="/assets/js/slider.js"></script>
+    <script src="/assets/js/video-hero.js"></script>
 </body>
 </html>
