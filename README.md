@@ -94,3 +94,8 @@ Place all images in the `assets/images` folder. Here's a list of required images
 - JavaScript (ES6+)
 - ScrollReveal.js for animations
 - Google Fonts (Playfair Display, Lato)
+
+
+## To run locally
+- Bash: python -m http.server 8000
+- Visit http://localhost:8000 in your browser

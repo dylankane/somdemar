@@ -29,12 +29,11 @@
                 <span class="fab-icon"></span>
             </button>
             <nav class="fab-dropdown" id="fabDropdown">
-                <a href="index.html">Inicio</a>
-                <a href="reserva.html">Reservar</a>
-                <a href="nuestros-platos.html">Nuestros Platos</a>
-                <a href="orígenes.html">Orígenes</a>
-                <a href="index.html#location">Ubicación y Contacto</a>
-                <a href="cronicas.html">Crónicas</a>
+                <a href="/es/">Inicio</a>
+                <a href="/es/reserva">Reservar</a>
+                <a href="/es/nuestros-platos">Nuestros Platos</a>
+                <a href="/es/orígenes">Orígenes</a>
+                <a href="/es/index.html#location">Ubicación y Contacto</a>
             </nav>
         </div>
 
@@ -42,7 +41,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="/es/">
                         <div class="logo-image"></div>
                     </a>
                 </div>
@@ -114,14 +113,10 @@
                 <div class="reservation-divider"></div>
                 <div class="contact-form-container">
                     <h2>Envíanos un Mensaje</h2>
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" method="POST" action="/contact.php">
                         <div class="form-group">
-                            <label for="firstName">Nombre</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Apellido</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
