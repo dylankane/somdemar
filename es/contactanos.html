@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contactanos - Som de Mar</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    
-        
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
-        <!-- ScrollReveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <!-- Styles -->
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos - Som de Mar</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap"
+        rel="stylesheet">
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <body>
     <header>
         <!-- FAB Menu -->
@@ -54,23 +57,23 @@
         </nav>
     </header>
 
-        <!-- Hero Section -->
-        <section class="hero sub-hero">
-            <div class="hero-background">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="/assets/images/misc/contact-hero-small.png" type="image/png">
-                    <source media="(max-width: 768px)" srcset="/assets/images/misc/contact-hero-small.png">
-                    <source srcset="/assets/images/misc/contact-hero-big.png" type="image/png">
-                    <img src="/assets/images/misc/contact-hero-big.png" alt="Plato especial de Som de Mar" loading="eager">
-                </picture>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>
-                    <span class="som">CONTACTANOS</span>
-                </h1>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero sub-hero">
+        <div class="hero-background">
+            <picture>
+                <source media="(max-width: 768px)" srcset="/assets/images/misc/contact-hero-small.png" type="image/png">
+                <source media="(max-width: 768px)" srcset="/assets/images/misc/contact-hero-small.png">
+                <source srcset="/assets/images/misc/contact-hero-big.png" type="image/png">
+                <img src="/assets/images/misc/contact-hero-big.png" alt="Plato especial de Som de Mar" loading="eager">
+            </picture>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                <span class="som">CONTACTANOS</span>
+            </h1>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="page-content">
@@ -79,38 +82,67 @@
                 <div class="contact-info-section">
                     <div class="section-title">
                         <h2>Información de Contacto</h2>
-                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen arriba. 
-                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y te responderemos lo antes posible.</p>
+                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una
+                            nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen
+                            arriba.
+                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y
+                            te responderemos lo antes posible.</p>
                     </div>
                     <div class="contact-info-grid">
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>+34 612 345 678</h3>
+                        <!-- Top Row -->
+                        <div class="contact-row top">
+                            <div class="contact-info-item phone">
+                                <a href="tel:+34671715988">
+                                    <i class="fas fa-phone" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
+
+                            <div class="contact-info-item whatsapp">
+                                <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                                    target="_blank" rel="noopener" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
+
+                            <div class="contact-info-item email">
+                                <a href="mailto:info@somdemar.com">
+                                    <i class="fas fa-envelope" style="font-size: 2rem;"></i>
+                                    <h3>info@somdemar.com</h3>
+                                </a>
                             </div>
                         </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>info@somdemar.com</h3>
+
+                        <!-- Bottom Row -->
+                        <div class="contact-row bottom">
+                            <div class="contact-info-item address">
+                                <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+                                    target="_blank" rel="noopener">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
+                                    <h3>Som De Mar<br>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
+                                </a>
                             </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Calle Mar Bella, 123<br>08001 Barcelona, Spain</h3>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Martes-Domingo: 12:00 - 23:00</h3>
-                                <h3>Lunes: Cerrado</h3>
+
+                            <div class="contact-info-item hours">
+                                <i class="fas fa-clock" style="font-size: 2rem;"></i>
+                                <h3>Miercoles - Domingo: <br>11:00 - 17:00 <br>20:00 - 23:00</h3>
+                                <h3>Lunes y Martes: Cerrado</h3>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="reservation-divider"></div>
+                <!-- Success Banner -->
+                <div id="success-banner" class="contact-banner success">
+                    Tu mensaje ha sido enviado correctamente.
+                </div>
+
+                <!-- Error Banner -->
+                <div id="error-banner" class="contact-banner error">
+                    Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.
+                </div>
                 <div class="contact-form-container">
                     <h2>Envíanos un Mensaje</h2>
                     <form id="contact-form" class="contact-form" method="POST" action="/contact.php">
@@ -153,7 +185,7 @@
                         <li><a href="#gallery">Galería</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Center Column - Logo -->
                 <div class="footer-logo">
                     <h1>
@@ -162,7 +194,7 @@
                         <span class="mar">MAR</span>
                     </h1>
                 </div>
-                
+
                 <!-- Right Column - Contact Info -->
                 <div class="footer-contact">
                     <div class="contact-address">
@@ -181,11 +213,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Footer Bottom Bar -->
             <div class="footer-bottom">
                 <div class="developer-credit">
-                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI
+                        LABS</a>
                 </div>
                 <div class="footer-legal">
                     <a href="#" class="legal-link">Legal</a>
@@ -203,6 +236,8 @@
     <script src="/assets/js/fab-menu.js"></script>
     <script src="/assets/js/som-carousel.js"></script>
     <script src="/assets/js/noches-modal.js"></script>
+    <script src="/assets/js/banner-message.js"></script>
 </body>
 </body>
+
 </html>
