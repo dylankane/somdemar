@@ -2734,6 +2734,7 @@ a {
 }
 
 .contact-info-grid {
+    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -2777,7 +2778,7 @@ a {
 
 .contact-info-item i {
     /* font-size: 1.3rem; */
-    color: var(--primary-color);
+    color: var(--text-dark);
     min-width: 30px;
     transition: color 0.3s ease;
 }
@@ -2788,12 +2789,12 @@ a {
 }
 
 .contact-info-item:hover i.fa-phone {
-    color: #007bff; /* blue */
+    color: var(--primary-color);
     transform: scale(1.5);
 }
 
 .contact-info-item:hover i.fa-envelope {
-    color: #007bff; /* blue */
+    color: var(--primary-color);
     transform: scale(1.5);
 }
 
@@ -2803,7 +2804,7 @@ a {
 }
 
 .contact-info-item:hover i.fa-map-marker-alt {
-    color: #f4c542; /* yellow */
+    color: var(--primary-color);
     transform: scale(1.5);
 }
 
