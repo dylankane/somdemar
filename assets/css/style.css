@@ -998,13 +998,13 @@ a {
 }
 
 .food-gallery .container {
-    max-width: 1100px
+    max-width: 1000px
 }
 
 .gallery-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -1069,9 +1069,14 @@ a {
     .gallery-grid {
         order: 2;
         grid-template-columns: repeat(2, 1fr);
-        max-width: 50vw;
+        max-width: 60vw;
         margin: 0 auto;
         min-width: 0;
+    }
+
+    .standard-button.food-gallery-reserve-button {
+        width: 75%;
+        max-width: 75%
     }
 }
 
@@ -1151,12 +1156,15 @@ a {
     position: relative;
     background: transparent;
     width: 100%;
-    height: 300px;
+    height: 390px;
     text-align: center;
     overflow: hidden;
 }
   
 .quote-overlay {
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -1177,6 +1185,13 @@ a {
     margin: 0;
 }
 
+.quote-logo {
+    width: clamp(100px, 18vw, 160px);  /* responsive width */
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+    display: block;
+}
+
 /* Responsive quote banner background */
 @media (max-width: 768px) {
     .quote-banner {
@@ -1194,7 +1209,7 @@ a {
     flex-direction: column;
     gap: 3px;
     height: 90vh;
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
     position: relative;
     background-color: var(--text-light);
@@ -1756,6 +1771,7 @@ a {
 }
 
 .origin-image {
+    position: relative;
     flex: 0 0 35%;
     width: 100%;
     height: 500px;
@@ -1799,6 +1815,22 @@ a {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
 }
+
+/* new section start */
+
+.alive-card { position: relative }
+.alive-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+.alive-card.playing .alive-video { opacity: 1 }
+
+ /* new section end */
 
 /* Responsive Styles for Origins Section */
 @media (max-width: 1200px) {
@@ -2032,7 +2064,7 @@ a {
     background-color: #ff0000;
     color: white !important;
     padding: 0.6rem 1.3rem;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -2480,7 +2512,7 @@ a {
     width: 90%;
     margin: 0 auto;
     height: 200px;
-    background: url('/assets/images/platos/patatas-banner.webp') no-repeat center 60%;
+    background: url('/assets/images/platos/menu-banner.webp') no-repeat center 60%;
     background-size: cover;
     position: relative;
     display: flex;

@@ -63,31 +63,31 @@
         loop 
         playsinline 
         preload="metadata"
-        poster="/assets/images/platos/vieiras-500x500.webp"
+        poster="/assets/images/platos/hero-platos-poster.webp"
         id="heroVideo"
       >
           <!-- Mobile-optimized video (smaller file size) -->
           <source 
-            src="/assets/videos/platos/compessed-hero-video-9x16.webm" 
+            src="/assets/videos/platos/hero-platos-small.webm" 
             type="video/webm" 
             media="(max-width: 768px)"
           >
           <source 
-            src="/assets/videos/platos/compessed-hero-video.mp4" 
+            src="/assets/videos/platos/hero-platos-original.mp4" 
             type="video/mp4" 
             media="(max-width: 768px)"
           >
           <!-- Desktop video -->
           <source 
-            src="/assets/videos/platos/compessed-hero-video.webm" 
+            src="/assets/videos/platos/hero-plato-big.webm" 
             type="video/webm"
           >
           <source 
-            src="/assets/videos/platos/compessed-hero-video.mp4" 
+            src="/assets/videos/platos/hero-platos-original.mp4" 
             type="video/mp4"
           >
           <!-- Fallback for browsers that don't support video -->
-          Your browser does not support the video tag.
+          Your browser does not support video.
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content video-hero-content">
@@ -105,9 +105,6 @@
         <button class="video-control-btn" id="playPauseBtn" title="Play/Pause">
           <i class="fas fa-pause"></i>
         </button>
-        <!-- <button class="video-control-btn" id="muteBtn" title="Mute/Unmute">
-          <i class="fas fa-volume-up"></i>
-        </button> -->
       </div>
     </section>
 
@@ -135,9 +132,12 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="/assets/images/platos/vieiras-500x500.webp" type="image/webp">
+                            <source
+                              srcset="/assets/images/platos/dish-1-img.webp"
+                              type="image/webp"
+                            >
                             <img 
-                              src="/assets/images/platos/vieiras.png" 
+                              src="/assets/images/platos/dish-1-img.png" 
                               alt="Gambas a la Plancha - Fresh prawns grilled to perfection" 
                               class="media-image"
                               loading="lazy"
@@ -151,10 +151,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="/assets/images/platos/vieiras-500x500.webp"
+                            poster="/assets/images/platos/dish-1-img.webp"
                           >
-                            <source data-src="/assets/videos/platos/vieira-video.webm" type="video/webm">
-                            <source data-src="/assets/videos/platos/vieira-video.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/dish-1-vid.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/dish-1-vid.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -174,16 +174,19 @@
                   </div>
                 </div>
 
-                <!-- Card 2: Paella Valenciana -->
+                <!-- Card 2: Gambones -->
                 <div class="dish-card" data-dish="paella">
                   <div class="card-media">
                     <div class="media-carousel" id="mediaCarousel2">
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="/assets/images/platos/gambones-dish-500x500.webp" type="image/webp">
+                            <source
+                              srcset="/assets/images/platos/dish-2-img.webp"
+                              type="image/webp"
+                            >
                             <img 
-                              src="/assets/images/platos/gambones-dish.png" 
+                              src="/assets/images/platos/dish-2-img.png" 
                               alt="Gambones - Premium Spanish prawns with authentic preparation" 
                               class="media-image"
                               loading="lazy"
@@ -197,10 +200,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="/assets/images/platos/gambones-dish-500x500.webp"
+                            poster="/assets/images/platos/dish-2-img.webp"
                           >
-                            <source data-src="/assets/videos/platos/gambones2.webm" type="video/webm">
-                            <source data-src="/assets/videos/platos/gambones2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/dish-2-vid.webm">
+                            <source data-src="/assets/videos/platos/dish-2-vid.mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -227,9 +230,12 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="/assets/images/platos/pulpo-smoke-dish-500x500.webp" type="image/webp">
+                            <source
+                              srcset="/assets/images/platos/dish-3-img.webp"
+                              type="image/webp"
+                            >
                             <img 
-                              src="/assets/images/platos/pulpo-smoke-dish.png" 
+                              src="/assets/images/platos/dish-3-img.png" 
                               alt="Pulpo Humo - Tender smoked octopus with Galician tradition" 
                               class="media-image"
                               loading="lazy"
@@ -243,10 +249,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="/assets/images/platos/pulpo-smoke-dish-500x500.webp"
+                            poster="/assets/images/platos/dish-3-img.webp"
                           >
-                            <source data-src="/assets/videos/platos/pulpo-smoke2.webm" type="video/webm">
-                            <source data-src="/assets/videos/platos/pulpo-smoke2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/dish-3-vid.mp4" type="video/webm">
+                            <source data-src="/assets/videos/platos/dish-3-vid.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -273,9 +279,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="/assets/images/platos/lamb-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/dish-4-img.webp" type="image/webp">
                             <img 
-                              src="/assets/images/lamb-dish.png" 
+                              src="/assets/images/platos/dish-4-img.png" 
                               alt="Cordero - Premium lamb prepared with traditional Spanish techniques" 
                               class="media-image"
                               loading="lazy"
@@ -289,10 +295,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="/assets/images/platos/lamb-dish-500x500.webp"
+                            poster="/assets/images/platos/dish-4-img.webp"
                           >
-                            <source data-src="/assets/videos/platos/lamb-video2.webm" type="video/webm">
-                            <source data-src="/assets/videos/platos/lamb-video2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/dish-4-vid.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/dish-4-vid.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -319,9 +325,9 @@
                       <div class="media-slides">
                         <div class="media-slide active">
                           <picture>
-                            <source srcset="/assets/images/platos/ostras-dish-500x500.webp" type="image/webp">
+                            <source srcset="/assets/images/platos/dish-5-img.webp" type="image/webp">
                             <img 
-                              src="/assets/images/ostras-dish.png" 
+                              src="/assets/images/platos/dish-5-img.png" 
                               alt="Ostras - Fresh oysters prepared with Mediterranean flair" 
                               class="media-image"
                               loading="lazy"
@@ -335,10 +341,10 @@
                             muted 
                             loop 
                             preload="none"
-                            poster="/assets/images/platos/ostras-dish-500x500.webp"
+                            poster="/assets/images/platos/dish-5-img.webp"
                           >
-                            <source data-src="/assets/videos/platos/ostras-video2.webm" type="video/webm">
-                            <source data-src="/assets/videos/platos/ostras-video2.mp4" type="video/mp4">
+                            <source data-src="/assets/videos/platos/dish-5-vid.webm" type="video/webm">
+                            <source data-src="/assets/videos/platos/dish-5-vid.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                           </video>
                         </div>

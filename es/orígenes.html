@@ -113,23 +113,37 @@
         <section class="origins-section">
             <div class="container">
                 <!-- Villajoyosa Section -->
+
                 <div class="origin-item">
-                    <div class="origin-image">
+                    <div class="origin-image alive-card">
                         <picture>
                             <source srcset="/assets/images/origins/villajoyosa-vintage.webp" type="image/webp">
                             <img 
                                 src="/assets/images/origins/villajoyosa-vintage.jpg" 
                                 alt="Villajoyosa - Pueblo costero con tradición pesquera"
                                 loading="lazy"
-                                class="origin-img"
+                                class="origin-img alive-poster"
                             >
                         </picture>
+                        <video 
+                            class="alive-video"
+                            muted 
+                            playsinline 
+                            loop 
+                            preload="metadata"
+                            poster="/assets/images/origins/villajoyosa-vintage.jpg"
+                        >
+                            <source src="/assets/videos/origins/villajoyosa-vintage.webm" type="video/webm">
+                            <source src="/assets/videos/origins/villajoyosa-vintage.mp4" type="video/mp4">
+                        </video>
                     </div>
+                
                     <div class="origin-content">
                         <h2>Villajoyosa</h2>
                         <p>Nuestra historia comienza en el corazón de Villajoyosa, un pueblo costero con una rica tradición pesquera. Aquí, entre las olas del Mediterráneo y el aroma a sal, descubrimos nuestra pasión por los sabores del mar. La herencia marinera de este lugar único se refleja en cada uno de nuestros platos, creados con el mismo respeto y cariño que los pescadores locales tienen por su oficio.</p>
                     </div>
                 </div>
+                
 
                 <!-- Inspiration Section -->
                 <div class="origin-item">
@@ -137,31 +151,55 @@
                         <h2>Inspiración</h2>
                         <p>Inspirados por la riqueza de la costa alicantina, nuestra cocina es un homenaje a los sabores auténticos del Mediterráneo. Cada plato cuenta una historia de tradición e innovación, donde los ingredientes locales son los verdaderos protagonistas. Nuestros chefs se nutren de la cultura gastronómica local para crear experiencias culinarias que despiertan los sentidos.</p>
                     </div>
-                    <div class="origin-image">
+                    <div class="origin-image alive-card">
                         <picture>
-                            <source srcset="/assets/images/origins/father-son-paint-740x1000.webp" type="image/webp">
+                            <source srcset="/assets/images/origins/inspiration-img.webp"
+                                type="image/webp"
+                            >
                             <img 
-                                src="/assets/images/origins/father-son-paint.png" 
-                                alt="Inspiración - Padre e hijo pintando"
+                                src="/assets/images/origins/inspiration-img.png" 
+                                alt="inspirational - father and son painting"
                                 loading="lazy"
-                                class="origin-img"
+                                class="origin-img alive-poster"
                             >
                         </picture>
+                        <video 
+                            class="alive-video"
+                            muted 
+                            playsinline 
+                            loop 
+                            preload="metadata"
+                            poster="/assets/images/origins/inspiration-img.webp"
+                        >
+                            <source src="/assets/videos/origins/inspiration-vid.webm" type="video/webm">
+                            <source src="/assets/videos/origins/inspiration-vid.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
                 <!-- Experience Section -->
                 <div class="origin-item">
-                    <div class="origin-image">
+                    <div class="origin-image alive-card">
                         <picture>
-                            <source srcset="/assets/images/origins/experience-origin-740x1000.webp" type="image/webp">
+                            <source srcset="/assets/images/origins/experience-img.webp" type="image/webp">
                             <img 
-                                src="/assets/images/origins/experience-origin.jpeg" 
-                                alt="Experiencia - Más de una década sirviendo comensales"
+                                src="/assets/images/origins/experience-img.png" 
+                                alt="Experiencia - cooking techniques"
                                 loading="lazy"
-                                class="origin-img"
+                                class="origin-img alive-poster"
                             >
                         </picture>
+                        <video 
+                            class="alive-video"
+                            muted 
+                            playsinline 
+                            loop 
+                            preload="metadata"
+                            poster="/assets/images/origins/experience-img.webp"
+                        >
+                            <source src="/assets/videos/origins/experience-vid.webm" type="video/webm">
+                            <source src="/assets/videos/origins/experience-vid.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="origin-content">
                         <h2>Experiencia</h2>
@@ -175,16 +213,27 @@
                         <h2>Som de Mar</h2>
                         <p>Hoy, Som de Mar es más que un restaurante; es un sueño hecho realidad. Un lugar donde la pasión por la gastronomía se encuentra con el amor por el mar Mediterráneo. Nuestro compromiso es ofrecer una experiencia auténtica, donde cada bocado cuente una historia de tradición, calidad y dedicación. Te invitamos a ser parte de esta historia y a disfrutar de los auténticos sabores del mar con nosotros.</p>
                     </div>
-                    <div class="origin-image">
+                    <div class="origin-image alive-card">
                         <picture>
-                            <source srcset="/assets/images/origins/roberto-kitchen-portrait-740x1000.webp" type="image/webp">
+                            <source srcset="/assets/images/origins/som-de-mar-img.webp" type="image/webp">
                             <img 
-                                src="/assets/images/origins/roberto-kitchen-portrait.png" 
+                                src="/assets/images/origins/som-de-mar-img.png" 
                                 alt="Som de Mar - Roberto en la cocina del restaurante"
                                 loading="lazy"
-                                class="origin-img"
+                                class="origin-img alive-poster"
                             >
                         </picture>
+                        <video 
+                            class="alive-video"
+                            muted 
+                            playsinline 
+                            loop 
+                            preload="metadata"
+                            poster="/assets/images/origins/som-de-mar-img.webp"
+                        >
+                            <source src="/assets/videos/origins/som-de-mar-vid.webm" type="video/webm">
+                            <source src="/assets/videos/origins/som-de-mar-vid.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -406,6 +455,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="/assets/js/origins-scroll-play.js"></script>
     <script src="/assets/js/scroll-effects.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/fab-menu.js"></script>
