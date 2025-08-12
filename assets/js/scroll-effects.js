@@ -16,39 +16,72 @@ sr.reveal('.hero-content .cta-button', { delay: 600 });
 sr.reveal('.about-text', { origin: 'left', delay: 200 });
 sr.reveal('.about-image', { origin: 'right', delay: 200 });
 
+//quote banner section
+sr.reveal('.quote-text', { 
+    origin: 'top', 
+    delay: 200 
+});
+sr.reveal('.quote-logo', { 
+    origin: 'bottom', 
+    delay: 200 
+});
+
 //food gallery section
-sr.reveal('.gallery-grid', { origin: 'left', delay: 300, distance: '200px' });
-sr.reveal('.gallery-text', { origin: 'right', delay: 300, distance: '200px' });
+sr.reveal('.gallery-grid', { 
+    origin: 'left', 
+    delay: 300, 
+    distance: '200px' 
+});
+sr.reveal('.gallery-text', { 
+    origin: 'right', 
+    delay: 300, 
+    distance: '200px' 
+});
 
 //ingredients gallery section
-sr.reveal('.ingredients-grid', { origin: 'right', delay: 300, distance: '200px' });
-sr.reveal('.ingredients-text', { origin: 'left', delay: 300, distance: '200px' });
+sr.reveal('.ingredients-grid', { 
+    origin: 'right', 
+    delay: 300, 
+    distance: '200px' 
+});
+sr.reveal('.ingredients-text', { 
+    origin: 'left', 
+    delay: 300, 
+    distance: '200px' 
+});
 
-// articles section
-sr.reveal('.dish-container .special-dish:nth-child(1) .dish-content', { 
-    origin: 'left', 
-    delay: 200
-});
-sr.reveal('.dish-container .special-dish:nth-child(1) .dish-images', { 
+//video gallery section
+sr.reveal('.top-row', { 
     origin: 'right', 
-    delay: 200
+    delay: 300, 
+    distance: '200px' 
 });
-sr.reveal('.dish-container .special-dish:nth-child(2) .dish-content', { 
-    origin: 'right', 
-    delay: 200
-});
-sr.reveal('.dish-container .special-dish:nth-child(2) .dish-images', { 
+sr.reveal('.video-row', { 
     origin: 'left', 
-    delay: 200
+    delay: 300, 
+    distance: '200px' 
 });
-sr.reveal('.dish-container .special-dish:nth-child(3) .dish-content', { 
-    origin: 'left', 
-    delay: 200
-});
-sr.reveal('.dish-container .special-dish:nth-child(3) .dish-images', { 
+
+sr.reveal('.bottom-row', { 
     origin: 'right', 
-    delay: 200
+    delay: 300, 
+    distance: '200px' 
 });
+
+// Location section animations
+sr.reveal('.location .location-pin', { origin: 'top', distance: '100px', delay: 300,});
+
+sr.reveal('.location .section-title', { origin: 'top', distance: '75px', delay: 600,});
+
+// First row - Images and text
+sr.reveal('.location-row-images .location-images', { origin: 'right', distance: '60px' });
+sr.reveal('.location-row-images .location-text', { origin: 'left', distance: '60px' });
+
+// Second row - Map and text
+sr.reveal('.location-map', { origin: 'left', distance: '60px' })
+sr.reveal('.location-row-map .location-text', { origin: 'right', distance: '60px' });
+
+
 
 // Dish Cards Carousel Section
 sr.reveal('.dish-cards-section .section-title', { 
@@ -63,13 +96,19 @@ sr.reveal('.cards-container', {
     duration: 1500
 });
 
-// Location section animations
-sr.reveal('.location .section-title', { origin: 'top', distance: '30px' });
+// Menu List Section
+sr.reveal('.menu-header', { origin: 'bottom', distance: '300px', delay: 300,});
 
-// First row - Images and text
-sr.reveal('.location-row-images .location-images', { origin: 'right', distance: '60px' });
-sr.reveal('.location-row-images .location-text', { origin: 'left', distance: '60px' });
+sr.reveal('.menu-content', { origin: 'left', distance: '300px', delay: 300,});
 
-// Second row - Map and text
-sr.reveal('.location-map', { origin: 'left', distance: '60px' })
-sr.reveal('.location-row-map .location-text', { origin: 'right', distance: '60px' });
+//Origin Section
+sr.reveal('.origin-item .left', { origin: 'left', distance: '300px', delay: 300,});
+sr.reveal('.origin-item .right', { origin: 'right', distance: '300px', delay: 300,});
+
+//Gallery Section
+sr.reveal('.col-1', { origin: 'left', distance: '300px', delay: 300,});
+sr.reveal('.col-2', { origin: 'bottom', distance: '300px', delay: 300,});
+sr.reveal('.col-3', { origin: 'right', distance: '300px', delay: 300,});
+
+//footer
+sr.reveal('.footer-logo', { origin: 'bottom', distance: '200px', delay: 300,});

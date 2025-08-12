@@ -1,24 +1,33 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const sideTab = document.getElementById('sideTab');
     const modalOverlay = document.getElementById('modalOverlay');
     const modalClose = document.querySelector('.modal-close');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalTransitionTime = 1500; // match CSS transition (1.5s)
 
     sideTab.addEventListener('click', function() {
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        modalVideo.currentTime = 0; // reset
+        // Delay play until after modal is fully visible
+        setTimeout(() => {
+            modalVideo.play();
+        }, modalTransitionTime);
     });
 
-    modalClose.addEventListener('click', function() {
+    function closeModal() {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
-    });
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+    }
 
-    // Close modal when clicking outside content
+    modalClose.addEventListener('click', closeModal);
+
     modalOverlay.addEventListener('click', function(e) {
         if (e.target === modalOverlay) {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal();
         }
     });
 });

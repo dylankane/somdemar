@@ -1,5 +1,5 @@
 
-@import url('./_variables.css');
+/* @import url('./_variables.css'); */
 
 *, *::before, *::after {
     margin: 0;
@@ -130,8 +130,8 @@ a {
 
 .standard-button {
     display: inline-block;
-    width: 50%;
-    max-width: 50%;
+    width: 55%;
+    max-width: 55%;
     color: var(--text-dark);
     border: 2px solid var(--primary-color);
     background-color: transparent;
@@ -291,7 +291,7 @@ a {
     background: var(--light-contrast);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1rem 0;
-    min-width: 280px;
+    min-width: 480px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -357,7 +357,7 @@ a {
   }
   
   .fab-dropdown {
-    min-width: 250px;
+    min-width: 320px;
   }
   
   .logo-image {
@@ -415,16 +415,24 @@ a {
     align-items: center;
     transform: translateX(-100%);
     overflow: hidden;
-    background: var(--modal-bg), linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    /* background: var(--modal-bg), linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
+    background-color: rgba(50, 50, 50, 0.8);
 }
   
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+}
+
+.modal-overlay video {
+    width: 100%;
+    height: 95%;
+    object-fit: contain; /* change to 'cover' if you want it cropped to fill */
+    display: block;
 }
 
 .modal-close {
@@ -452,12 +460,12 @@ a {
 }
 
 /* Mobile-specific styles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .modal-overlay {
         background-image: var(--modal-sm);
         background-size: cover;
     }
-}
+} */
 
 /* === Hero Section === */
 .hero {
@@ -1195,7 +1203,7 @@ a {
 /* Responsive quote banner background */
 @media (max-width: 768px) {
     .quote-banner {
-        background-image: url('/assets/images/index/close-arroz-banner.webp');
+        background-image: url('/assets/images/index/quote-banner-mobile.webp');
         background-position: center center;
         background-size: cover;
     }
@@ -1857,7 +1865,7 @@ a {
     }
     
     .origin-image {
-        height: 400px;
+        height: 500px;
         margin-bottom: 2rem;
         flex: 0 0 auto;
         width: 75%;
@@ -1878,11 +1886,11 @@ a {
     }
 
     .origin-image {
-        height: 400px;
+        height: 500px;
         margin-bottom: 2rem;
         flex: 0 0 auto;
-        width: 100%;
-        order: 1; /* Always show image first */
+        width: 90%;
+        order: 1;
     }
 
 }
