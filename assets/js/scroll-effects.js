@@ -32,6 +32,7 @@ sr.reveal('.gallery-grid', {
     delay: 300, 
     distance: '200px' 
 });
+
 sr.reveal('.gallery-text', { 
     origin: 'right', 
     delay: 300, 
@@ -44,6 +45,7 @@ sr.reveal('.ingredients-grid', {
     delay: 300, 
     distance: '200px' 
 });
+
 sr.reveal('.ingredients-text', { 
     origin: 'left', 
     delay: 300, 
@@ -56,6 +58,7 @@ sr.reveal('.top-row', {
     delay: 300, 
     distance: '200px' 
 });
+
 sr.reveal('.video-row', { 
     origin: 'left', 
     delay: 300, 
@@ -89,6 +92,7 @@ sr.reveal('.dish-cards-section .section-title', {
     delay: 300, 
     distance: '60px' 
 });
+
 sr.reveal('.cards-container', { 
     origin: 'right', 
     delay: 400, 
