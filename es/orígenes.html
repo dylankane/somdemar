@@ -1,145 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orígenes - Som de Mar</title>
+    <title>Orígenes</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
-    <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
 <body>
-    <!-- FAB Menu -->
-    <div class="fab-container">
-        <button class="fab-button" id="fabButton">
-            <span class="fab-icon"></span>
-            <span class="fab-icon"></span>
-            <span class="fab-icon"></span>
-        </button>
-        <nav class="fab-dropdown" id="fabDropdown">
-            <a href="/es/">Inicio</a>
-            <a href="/es/reserva">Reservar</a>
-            <a href="/es/nuestros-platos">Nuestros Platos</a>
-            <a href="/es/index.html#location">Ubicación y Contacto</a>
+    <header>
+        <!-- FAB Menu -->
+        <div class="fab-container">
+            <button class="fab-button" id="fabButton">
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+            </button>
+            <nav class="fab-dropdown" id="fabDropdown">
+                <a href="/es/">Inicio</a>
+                <a href="/es/reserva">Reservar</a>
+                <a href="/es/nuestros-platos">Nuestros Platos</a>
+                <a href="/es/index.html#location">Ubicación y Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/es/">
+                        <div class="logo-image"></div>
+                    </a>
+                </div>
+                <div class="language-selector">
+                    <a href="/es/orígenes" class="language-link active">ES</a>
+                    <span class="language-divider">|</span>
+                    <a href="/en/orígenes" class="language-link">EN</a>
+                    <span class="language-divider">|</span>
+                    <a href="/fr/orígenes" class="language-link">FR</a>
+                </div>
+            </div>
         </nav>
-    </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero secondary-hero">
+            <div class="hero-carousel">
+                <div class="carousel-item" style="opacity: 0;">
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-1-small.webp"
+                            type="image/webp"
+                        >
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-1-small.png"
+                        >
+                        <source
+                            srcset="/assets/images/origins/hero-origins-1-big.webp"
+                            type="image/webp"
+                        >
+                        <img 
+                            src="/assets/images/origins/hero-origins-1-big.png"
+                            alt="Roberto en la cocina - Som de Mar"
+                            loading="eager"
+                            class="hero-image"
+                        >
+                    </picture>
+                </div>
+                <div class="carousel-item" style="opacity: 0;">
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-2-small.webp"
+                            type="image/webp"
+                        >
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-2-small.png"
+                        >
+                        <source
+                            srcset="/assets/images/origins/hero-origins-2-big.webp"
+                            type="image/webp"
+                        >
+                        <img 
+                            src="/assets/images/origins/hero-origins-2-big.png" 
+                            alt="Letrero Som de Mar"
+                            loading="lazy"
+                            class="hero-image"
+                        >
+                    </picture>
+                </div>
+                <div class="carousel-item" style="opacity: 0;">
+                    <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-3-small.webp"
+                            type="image/webp"
+                        >
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="/assets/images/origins/hero-origins-3-small.png"
+                        >
+                        <source
+                            srcset="/assets/images/origins/hero-origins-3-big.webp"
+                            type="image/webp"
+                        >
+                        <img 
+                            src="/assets/images/origins/hero-origins-3-big.jpg" 
+                            alt="Preparación de pulpo - Som de Mar"
+                            loading="lazy"
+                            class="hero-image"
+                        >
+                    </picture>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>
+                    <span class="nuestros">Nuestros</span>
+                    <span class="platos">Orígenes</span>
+                </h1>
+                <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar.</p>
+                <a href="reserva.html" class="cta-button">Reservar Ahora</a>
+            </div>
+        </section>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="/es/">
-                    <div class="logo-image"></div>
-                </a>
-            </div>
-            <div class="language-selector">
-                <a href="/es/orígenes" class="language-link active">ES</a>
-                <span class="language-divider">|</span>
-                <a href="/en/orígenes" class="language-link">EN</a>
-                <span class="language-divider">|</span>
-                <a href="/fr/orígenes" class="language-link">FR</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero secondary-hero">
-        <div class="hero-carousel">
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-1-small.webp"
-                        type="image/webp"
-                    >
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-1-small.png"
-                    >
-                    <source
-                        srcset="/assets/images/origins/hero-origins-1-big.webp"
-                        type="image/webp"
-                    >
-                    <img 
-                        src="/assets/images/origins/hero-origins-1-big.png"
-                        alt="Roberto en la cocina - Som de Mar"
-                        loading="eager"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-2-small.webp"
-                        type="image/webp"
-                    >
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-2-small.png"
-                    >
-                    <source
-                        srcset="/assets/images/origins/hero-origins-2-big.webp"
-                        type="image/webp"
-                    >
-                    <img 
-                        src="/assets/images/origins/hero-origins-2-big.png" 
-                        alt="Letrero Som de Mar"
-                        loading="lazy"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-            <div class="carousel-item" style="opacity: 0;">
-                <picture>
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-3-small.webp"
-                        type="image/webp"
-                    >
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="/assets/images/origins/hero-origins-3-small.png"
-                    >
-                    <source
-                        srcset="/assets/images/origins/hero-origins-3-big.webp"
-                        type="image/webp"
-                    >
-                    <img 
-                        src="/assets/images/origins/hero-origins-3-big.jpg" 
-                        alt="Preparación de pulpo - Som de Mar"
-                        loading="lazy"
-                        class="hero-image"
-                    >
-                </picture>
-            </div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>
-                <span class="nuestros">Nuestros</span>
-                <span class="platos">Orígenes</span>
-            </h1>
-            <p>En Som de Mar, nos dedicamos a crear experiencias culinarias únicas utilizando los mejores productos del mar.</p>
-            <a href="reserva.html" class="cta-button">Reservar Ahora</a>
-        </div>
-    </section>
-
-    <!-- Origins Content -->
-    <main class="page-content">
+        <!-- Origins Content -->
         <section class="origins-section">
             <div class="container">
                 <!-- Villajoyosa Section -->
@@ -441,51 +436,93 @@
                 <!-- Left Column - Navigation Links -->
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#reserve">Reservar</a></li>
-                        <li><a href="#contact">Contáctanos</a></li>
-                        <li><a href="#location">Ubicación</a></li>
-                        <li><a href="#dishes">Nuestros Platos</a></li>
-                        <li><a href="origenes.html">Orígenes</a></li>
-                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="/es/">Inicio</a></li>
+                        <li><a href="/es/reserva">Reservar</a></li>
+                        <li><a href="/es/contactanos">Contáctanos</a></li>
+                        <li><a href="/es/#location">Ubicación</a></li>
+                        <li><a href="/es/nuestros-platos">Nuestros Platos</a></li>
+                        <li><a href="/es/origenes">Orígenes</a></li>
+                        <li><a href="/es/orígenes/#gallery">Galería</a></li>
+                        <li><a href="/es/legal">Legal</a></li>
                     </ul>
                 </div>
-                
+
+
                 <!-- Center Column - Logo -->
-                <a href="/es/" class="footer-logo">
-                    <h1>
-                        <span class="som">SOM</span>
-                        <span class="de">DE</span>
-                        <span class="mar">MAR</span>
-                    </h1>
-                </a>
-                
+                <div class="footer-logo-container">
+                    <a href="/es/" class="footer-logo">
+                        <h1>
+                            <span class="som">SOM</span>
+                            <span class="de">DE</span>
+                            <span class="mar">MAR</span>
+                        </h1>
+                    </a>
+                </div>
+
                 <!-- Right Column - Contact Info -->
                 <div class="footer-contact">
                     <div class="contact-address">
-                        <p>Calle del Mar, 12<br>Villajoyosa, Alicante</p>
+                        <p>
+                            <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+                               target="_blank"
+                               rel="noopener">
+                                Carrer Arsenal, 38<br>
+                                03570 La Vila Joiosa<br>
+                                Alicante, Spain
+                            </a>
+                        </p>
                     </div>
                     <div class="contact-hours">
-                        <p>Lunes - Domingo<br>13:00 - 16:00<br>19:30 - 23:00</p>
+                        <p>
+                            Martes: cerrado<br>
+                            Miercoles - Lunes:<br>
+                            13:00 - 16:00 / 20:00 - 23:00<br>
+                            Augusto:<br>
+                            13:00 - 23:00
+                        </p>
                     </div>
                     <div class="contact-info">
-                        <p>+34 123 456 789<br>info@somdemar.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-footer">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
+                        <p>
+                            <a href="tel:+34671715988">
+                                +34 671 715 988
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@somdemar.com">
+                                info@somdemar.com
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Footer Bottom Bar -->
+            <div class="footer-bottom-1">
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@SomdeMar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-footer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="WhatsApp"
+                        class="social-footer whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <div class="developer-credit">
-                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI LABS</a>
+                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI
+                        LABS</a>
                 </div>
                 <div class="footer-legal">
-                    <a href="#" class="legal-link">Legal</a>
+                    <a href="#" id="cookie-settings-btn" class="legal-link">Cookies</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 Som de Mar.
@@ -493,6 +530,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- Side Tab -->
     <div class="side-tab" id="sideTab">
@@ -527,7 +565,19 @@
         <div class="modal-close">&times;</div>
     </div>
 
+    <!-- Cookie Consent Modal -->
+    <div id="cookie-modal" class="cookie-modal">
+        <div class="cookie-content">
+            <p id="cookie-text"></p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept"></button>
+                <button id="cookie-reject"></button>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
+    <script src="/assets/js/cookie-ga-modal.js"></script>
     <script src="/assets/js/origins-scroll-play.js"></script>
     <script src="/assets/js/scroll-effects.js"></script>
     <script src="/assets/js/main.js"></script>
