@@ -17,17 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const translations = {
       es: {
-        text: `Usamos cookies para mejorar su experiencia. <a href="/es/legal.html">Más información</a>`,
+        text: `Usamos cookies para mejorar su experiencia, personalizar el contenido y comprender cómo se utiliza nuestro sitio. ¿Acepta el uso de cookies?</a>`,
         accept: "Aceptar",
         reject: "Rechazar"
       },
       en: {
-        text: `We use cookies to improve your experience. <a href="/en/legal.html">Learn more</a>`,
+        text: `We use cookies to make our site work better for you, personalise content, and understand how it’s used. Do you accept our use of cookies?</a>`,
         accept: "Accept",
         reject: "Reject"
       },
       fr: {
-        text: `Nous utilisons des cookies pour améliorer votre expérience. <a href="/fr/legal.html">En savoir plus</a>`,
+        text: `Nous utilisons des cookies pour améliorer votre expérience, personnaliser le contenu et comprendre comment notre site est utilisé. Acceptez-vous notre utilisation des cookies ?</a>`,
         accept: "Accepter",
         reject: "Refuser"
       }
