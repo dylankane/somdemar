@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Som de Mar</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <!-- FAB Menu -->
+        <div class="fab-container">
+            <button class="fab-button" id="fabButton">
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+                <span class="fab-icon"></span>
+            </button>
+            <nav class="fab-dropdown" id="fabDropdown">
+                <a href="/es/reserva">Reservar</a>
+                <a href="/es/nuestros-platos">Nuestros Platos</a>
+                <a href="/es/orígenes">Orígenes</a>
+                <a href="/es/#location">Ubicación y Contacto</a>
+            </nav>
+        </div>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/es/">
+                        <div class="logo-image"></div>
+                    </a>
+                </div>
+                <div class="language-selector">
+                    <a href="/es/" class="language-link active">ES</a>
+                    <span class="language-divider">|</span>
+                    <a href="/en/" class="language-link">EN</a>
+                    <span class="language-divider">|</span>
+                    <a href="/fr/" class="language-link">FR</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-carousel">
+                <div class="carousel-item" style="opacity: 0;">
+                    <picture>
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-1-small.webp"
+                        type="image/webp"
+                    >
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-1-small.jpg"
+                    >
+                    <source
+                        srcset="/assets/images/index/home-hero-1-big.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="/assets/images/index/home-hero-1-big.jpg"
+                        alt="Gambas a la plancha con pulpo - Som de Mar"
+                        loading="eager"
+                        class="hero-image"
+                    >
+                    </picture>
+                </div>
+                <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-2-small.webp"
+                        type="image/webp"
+                    >
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-2-small.jpg"
+                    >
+                    <source
+                        srcset="/assets/images/index/home-hero-2-big.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="/assets/images/index/home-hero-2-big.jpg"
+                        alt="Plato especial de Som de Mar"
+                        loading="eager"
+                        class="hero-image"
+                        >
+                </picture>
+                </div>
+                <div class="carousel-item" style="opacity: 0;">
+                <picture>
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-3-small.webp"
+                        type="image/webp"
+                    >
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="/assets/images/index/home-hero-3-small.jpg"
+                    >
+                    <source
+                        srcset="/assets/images/index/home-hero-3-big.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="/assets/images/index/home-hero-3-big.png"
+                        alt="Vieiras frescas - Som de Mar"
+                        loading="lazy"
+                        class="hero-image"
+                    >
+                </picture>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+            <h1>
+                <span class="som">SOM</span>
+                <span class="de">DE</span>
+                <span class="mar">MAR</span>
+            </h1>
+            <p class="hero-firma">de Roberto Cereto</p>
+            <a href="/es/reserva" class="cta-button">Reservar Ahora</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">La Esencia de Som de Mar</h2>
+                        <p>
+                            Ubicado en la impresionante playa de La Villajoyosa, nos especializamos en mariscos frescos y arroces, con una carta variada pensada para todos los gustos.
+                            En Som de Mar, combinamos ingredientes de calidad, técnica refinada,
+                            creatividad y un servicio atento para ofrecer una experiencia gastronómica que va más allá de la mesa.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <picture>
+                            <source
+                                srcset="/assets/images/index/about-intro.webp"
+                                type="image/webp">
+                            <img
+                                src="/assets/images/index/about-intro.jpg"
+                                alt="Equipo de Som de Mar en la cocina"
+                                loading="lazy"
+                                class="about-img">
+                        </picture>
+                    </div>
+                </div>
+                <div class="about-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Quote Banner -->
+        <section class="quote-banner">
+            <div class="quote-overlay">
+                <p class="quote-text">
+                    Todas las artes son maravillosas, y la cocina es una de ellas.<br>
+                    Así que disfruten de la comida.
+                </p>
+                <img 
+                    src="/assets/images/logos/som_de_mar_logo_light.png"
+                    alt="Som de Mar"
+                    class="quote-logo"
+                />
+            </div>
+        </section>
+
+        <!-- Kitchen Gallery Section -->
+        <section id="food-gallery-1" class="food-gallery">
+            <div class="container">
+                <div class="gallery-content">
+                    <div class="gallery-grid">
+                        <div class="carousel" data-delay="6000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-1.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/cocina-1.png"
+                                    class="carousel-img active"
+                                    loading="lazy" alt="Pulpo a la plancha"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-2.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-2.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Pulpo con cuchillo"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="7000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-3.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-3.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Postre Som de Mar"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-4.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-4.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Postre detalle"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="8000">
+                            <picture>
+                                <source 
+                                    srcset="/assets/images/index/cocina-5.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-5.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Plato de gambas"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-6.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-6.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Plato artístico"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="6500">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-7.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-7.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Arroz negro"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/cocina-8.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/cocina-8.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Atún cortado"
+                                >
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="gallery-text">
+                        <h2 class="section-title">Nuestra Cocina</h2>
+                        <p>
+                            Descubra la pasión y el oficio que hay detrás de cada plato en Som de Mar.
+                            Nuestra cocina combina tradición e innovación, uniendo técnica experta con un toque creativo para realzar lo mejor de cada sabor.
+                            Desde la primera preparación hasta el toque final, cada plato está pensado para cautivar los sentidos.
+                        </p>
+                        <a href="nuestros-platos.html" class="standard-button">Platos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer with button -->
+        <div class="spacer-small">
+            <a href="/es/reserva" class="standard-button food-gallery-reserve-button">Reserva</a>
+        </div>
+
+        <!-- Ingredients Gallery Section -->
+        <section id="food-gallery-2" class="food-gallery">
+            <div class="container">
+                <div class="gallery-content">
+                    <div class="gallery-text ingredients-text">
+                        <h2 class="section-title">Nuestros Ingredientes</h2>
+                        <p>
+                            En Som de Mar, cada plato comienza con los mejores ingredientes. Damos prioridad a los productos y pescados de origen local,
+                            eligiendo solo lo más fresco y lleno de sabor.
+                            Cuando no es posible encontrarlos cerca, buscamos lo mejor entre proveedores de confianza, asegurando calidad y autenticidad en cada bocado.
+                        </p>
+                        <a href="origenes.html" class="standard-button">Orígenes</a>
+                    </div>
+                    <div class="gallery-grid ingredients-grid">
+                        <div class="carousel" data-delay="6000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-1.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/ingredients-1.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Atún fresco crudo"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-2.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/ingredients-2.png" class="carousel-img" loading="lazy"
+                                    alt="Atún crudo preparación">
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="7000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-3.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/ingredients-3.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Limones frescos"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-4.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/ingredients-4.png" class="carousel-img" loading="lazy"
+                                    alt="Hierbas aromáticas">
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="8000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-5.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/ingredients-5.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Mercado de ingredientes"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-6.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/ingredients-6.png" class="carousel-img" loading="lazy"
+                                    alt="Mercado productos frescos">
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="6500">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-7.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/ingredients-7.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Pescador tradicional"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/ingredients-8.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/ingredients-8.png" class="carousel-img" loading="lazy"
+                                    alt="Campo de arroz">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer with button -->
+        <div class="spacer-small">
+            <a href="/es/reserva" class="standard-button food-gallery-reserve-button">Reserva</a>
+        </div>
+
+        <!-- Experience gallery -->
+        <section id="food-gallery-1" class="food-gallery">
+            <div class="container">
+                <div class="gallery-content">
+                    <div class="gallery-grid">
+                        <div class="carousel" data-delay="6000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-1.webp"
+                                    type="image/webp"
+                                >
+                                <img src="/assets/images/index/experience-1.png"
+                                    class="carousel-img active"
+                                    loading="lazy" alt="Pulpo a la plancha"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-2.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-2.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Pulpo con cuchillo"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="7000">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-3.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-3.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Postre Som de Mar"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-4.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-4.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Postre detalle"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="8000">
+                            <picture>
+                                <source 
+                                    srcset="/assets/images/index/experience-5.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-5.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Plato de gambas"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-6.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-6.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Plato artístico"
+                                >
+                            </picture>
+                        </div>
+                        <div class="carousel" data-delay="6500">
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-7.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-7.png"
+                                    class="carousel-img active"
+                                    loading="lazy"
+                                    alt="Arroz negro"
+                                >
+                            </picture>
+                            <picture>
+                                <source
+                                    srcset="/assets/images/index/experience-8.webp"
+                                    type="image/webp"
+                                >
+                                <img
+                                    src="/assets/images/index/experience-8.png"
+                                    class="carousel-img"
+                                    loading="lazy"
+                                    alt="Atún cortado"
+                                >
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="gallery-text">
+                        <h2 class="section-title">La Experiencia Som de Mar</h2>
+                        <p>
+                            En Som de Mar, cada visita es más que una comida: es un momento junto al mar.
+                            Nuestra ubicación privilegiada en primera línea de playa en La Villajoyosa se combina con una cocina excepcional, un bar completo,
+                            una carta de vinos selecta y cócteles que celebran el Mediterráneo, todo acompañado de cercanía, atención y cuidado en cada detalle.
+                        </p>
+                        <a href="#galeria/orígenes.html" class="standard-button">Galeria</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Youtube Channel -->
+        <div class="youtube-channel">
+            <a href="https://www.youtube.com/@SomdeMar" target="_blank" class="youtube-link">
+                <i class="fab fa-youtube"></i>Síguenos en YouTube
+            </a>
+        </div>
+
+        <!-- Spacer -->
+        <div class="spacer-small"></div>
+
+        <!-- Video Gallery -->
+        <section>
+            <div class="video-gallery">
+
+                <!-- Row of 3 images -->
+                <div class="video-gallery-row three top-row">
+                    <div class="img-1">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-top-1.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-top-1.png" alt="Arty Dish">
+                        </picture>
+                    </div>
+                    <div class="img-2">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-top-2.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-top-2.png" alt="Lemons">
+                        </picture>
+                    </div>
+                    <div class="img-3">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-top-3.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-top-3.png" alt="Gambas Plate">
+                        </picture>
+                    </div>
+                </div>
+
+                <!-- Video row -->
+                <div class="video-gallery-row video-row">
+                    <video class="video-gallery-video" autoplay muted loop playsinline>
+                        <source src="/assets/videos/index/vg-vid-big.webm" type="video/webm">
+                        <source src="/assets/videos/index/vg-vid-big.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="video-content">
+                            <h2>
+                                <span class="som">SOM</span>
+                                <span class="de">DE</span>
+                                <span class="mar">MAR</span>
+                            </h2>
+                            <p>Arrocería</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row of 3 images -->
+                <div class="video-gallery-row three bottom-row">
+                    <div class="img-1">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-bot-1.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-bot-1.png" alt="Arty Dish">
+                        </picture>
+                    </div>
+                    <div class="img-2">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-bot-2.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-bot-2.png" alt="Lemons">
+                        </picture>
+                    </div>
+                    <div class="img-3">
+                        <picture>
+                            <source srcset="/assets/images/index/vg-bot-3.webp" type="image/webp">
+                            <img src="/assets/images/index/vg-bot-3.png" alt="Gambas Plate">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer -->
+        <div class="spacer-small"></div>
+
+        <!-- Location -->
+        <section id="location" class="location">
+            <div class="container location-container">
+                <!-- Location Pin Icon -->
+                <div class="location-pin" aria-hidden="true">
+                    <i class="fa-solid fa-location-dot" style="font-size: 4rem; color: var(--primary-color);"></i>
+                </div>
+
+                <!-- First Row: Three Images with La Zona Text -->
+                <div class="location-row location-row-images">
+                    <div class="location-images">
+                        <div class="location-images-top">
+                            <div class="location-image">
+                                <picture>
+                                    <source 
+                                        srcset="/assets/images/index/location-1.webp"
+                                        type="image/webp"
+                                    >
+                                    <img
+                                        src="/assets/images/index/location-1.jpeg"
+                                        alt="Vista aérea de Villajoyosa"
+                                        loading="lazy"
+                                    >
+                                </picture>
+                            </div>
+                            <div class="location-image">
+                                <picture>
+                                    <source 
+                                        srcset="/assets/images/index/location-2.webp"
+                                        type="image/webp"
+                                    >
+                                    <img
+                                        src="/assets/images/index/location-2.jpg"
+                                        alt="Fachada del restaurante Som de Mar"
+                                        loading="lazy"
+                                    >
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="location-images-bottom">
+                            <div class="location-image">
+                                <video class="video-drone" autoplay muted loop playsinline preload="metadata">
+                                    <source 
+                                        src="/assets/videos/index/location-vid.webm"
+                                        type="video/webm"
+                                    >
+                                    <source 
+                                        src="/assets/videos/index/location-vid.mp4"
+                                        type="video/mp4"
+                                    >
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-text">
+                        <h2 class="section-title">La Villa Joiosa</h2>
+                        <p>
+                            Ubicados en uno de los pueblos costeros más pintorescos de la Costa Blanca, nuestro
+                            restaurante está rodeado de historia y belleza natural. Disfruta de las vistas al mar y del
+                            encanto de nuestro casco antiguo, con sus coloridas casas de pescadores y su ambiente
+                            mediterráneo único.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Second Row: Map with Cómo Llegar Text -->
+                <div class="location-row location-row-map">
+                    <div class="location-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072.058114213396!2d-0.1194549841874617!3d38.55723997934826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6393804358951f%3A0x5c792a6e5f5a6587!2sVillajoyosa!5e0!3m2!1ses!2ses!4v1704833953055!5m2!1ses!2ses"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="location-text">
+                        <h2 class="section-title">Cómo Llegar</h2>
+                        <p>
+                            Situado en el extremo sur del famoso paseo marítimo de Villajoyosa, llegar es muy sencillo.
+                            Hay abundante aparcamiento en la zona, incluido un gran aparcamiento público a solo dos minutos.
+                            La estación de tranvía se encuentra a 10 minutos a pie y la localidad cuenta con varias líneas de autobús con paradas cerca del paseo marítimo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer -->
+        <div class="spacer">
+            <a href="/es/contactanos" class="standard-button">contactanos</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Left Column - Navigation Links -->
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/es/">Inicio</a></li>
+                        <li><a href="/es/reserva">Reservar</a></li>
+                        <li><a href="/es/contactanos">Contáctanos</a></li>
+                        <li><a href="/es/#location">Ubicación</a></li>
+                        <li><a href="/es/nuestros-platos">Nuestros Platos</a></li>
+                        <li><a href="/es/origenes">Orígenes</a></li>
+                        <li><a href="/es/orígenes/#gallery">Galería</a></li>
+                        <li><a href="/es/legal">Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Center Column - Logo -->
+                <div class="footer-logo-container">
+                    <a href="/es/" class="footer-logo">
+                        <h1>
+                            <span class="som">SOM</span>
+                            <span class="de">DE</span>
+                            <span class="mar">MAR</span>
+                        </h1>
+                    </a>
+                </div>
+
+                <!-- Right Column - Contact Info -->
+                <div class="footer-contact">
+                    <div class="contact-address">
+                        <p>
+                            <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+                               target="_blank"
+                               rel="noopener">
+                                Carrer Arsenal, 38<br>
+                                03570 La Vila Joiosa<br>
+                                Alicante, Spain
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-hours">
+                        <p>
+                            Martes: cerrado<br>
+                            Miercoles - Lunes:<br>
+                            13:00 - 16:00 / 20:00 - 23:00<br>
+                            Augusto:<br>
+                            13:00 - 23:00
+                        </p>
+                    </div>
+                    <div class="contact-info">
+                        <p>
+                            <a href="tel:+34671715988">
+                                +34 671 715 988
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@somdemar.com">
+                                info@somdemar.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom-1">
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@SomdeMar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-footer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="WhatsApp"
+                        class="social-footer whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="developer-credit">
+                    <a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI
+                        LABS</a>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" id="cookie-settings-btn" class="legal-link">Cookies</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Som de Mar.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Side Tab -->
+    <div class="side-tab" id="sideTab">
+        <span>#NOCHES</span>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <video id="modalVideo" preload="metadata" playsinline>
+            <!-- Large screens -->
+            <source 
+                src="/assets/videos/noches/noches-big.webm" 
+                type="video/webm" 
+                media="(min-width: 769px)">
+            <source 
+                src="/assets/videos/noches/noches-big.mp4" 
+                type="video/mp4" 
+                media="(min-width: 769px)">
+
+            <!-- Small screens -->
+            <source 
+                src="/assets/videos/noches/noches-small.webm" 
+                type="video/webm" 
+                media="(max-width: 768px)">
+            <source 
+                src="/assets/videos/noches/noches-small.mp4" 
+                type="video/mp4" 
+                media="(max-width: 768px)">
+
+            Your browser does not support the video tag.
+        </video>
+        <div class="modal-close">&times;</div>
+    </div>
+
+    <!-- Cookie Consent Modal -->
+    <div id="cookie-modal" class="cookie-modal">
+        <div class="cookie-content">
+            <p id="cookie-text"></p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept"></button>
+                <button id="cookie-reject"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/cookie-ga-modal.js"></script>
+    <script src="/assets/js/fab-menu.js"></script>
+    <script src="/assets/js/hero-carousel.js"></script>
+    <script src="/assets/js/scroll-effects.js"></script>
+    <script src="/assets/js/gallery-carousel.js"></script>
+    <script src="/assets/js/noches-modal.js"></script>
+    
+</body>
+</html>

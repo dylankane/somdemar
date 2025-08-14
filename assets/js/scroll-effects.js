@@ -68,4 +68,4 @@ sr.reveal('.col-2', { origin: 'bottom', distance: '300px', delay: 300 });
 sr.reveal('.col-3', { origin: 'right', distance: '300px', delay: 300 });
 
 //footer
-sr.reveal('.footer-logo', { origin: 'bottom', distance: '200px', delay: 300 });
+sr.reveal('.footer-logo', { origin: 'bottom', distance: '100px', delay: 300 });
