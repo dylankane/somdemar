@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalOverlay = document.getElementById('modalOverlay');
     const modalClose = document.querySelector('.modal-close');
     const modalVideo = document.getElementById('modalVideo');
-    const modalTransitionTime = 1500; // match CSS transition (1.5s)
+    const modalTransitionTime = 3000; // match CSS transition (1.5s)
 
     sideTab.addEventListener('click', function() {
         modalOverlay.classList.add('active');

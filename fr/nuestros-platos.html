@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nuestros Platos - Som de Mar</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Anton&family=Poppins:wght@300;400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap"
+		rel="stylesheet">
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<!-- FAB Menu -->
+		<div class="fab-container">
+			<button class="fab-button" id="fabButton">
+				<span class="fab-icon"></span>
+				<span class="fab-icon"></span>
+				<span class="fab-icon"></span>
+			</button>
+			<nav class="fab-dropdown" id="fabDropdown">
+				<a href="/es/">Inicio</a>
+				<a href="/es/reserva">Reservar</a>
+				<a href="/es/orígenes">Orígenes</a>
+				<a href="/es/#location">Ubicación y Contacto</a>
+			</nav>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="container">
+				<div class="logo">
+					<a href="/es/">
+						<div class="logo-image"></div>
+					</a>
+				</div>
+				<div class="language-selector">
+					<a href="/es/nuestros-platos" class="language-link active">ES</a>
+					<span class="language-divider">|</span>
+					<a href="/en/nuestros-platos" class="language-link">EN</a>
+					<span class="language-divider">|</span>
+					<a href="/fr/nuestros-platos" class="language-link">FR</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Main Content -->
+	<main>
+		<!-- Hero Section -->
+		<section class="hero video-hero">
+			<video class="video-background" autoplay muted loop playsinline preload="metadata"
+				poster="/assets/images/platos/hero-platos-poster.webp" id="heroVideo">
+				<!-- Mobile-optimized video (smaller file size) -->
+				<source src="/assets/videos/platos/hero-platos-small.webm" type="video/webm" media="(max-width: 768px)">
+				<source src="/assets/videos/platos/hero-platos-original.mp4" type="video/mp4"
+					media="(max-width: 768px)">
+				<!-- Desktop video -->
+				<source src="/assets/videos/platos/hero-plato-big.webm" type="video/webm">
+				<source src="/assets/videos/platos/hero-platos-original.mp4" type="video/mp4">
+				<!-- Fallback for browsers that don't support video -->
+				Your browser does not support video.
+			</video>
+			<div class="hero-overlay"></div>
+			<div class="hero-content video-hero-content">
+				<h1>
+					<span class="nuestros">Nuestros</span>
+					<span class="platos">Platos</span>
+				</h1>
+				<p>Deliciosos platos que reflejan la tradición y la calidad de los ingredientes que usamos en Som de
+					Mar.</p>
+				<a href="reserva.html" class="cta-button">Reservar</a>
+			</div>
+		</section>
+
+		<!-- Dish Intro Section -->
+		<section class="dish-intro-section">
+			<div class="dish-intro">
+				<h2 class="section-title">El Menú</h2>
+				<p>Como usamos ingredientes locales, nuestro menú completo cambia regularmente, esto es solo una muestra
+					de lo que ofrecemos, que evoluciona con las estaciones y el mercado.</p>
+			</div>
+		</section>
+
+		<!-- Dish Cards Carousel Section -->
+		<section class="dish-cards-section">
+			<div>
+				<h2 class="section-title">Favoritos del Chef</h2>
+			</div>
+			<div class="cards-carousel">
+				<div class="cards-container">
+					<div class="cards-track" id="dishCardsTrack">
+
+						<!-- Card 1: Vieiras -->
+						<div class="dish-card" data-dish="gambas">
+							<div class="card-media">
+								<div class="media-carousel" id="mediaCarousel1">
+									<div class="media-slides">
+										<div class="media-slide active">
+											<picture>
+												<source srcset="/assets/images/platos/dish-1-img.webp"
+													type="image/webp">
+												<img src="/assets/images/platos/dish-1-img.png"
+													alt="Gambas a la Plancha - Fresh prawns grilled to perfection"
+													class="media-image" loading="lazy" decoding="async">
+											</picture>
+										</div>
+										<div class="media-slide">
+											<video class="media-video" muted loop preload="none"
+												poster="/assets/images/platos/dish-1-img.webp">
+												<source data-src="/assets/videos/platos/dish-1-vid.webm"
+													type="video/webm">
+												<source data-src="/assets/videos/platos/dish-1-vid.mp4"
+													type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
+									</div>
+									<div class="media-dots">
+										<i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;"
+											data-slide="0"></i>
+										<i class="fa-solid fa-video media-dot" style="color: #f8f8f8;"
+											data-slide="1"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-content">
+								<h3 class="dish-title">Vieiras al grill con cereza y sorbete al gin lemon</h3>
+								<div class="title-line"></div>
+								<p class="dish-description">
+									Tiernas vieiras marcadas a la parrilla, servidas sobre un delicado coulis de cereza
+									y perfume de sorbete al gin lemon.
+								</p>
+								<h4 class="dish-subtitle">Notas de Sabor</h4>
+								<p class="dish-details">
+									Un bocado marino que combina dulzura, frescor cítrico y sutil ahumado, coronado con
+									pétalos de flores comestibles para una experiencia elegante y memorable.
+								</p>
+							</div>
+						</div>
+
+						<!-- Card 2: Gambones -->
+						<div class="dish-card" data-dish="paella">
+							<div class="card-media">
+								<div class="media-carousel" id="mediaCarousel2">
+									<div class="media-slides">
+										<div class="media-slide active">
+											<picture>
+												<source srcset="/assets/images/platos/dish-2-img.webp"
+													type="image/webp">
+												<img src="/assets/images/platos/dish-2-img.png"
+													alt="Gambones - Premium Spanish prawns with authentic preparation"
+													class="media-image" loading="lazy" decoding="async">
+											</picture>
+										</div>
+										<div class="media-slide">
+											<video class="media-video" muted loop preload="none"
+												poster="/assets/images/platos/dish-2-img.webp">
+												<source data-src="/assets/videos/platos/dish-2-vid.webm">
+												<source data-src="/assets/videos/platos/dish-2-vid.mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
+									</div>
+									<div class="media-dots">
+										<i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;"
+											data-slide="0"></i>
+										<i class="fa-solid fa-video media-dot" style="color: #f8f8f8;"
+											data-slide="1"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-content">
+								<h3 class="dish-title">Gambas rojas confitadas a 25º con perita de San Juan</h3>
+								<div class="title-line"></div>
+								<p class="dish-description">
+									Red prawns slowly confit at a low temperature,
+									accompanied by juicy San Juan pear and served over a
+									delicate tomato broth infused with kombu and pickles.
+								</p>
+								<h4 class="dish-subtitle">Notas de Sabor</h4>
+								<p class="dish-details">
+									Cooked gently to preserve their silky texture and marine sweetness,
+									the broth infused with kombu and pickles adds umami depth and subtle acidity.
+								</p>
+							</div>
+						</div>
+
+						<!-- Card 3: Pulpo smoke -->
+						<div class="dish-card" data-dish="pulpo">
+							<div class="card-media">
+								<div class="media-carousel" id="mediaCarousel3">
+									<div class="media-slides">
+										<div class="media-slide active">
+											<picture>
+												<source srcset="/assets/images/platos/dish-3-img.webp"
+													type="image/webp">
+												<img src="/assets/images/platos/dish-3-img.png"
+													alt="Pulpo Humo - Tender smoked octopus with Galician tradition"
+													class="media-image" loading="lazy" decoding="async">
+											</picture>
+										</div>
+										<div class="media-slide">
+											<video class="media-video" muted loop preload="none"
+												poster="/assets/images/platos/dish-3-img.webp">
+												<source data-src="/assets/videos/platos/dish-3-vid.mp4"
+													type="video/webm">
+												<source data-src="/assets/videos/platos/dish-3-vid.mp4"
+													type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
+									</div>
+									<div class="media-dots">
+										<i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;"
+											data-slide="0"></i>
+										<i class="fa-solid fa-video media-dot" style="color: #f8f8f8;"
+											data-slide="1"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-content">
+								<h3 class="dish-title">Pulpo ahumado con vinagreta de la pasión</h3>
+								<div class="title-line"></div>
+								<p class="dish-description">
+									Pulpo tierno, cocinado a baja temperatura y ahumado, acompañado de tomate vilero
+									fresco y patatas revolconas, terminado con una vinagreta de fruta de la pasión.
+								</p>
+								<h4 class="dish-subtitle">Notas de Sabor</h4>
+								<p class="dish-details">
+									Contraste cítrico y exótico que realza cada bocado con un equilibrio perfecto entre
+									dulzura, acidez y el carácter del mar.
+								</p>
+							</div>
+						</div>
+
+						<!-- Card 4: Cordero -->
+						<div class="dish-card" data-dish="jamon">
+							<div class="card-media">
+								<div class="media-carousel" id="mediaCarousel4">
+									<div class="media-slides">
+										<div class="media-slide active">
+											<picture>
+												<source srcset="/assets/images/platos/dish-4-img.webp"
+													type="image/webp">
+												<img src="/assets/images/platos/dish-4-img.png"
+													alt="Cordero - Premium lamb prepared with traditional Spanish techniques"
+													class="media-image" loading="lazy" decoding="async">
+											</picture>
+										</div>
+										<div class="media-slide">
+											<video class="media-video" muted loop preload="none"
+												poster="/assets/images/platos/dish-4-img.webp">
+												<source data-src="/assets/videos/platos/dish-4-vid.webm"
+													type="video/webm">
+												<source data-src="/assets/videos/platos/dish-4-vid.mp4"
+													type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
+									</div>
+									<div class="media-dots">
+										<i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;"
+											data-slide="0"></i>
+										<i class="fa-solid fa-video media-dot" style="color: #f8f8f8;"
+											data-slide="1"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-content">
+								<h3 class="dish-title">Carré de cordero con pistacho y calabaza</h3>
+								<div class="title-line"></div>
+								<p class="dish-description">
+									Carré de cordero al punto, cubierto con crujiente costra de pistacho y acompañado de
+									cremoso puré de calabaza aromatizado con romero fresco.
+								</p>
+								<h4 class="dish-subtitle">Notas de Sabor</h4>
+								<p class="dish-details">
+									Equilibrio entre suavidad, dulzor natural de la calabaza, aroma herbal del romero y
+									notas tostadas del pistacho,
+									que realzan el sabor tierno y jugoso del cordero.
+								</p>
+							</div>
+						</div>
+
+						<!-- Card 5: ostras -->
+						<div class="dish-card" data-dish="crema">
+							<div class="card-media">
+								<div class="media-carousel" id="mediaCarousel5">
+									<div class="media-slides">
+										<div class="media-slide active">
+											<picture>
+												<source srcset="/assets/images/platos/dish-5-img.webp"
+													type="image/webp">
+												<img src="/assets/images/platos/dish-5-img.png"
+													alt="Ostras - Fresh oysters prepared with Mediterranean flair"
+													class="media-image" loading="lazy" decoding="async">
+											</picture>
+										</div>
+										<div class="media-slide">
+											<video class="media-video" muted loop preload="none"
+												poster="/assets/images/platos/dish-5-img.webp">
+												<source data-src="/assets/videos/platos/dish-5-vid.webm"
+													type="video/webm">
+												<source data-src="/assets/videos/platos/dish-5-vid.mp4"
+													type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
+									</div>
+									<div class="media-dots">
+										<i class="fa-solid fa-image media-dot active" style="color: #f8f8f8;"
+											data-slide="0"></i>
+										<i class="fa-solid fa-video media-dot" style="color: #f8f8f8;"
+											data-slide="1"></i>
+									</div>
+								</div>
+							</div>
+						
+							<div class="card-content">
+								<h3 class="dish-title">Ostras francesas con aire de cava, perita de San Juan y salicornia
+								</h3>
+								<div class="title-line"></div>
+								<p class="dish-description">
+									Finas ostras francesas, servidas sobre hielo y realzadas con un delicado aire de cava
+									para aportar efervescencia y elegancia,
+									acompañadas de perita de San Juan y salicornia.
+								</p>
+								<h4 class="dish-subtitle">Notas de Sabor</h4>
+								<p class="dish-details">
+									La dulzura de la perita de San Juan equilibra el carácter marino, mientras que la
+									salicornia añade un matiz salino que prolonga el sabor.
+									Un bocado fresco, sofisticado y lleno de matices que evoca el mar.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Floating Navigation Arrows -->
+			<div class="cards-navigation">
+				<button class="nav-arrow nav-arrow-prev" id="prevCardBtn">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<button class="nav-arrow nav-arrow-next" id="nextCardBtn">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+			</div>
+		</section>
+
+		<div class="spacer-small">
+			<a href="reserva.html" class="standard-button">Reservar Ahora</a>
+		</div>
+
+		<!-- Menu List -->
+		<section class="menu-list">
+			<div class="menu-header">
+				<div class="menu-overlay"></div>
+				<div class="container">
+					<h2>Otras Sugerencias del Chef </h2>
+				</div>
+			</div>
+			<div class="menu-content">
+				<div class="container">
+					<ul>
+						<li>
+							<h3>Paella Valenciana</h3>
+							<p>Arroz de Calasparra con pollo, conejo y verduras de temporada.</p>
+						</li>
+						<li>
+							<h3>Lubina al Horno</h3>
+							<p>Lubina fresca del Mediterráneo con azafrán y hierbas del jardín.</p>
+						</li>
+						<li>
+							<h3>Arroz con Bogavante</h3>
+							<p>Arroz de Calasparra con bogavante de la costa alicantina.</p>
+						</li>
+						<li>
+							<h3>Calamares a la Romana</h3>
+							<p>Calamares frescos rebozados con harina de trigo y azafrán.</p>
+						</li>
+						<li>
+							<h3>Ensaladilla Rusa</h3>
+							<p>Ensalada tradicional con patata, zanahoria y mayonesa casera.</p>
+						</li>
+						<li>
+							<h3>Postre Tradicional</h3>
+							<p>Tarta de limón con merengue italiano y ralladura de limón.</p>
+						</li>
+						<li>
+							<h3>Arroz al Horno</h3>
+							<p>Arroz de Calasparra con pollo, conejo y verduras de temporada.</p>
+						</li>
+						<li>
+							<h3>Ensalada de Mariscos</h3>
+							<p>Ensalada fresca con gambas, mejillones y almejas.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div class="spacer">
+			<a href="index.html" class="standard-button">Inicio</a>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-main">
+				<!-- Left Column - Navigation Links -->
+				<div class="footer-nav">
+					<ul>
+						<li><a href="/es/">Inicio</a></li>
+						<li><a href="/es/reserva">Reservar</a></li>
+						<li><a href="/es/contactanos">Contáctanos</a></li>
+						<li><a href="/es/#location">Ubicación</a></li>
+						<li><a href="/es/nuestros-platos">Nuestros Platos</a></li>
+						<li><a href="/es/origenes">Orígenes</a></li>
+						<li><a href="/es/orígenes/#gallery">Galería</a></li>
+						<li><a href="/es/legal">Legal</a></li>
+					</ul>
+				</div>
+
+
+				<!-- Center Column - Logo -->
+				<div class="footer-logo-container">
+					<a href="/es/" class="footer-logo">
+						<h1>
+							<span class="som">SOM</span>
+							<span class="de">DE</span>
+							<span class="mar">MAR</span>
+						</h1>
+					</a>
+				</div>
+
+				<!-- Right Column - Contact Info -->
+				<div class="footer-contact">
+					<div class="contact-address">
+						<p>
+							<a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+								target="_blank" rel="noopener">
+								Carrer Arsenal, 38<br>
+								03570 La Vila Joiosa<br>
+								Alicante, Spain
+							</a>
+						</p>
+					</div>
+					<div class="contact-hours">
+						<p>
+							Martes: cerrado<br>
+							Miercoles - Lunes:<br>
+							13:00 - 16:00 / 20:00 - 23:00<br>
+							Augusto:<br>
+							13:00 - 23:00
+						</p>
+					</div>
+					<div class="contact-info">
+						<p>
+							<a href="tel:+34671715988">
+								+34 671 715 988
+							</a>
+						</p>
+						<p>
+							<a href="mailto:info@somdemar.com">
+								info@somdemar.com
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer Bottom Bar -->
+			<div class="footer-bottom-1">
+				<div class="social-links">
+					<a href="https://www.youtube.com/@SomdeMar" target="_blank" rel="noopener noreferrer"
+						class="social-footer">
+						<i class="fa-brands fa-youtube"></i>
+					</a>
+				</div>
+				<div class="social-links">
+					<a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+						target="_blank" rel="noopener" aria-label="WhatsApp" class="social-footer whatsapp">
+						<i class="fab fa-whatsapp"></i>
+					</a>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="developer-credit">
+					<a href="https://ailaboratories.eu/" target="_blank" rel="noopener noreferrer">Developed by AI
+						LABS</a>
+				</div>
+				<div class="footer-legal">
+					<a href="#" id="cookie-settings-btn" class="legal-link">Cookies</a>
+				</div>
+				<div class="copyright">
+					&copy; 2025 Som de Mar.
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Side Tab -->
+	<div class="side-tab" id="sideTab">
+		<span>#NOCHES</span>
+	</div>
+
+	<!-- Modal Overlay -->
+	<div class="modal-overlay" id="modalOverlay">
+		<video id="modalVideo" preload="metadata" playsinline>
+			<!-- Large screens -->
+			<source src="/assets/videos/noches/noches-big.webm" type="video/webm" media="(min-width: 769px)">
+			<source src="/assets/videos/noches/noches-big.mp4" type="video/mp4" media="(min-width: 769px)">
+			<!-- Small screens -->
+			<source src="/assets/videos/noches/noches-small.webm" type="video/webm" media="(max-width: 768px)">
+			<source src="/assets/videos/noches/noches-small.mp4" type="video/mp4" media="(max-width: 768px)">
+			Your browser does not support the video tag.
+		</video>
+		<div class="modal-close">&times;</div>
+	</div>
+	<!-- Cookie Consent Modal -->
+	<div id="cookie-modal" class="cookie-modal">
+		<div class="cookie-content">
+			<p id="cookie-text"></p>
+			<div class="cookie-buttons">
+				<button id="cookie-accept"></button>
+				<button id="cookie-reject"></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script src="/assets/js/cookie-ga-modal.js"></script>
+	<script src="/assets/js/video-hero.js"></script>
+	<script src="/assets/js/fab-menu.js"></script>
+	<script src="/assets/js/scroll-effects.js"></script>
+	<script src="/assets/js/slider.js"></script>
+	<script src="/assets/js/noches-modal.js"></script>
+
+</body>
+</html>
