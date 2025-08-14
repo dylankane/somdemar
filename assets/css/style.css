@@ -873,7 +873,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 40%;
+    width: 15%;
     justify-items: center;
     padding-bottom: 1rem;
 }
@@ -972,6 +972,10 @@ a {
     
     .footer-nav li {
         margin: 0;
+    }
+
+    .footer-bottom-1 {
+        width: 50%;
     }
     
     .footer-bottom {
