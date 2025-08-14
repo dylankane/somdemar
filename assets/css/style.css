@@ -102,7 +102,6 @@ a {
 }
 
 /* ===== BUTTON STYLES ===== */
-
 .cta-button {
     position: relative;
     display: inline-block;
@@ -230,7 +229,6 @@ a {
     font-weight: 800;
 }
 
-
 /* FAB Menu */
 .fab-container {
     position: fixed;
@@ -240,8 +238,8 @@ a {
 }
 
 .fab-button {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: var(--primary-color);
     border: none;
@@ -319,7 +317,6 @@ a {
 }
 
 /* === Navigation Responsive Styles === */
-
 /* Tablet Styles */
 @media (max-width: 768px) {
   .navbar {
@@ -381,8 +378,6 @@ a {
     font-size: 1rem;
     padding: 0.2rem 0.4rem;
   }
-  
-
 }
 
 /* === noches modal ===== */
@@ -399,10 +394,7 @@ a {
     z-index: 1000;
     letter-spacing: 0.15rem;
     transition: all 0.3s ease;
-    /* border-top-right-radius: 5px;
-    border-top-left-radius: 5px; */
     font-family: 'Poppins', sans-serif;
-    /* border-radius: 5px; */
 }
 
 .side-tab:hover {
@@ -410,7 +402,6 @@ a {
 }
 
 /* Modal Overlay */
-
 .modal-overlay {
     position: fixed;
     z-index: 9999;
@@ -425,10 +416,6 @@ a {
     align-items: center;
     transform: translateX(-100%);
     overflow: hidden;
-    /* background: var(--modal-bg), linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
     background-color: rgba(50, 50, 50, 0.8);
 }
   
@@ -441,7 +428,7 @@ a {
 .modal-overlay video {
     width: 100%;
     height: 95%;
-    object-fit: contain; /* change to 'cover' if you want it cropped to fill */
+    object-fit: contain;
     display: block;
 }
 
@@ -470,13 +457,6 @@ a {
 }
 
 /* Mobile-specific styles */
-/* @media (max-width: 768px) {
-    .modal-overlay {
-        background-image: var(--modal-sm);
-        background-size: cover;
-    }
-} */
-
 /* === Hero Section === */
 .hero {
     position: relative;
@@ -534,7 +514,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -601,10 +581,8 @@ a {
 .video-hero-content {
     padding: 10rem 2rem 2rem 2rem;
 }
-    
 
 /* === Hero Section Responsive Styles === */
-
 /* Hero responsive styles */
 @media (max-width: 768px) {
     .hero-image {
@@ -627,7 +605,6 @@ a {
         font-size: 7rem;
     }
     
-    /* Specific spacing for nuestros-platos page */
     .secondary-hero .hero-content h1 {
       margin-bottom: 6rem !important;
     }
@@ -657,8 +634,7 @@ a {
     .hero .mar {
         font-size: 6rem;
     }
-    
-    /* Even more spacing for small mobile screens */
+
     .secondary-hero .hero-content h1 {
       margin-bottom: 3rem;
     }
@@ -677,12 +653,7 @@ a {
     }
   }
 
-  /* === Sub Hero Section === */
-
-/* .hero.sub-hero p {
-    margin: 0 auto;
-} */
-
+/* === Sub Hero Section === */
 .sub-hero {
     height: 60vh;
 }
@@ -692,7 +663,6 @@ a {
     padding-bottom: 0.5rem !important;
 }
 
-/* Sub-hero uses a single background image instead of carousel */
 .sub-hero .hero-carousel {
     display: none;
 }
@@ -738,8 +708,6 @@ a {
         font-size: 2.5rem !important;
     }
 }
-
-  
 
 /* ===== FOOTER ===== */
 .footer {
@@ -789,7 +757,6 @@ a {
     margin: 0 auto;
 }
 
-    
 .footer-logo h1 {
     font-family: 'Anton', sans-serif;
     font-size: 4.5rem;
@@ -838,7 +805,6 @@ a {
 
 .social-footer {
     padding-top: 1rem;
-    /* border-top: 1px solid var(--primary-color); */
     text-align: center;
     color: #ff0000;
     font-size: 2rem;
@@ -863,7 +829,6 @@ a {
 .footer-contact p {
     margin: 0 0 1rem;
     font-size: 0.9rem;
-    /* line-height: 1.6; */
     color: var(--text-light);
 }
 
@@ -876,14 +841,6 @@ a {
 .footer-contact a:hover {
     color: var(--primary-color);
 }
-
-/* .contact-hours{
-    margin: 0;
-    border-bottom: 1px solid var(--primary-color);
-    padding-bottom: 1rem;
-    border-top: 1px solid var(--primary-color);
-    padding-top: 1rem;
-} */
 
 .contact-hours::before {
     content: "";
@@ -1096,7 +1053,6 @@ a {
 }
 
 /* === FOOD GALLERY SECTION === */
-
 /* Main Gallery Layout */
 .food-gallery {
     padding: 8rem 4rem;
@@ -1137,7 +1093,6 @@ a {
     overflow: hidden;
 }
 
-/* Carousel Images - No CSS transitions, JavaScript handles animation */
 .carousel-img {
     position: absolute;
     top: 0;
@@ -1148,7 +1103,6 @@ a {
 }
 
 /* === RESPONSIVE DESIGN === */
-
 /* Tablet & Medium Screens */
 @media (max-width: 990px) {
     .food-gallery {
@@ -1246,7 +1200,6 @@ a {
 }
 
 /* === CAROUSEL STYLING === */
-
 /* Carousel Container */
 .carousel {
     position: relative;
@@ -1283,7 +1236,7 @@ a {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1301,7 +1254,7 @@ a {
 }
 
 .quote-logo {
-    width: clamp(100px, 18vw, 160px);  /* responsive width */
+    width: clamp(100px, 18vw, 160px);
     height: auto;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
     display: block;
@@ -1317,7 +1270,6 @@ a {
 }
 
 /* Video gallery section */
-
 .video-gallery {
     margin: 0 auto;
     display: flex;
@@ -1440,139 +1392,7 @@ a {
       flex: 1 1 50%;
     }
 }
-
-/* Video banner */
-/* .video-banner-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-  
-
-.video-banner {
-    position: relative;
-    height: 75vh;
-    width: 100%;
-    background: var(--text-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-
-.video-banner-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.video-banner-container::before,
-.video-banner-container::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: var(--primary-highlight);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.video-banner-container::before {
-  top: 0;
-  transform-origin: top right;
-  transform: skewY(3deg);
-}
-
-.video-banner-container::after {
-  bottom: 0;
-  transform-origin: bottom left;
-  transform: skewY(3deg);
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-.video-content {
-    position: relative;
-    z-index: 3;
-    color: var(--text-light);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    text-align: center;
-}
-
-.video-banner h2 {
-    margin-bottom: 1rem;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 2px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1;
-}
-
-.video-banner span {
-    display: block;
-    font-size: 6rem;
-    letter-spacing: 2px;
-    position: relative;
-    color: var(--text-light);
-    margin-top: -0.5rem;
-}
-
-.video-banner .de {
-    font-size: 4rem;
-}
-
-.video-banner p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    color: var(--text-light);
-} */
-
-
-
-/* Video Banner Mobile Styles */
-/* @media (max-width: 768px) {
-    
-    .video-banner {
-        position: relative;
-        height: 75vh;
-        width: 100%;
-        overflow: hidden;
-        background: #000;
-    }
-    
-
-    .video-banner span {
-        font-size: 5rem;
-    }
-    
-    .video-banner p {
-        font-size: 1.1rem;
-    }
-} */
-
+ 
 /* Location Section */
 .location {
     padding: 0;
@@ -1706,17 +1526,14 @@ a {
     max-width: 600px;
 }
 
-/* Right-aligned text for images section */
 .location-row-images .location-text {
     text-align: right;
 }
 
-/* Left-aligned text for map section */
 .location-row-map .location-text {
     text-align: left;
 }
 
-/* Right-aligned underline for images section */
 .location-row-images .location-text h2:after {
     content: '';
     position: absolute;
@@ -1727,7 +1544,6 @@ a {
     background-color: var(--primary-color);
 }
 
-/* Left-aligned underline for map section */
 .location-row-map .location-text h2:after {
     content: '';
     position: absolute;
@@ -1837,7 +1653,6 @@ a {
         margin-bottom: 0.5rem;
         z-index: 1;
         min-height: 1px;
-        /* display: block; */
     }
     
     .location-row-images .location-video video {
@@ -1867,7 +1682,6 @@ a {
         font-size: 1.5rem;
     }
 }
-
 
 /* ===== Origins Page ===== */
 .origins-section {
@@ -1931,8 +1745,6 @@ a {
     margin-bottom: 1.5rem;
 }
 
-/* new section start */
-
 .alive-card { position: relative }
 .alive-video {
     position: absolute;
@@ -1944,8 +1756,6 @@ a {
     transition: opacity .25s ease;
 }
 .alive-card.playing .alive-video { opacity: 1 }
-
- /* new section end */
 
 /* Responsive Styles for Origins Section */
 @media (max-width: 1200px) {
@@ -1976,13 +1786,13 @@ a {
         margin-bottom: 2rem;
         flex: 0 0 auto;
         width: 75%;
-        order: 1; /* Always show image first */
+        order: 1;
     }
 
     .origin-content {
         width: 100%;
         max-width: 100%;
-        order: 2; /* Always show content second */
+        order: 2;
     }
 }
 
@@ -2077,7 +1887,6 @@ a {
     overflow: hidden;
 }
 
-/* Make img elements behave like background images */
 .album .img img {
     width: 100%;
     height: 100%;
@@ -2179,7 +1988,6 @@ a {
     background-color: #ff0000;
     color: white !important;
     padding: 0.6rem 1.3rem;
-    /* border-radius: 30px; */
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -2220,42 +2028,6 @@ a {
     object-fit: cover;
     z-index: 1;
 }
-
-/* Video Controls */
-/* .video-controls {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 4;
-    display: flex;
-    gap: 1rem;
-}
-
-.video-control-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.video-control-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.1);
-} */
-
-
-/* .platos-main {
-    padding-top: 4rem;
-} */
 
 .dish-intro-section {
     position: relative;
@@ -2299,8 +2071,6 @@ a {
     margin-bottom: 3rem;
     text-align: center;
 }
-
-
 
 .cards-carousel {
     position: relative;
@@ -2501,7 +2271,6 @@ a {
   color: #009697;
 }
 
-/* Page Header */
 .page-header {
   text-align: center;
   padding: 2rem 0;
@@ -2522,12 +2291,10 @@ a {
   opacity: 0.9;
 }
 
-/* Desktop styles */
+/* Responsive styles */
 @media (min-width: 769px) {
-  /* No additional track styles needed - JS handles positioning */
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .dish-cards-section {
     padding: 0 1rem;
@@ -2536,8 +2303,8 @@ a {
   
   .cards-container {
     min-height: 500px;
-    margin-bottom: 20px; /* Smaller margin for mobile */
-    padding: 0 1rem; /* Smaller padding for mobile */
+    margin-bottom: 20px;
+    padding: 0 1rem;
   }
   
   .cards-track {
@@ -2549,12 +2316,11 @@ a {
   }
   
   .dish-card {
-    flex: 0 0 300px; /* Narrower cards to show peeks */
-    /* margin: 0 2.5vw; Smaller margins for peek effect */
+    flex: 0 0 300px;
   }
   
   .card-media {
-    height: 250px; /* Smaller fixed height for mobile */
+    height: 250px;
   }
   
   .card-content {
@@ -2578,14 +2344,14 @@ a {
   }
   
   .cards-navigation {
-    top: 320px; /* Position below smaller mobile media container */
+    top: 320px;
     width: 100%;
   }
   
   .nav-arrow {
     width: 45px;
     height: 45px;
-    font-size: 1.8rem; /* Bigger mobile arrows */
+    font-size: 1.8rem;
   }
   
   .page-header h1 {
@@ -2691,7 +2457,6 @@ a {
 }
 
 .menu-list h3 {
-    /* font-size: 1.4rem; */
     color: var(--text-dark);
     margin-bottom: 2rem;
     position: relative;
@@ -2709,18 +2474,15 @@ a {
 
 .menu-list p {
     font-size: 1rem;
-    /* line-height: 1.6; */
     color: var(--text-dark);
 }
 
 /* === Menu Section Responsive Styles === */
-
 /* Tablet Styles */
 @media (max-width: 768px) {
   .menu-header {
     width: 95%;
     height: 180px;
-    /* background-attachment: scroll; */
   }
   
   .menu-header h2 {
@@ -2742,7 +2504,7 @@ a {
   }
   
   .menu-list li {
-    width: 100%; /* Single column layout */
+    width: 100%;
     margin-bottom: 2.5rem;
     padding: 0;
   }
@@ -2755,7 +2517,7 @@ a {
   
   .menu-list h3:after {
     left: 50%;
-    transform: translateX(-50%); /* Center the underline */
+    transform: translateX(-50%);
   }
   
   .menu-list p {
@@ -2769,7 +2531,6 @@ a {
   .menu-header {
     width: 100%;
     height: 150px;
-    /* background-attachment: scroll; */
   }
   
   .menu-header h2 {
@@ -2806,9 +2567,9 @@ a {
   }
   
   .menu-list h3:after {
-    width: 30%; /* Wider underline on mobile */
+    width: 30%;
     left: 50%;
-    transform: translateX(-50%); /* Center the underline */
+    transform: translateX(-50%);
   }
   
   .menu-list p {
@@ -2818,7 +2579,6 @@ a {
 }
 
 /*=== reservation Page ===*/
-
 .reservation-divider {
     width: 33%;
     height: 3px;
@@ -2828,8 +2588,6 @@ a {
     border-radius: 2px;
     display: block;
 }
-
-
 
 .reservation-info-section {
     text-align: center;
@@ -2855,7 +2613,6 @@ a {
 }
 
 /*=== Contact Page ===*/
-
 .contact-container {
     padding: 0rem!important;
 }
@@ -2929,7 +2686,6 @@ a {
 }
 
 .contact-info-item i {
-    /* font-size: 1.3rem; */
     color: var(--text-dark);
     min-width: 30px;
     transition: color 0.3s ease;
@@ -2951,7 +2707,7 @@ a {
 }
 
 .contact-info-item:hover i.fa-whatsapp {
-    color: #25d366; /* WhatsApp green */
+    color: #25d366;
     transform: scale(2);
 }
 
@@ -2959,8 +2715,6 @@ a {
     color: var(--primary-color);
     transform: scale(1.5);
 }
-
-
 
 .contact-info-item h3 {
     padding-top: 1rem;
@@ -2988,7 +2742,6 @@ a {
 }
 
 /* Contact Form Styles */
-
 .contact-form-container {
     max-width: 75%;
     margin: 4rem auto;
@@ -3084,7 +2837,6 @@ a {
 }
 
 /* === 404 Page === */
-
 .container-404 {
     display: flex;
     flex-direction: column;
@@ -3102,7 +2854,6 @@ a {
 }
 
 /* === Legal Page === */
-
 .legal-container {
     max-width: 1200px;
     width: 100%;
@@ -3135,7 +2886,6 @@ a {
 }
 
 /* === Cookie Consent Modal === */
-
 .cookie-modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -3182,4 +2932,3 @@ a {
   
   #cookie-accept { background: #2e7d32; color: var(--text-light); }
   #cookie-reject { background: #c62828; color: var(--text-light); }
-  

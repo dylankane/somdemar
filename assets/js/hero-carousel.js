@@ -1,68 +1,58 @@
-// Hero Carousel
-const heroCarousel = document.querySelector('.hero-carousel');
-const carouselItems = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
-let carouselInterval;
-const interval = 5000; // 5 seconds
+// som-carousel.js - Optimized for HTML img elements
 
-function showNextSlide() {
-    if (!carouselItems.length) return;
-    
-    // Fade out current slide
-    carouselItems[currentIndex].style.opacity = '0';
-    
-    // Move to next slide (loop back to start if at end)
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    
-    // Fade in new slide
-    carouselItems[currentIndex].style.opacity = '1';
-}
-
-// Start the carousel
-function startCarousel() {
-    // Set initial active slide
-    if (carouselItems.length > 0) {
-        carouselItems[0].style.opacity = '1';
-    }
-    
-    // Start the interval
-    carouselInterval = setInterval(showNextSlide, interval);
-}
-
-// Pause carousel when tab is not visible
-function handleVisibilityChange() {
-    if (document.hidden) {
-        clearInterval(carouselInterval);
-    } else {
-        startCarousel();
-    }
-}
-
-// Initialize carousel when DOM is loaded and section is visible
 document.addEventListener('DOMContentLoaded', () => {
-    // Start with a small delay to ensure everything is loaded
-    setTimeout(() => {
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startCarousel();
-                        document.addEventListener('visibilitychange', handleVisibilityChange);
-                    } else {
-                        clearInterval(carouselInterval);
-                        document.removeEventListener('visibilitychange', handleVisibilityChange);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            observer.observe(heroSection);
-        }
-    }, 1000);
-});
+    const hero = document.getElementById('home');
+    if (!hero) return;
 
-// Clean up on page unload
-window.addEventListener('beforeunload', () => {
-    clearInterval(carouselInterval);
-    document.removeEventListener('visibilitychange', handleVisibilityChange);
+    const slides = hero.querySelectorAll('.carousel-item');
+    const intervalTime = 5000;      // ms between slides
+    let current = 0;
+    let slideTimer = null;
+
+    // Show the slide at index i, hide the rest
+    function showSlide(i) {
+        slides.forEach((slide, idx) => {
+            slide.style.opacity = (idx === i ? '1' : '0');
+        });
+    }
+
+    // Advance to next slide and loop
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    // Start the autoplay
+    function startCarousel() {
+        // Initialize first slide
+        showSlide(current);
+        // Clear any existing timer before starting
+        clearInterval(slideTimer);
+        slideTimer = setInterval(nextSlide, intervalTime);
+    }
+
+    // Pause when tab is hidden, resume when visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            clearInterval(slideTimer);
+        } else {
+            startCarousel();
+        }
+    });
+
+    // Pause when scrolled out of view, resume when in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCarousel();
+            } else {
+                clearInterval(slideTimer);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(hero);
+
+    // Start the carousel
+    startCarousel();
 });
