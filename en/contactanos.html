@@ -74,65 +74,7 @@
         <!-- Contact Info Section -->
         <section class="section">
             <div class="container contact-container">
-                <div class="contact-info-section">
-                    <div class="section-title">
-                        <h2>Información de Contacto</h2>
-                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una
-                            nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen
-                            arriba.
-                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y
-                            te responderemos lo antes posible.</p>
-                    </div>
-                    <div class="contact-info-grid">
-                        <!-- Top Row -->
-                        <div class="contact-row top">
-                            <div class="contact-info-item phone">
-                                <a href="tel:+34671715988">
-                                    <i class="fas fa-phone" style="font-size: 2rem;"></i>
-                                    <h3>+34 671 71 59 88</h3>
-                                </a>
-                            </div>
-
-                            <div class="contact-info-item whatsapp">
-                                <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
-                                    target="_blank" rel="noopener" aria-label="WhatsApp">
-                                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
-                                    <h3>+34 671 71 59 88</h3>
-                                </a>
-                            </div>
-
-                            <div class="contact-info-item email">
-                                <a href="mailto:info@somdemar.com">
-                                    <i class="fas fa-envelope" style="font-size: 2rem;"></i>
-                                    <h3>info@somdemar.com</h3>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!-- middle row -->
-                        <div class="contact-row middle">
-                            <div class="contact-info-item address">
-                                <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
-                                    target="_blank" rel="noopener">
-                                    <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
-                                    <h3>Som De Mar<br>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Row -->
-                        <div class="contact-row bottom">
-                            <div class="contact-info-item hours">
-                                <i class="fas fa-clock" style="font-size: 2rem;"></i>
-                                <h3>Martes: Cerrado</h3>
-                                <h3>Augusto:<br>Miercoles - Lunes:<br>13:00 - 23:00</h3>
-                                <h3>Resto del año:<br>Miercoles - Lunes:<br>13:00 - 16:00<br>20:00 - 23:00</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reservation-divider"></div>
+                
                 <!-- Success Banner -->
                 <div id="success-banner" class="contact-banner success">
                     Tu mensaje ha sido enviado correctamente.
@@ -142,6 +84,8 @@
                 <div id="error-banner" class="contact-banner error">
                     Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.
                 </div>
+
+                <!--Contact Form-->
                 <div class="contact-form-container">
                     <h2>Envíanos un Mensaje</h2>
                     <form id="contact-form" class="contact-form" method="POST" action="/contact.php">
@@ -163,6 +107,57 @@
                         </div>
                         <button type="submit" class="message-button standard-button">Enviar Mensaje</button>
                     </form>
+                </div>
+                <div class="reservation-divider"></div>
+                <div class="contact-info-section">
+                    <div class="section-title">
+                        <h2>Información de Contacto</h2>
+                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una
+                            nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen
+                            arriba.
+                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y
+                            te responderemos lo antes posible.</p>
+                    </div>
+                    <div class="contact-info-grid">
+                        <!-- Top Row -->
+                        <div class="contact-row top">
+                            <div class="contact-info-item phone">
+                                <a href="tel:+34671715988">
+                                    <i class="fas fa-phone" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
+                            <div class="contact-info-item whatsapp">
+                                <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                                    target="_blank" rel="noopener" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
+                            <div class="contact-info-item email">
+                                <a href="mailto:info@somdemar.com">
+                                    <i class="fas fa-envelope" style="font-size: 2rem;"></i>
+                                    <h3>info@somdemar.com</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- middle row -->
+                        <div class="contact-row middle">
+                            <div class="contact-info-item address">
+                                <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+                                    target="_blank" rel="noopener">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
+                                    <h3>Som De Mar<br>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
+                                </a>
+                            </div>
+                            <div class="contact-info-item hours">
+                                <i class="fas fa-clock" style="font-size: 2rem;"></i>
+                                <h3>Martes: Cerrado</h3>
+                                <h3>Miercoles - Lunes:<br>13:00 - 16:00 / 20:00 - 23:00</h3>
+                                <h3>Augusto: 13:00 - 23:00</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
