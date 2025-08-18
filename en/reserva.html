@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva</title>
+    <title>Reservations</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
@@ -25,11 +25,11 @@
                 <span class="fab-icon"></span>
             </button>
             <nav class="fab-dropdown" id="fabDropdown">
-                <a href="/es/">Inicio</a>
-                <a href="/es/nuestros-platos">Nuestros Platos</a>
-                <a href="/es/orígenes">Orígenes</a>
-                <a href="/es/#location">Ubicación y Contacto</a>
-                <a href="/es/cronicas">Crónicas</a>
+                <a href="/en/">Home</a>
+                <a href="/en/nuestros-platos">Our dishes</a>
+                <a href="/en/orígenes">Origins</a>
+                <a href="/en/reserva">Book a Table</a>
+                <a href="/en/#location">Location and Contact</a>
             </nav>
         </div>
 
@@ -37,12 +37,12 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <a href="/es/">
+                    <a href="/en/">
                         <div class="logo-image"></div>
                     </a>
                 </div>
                 <div class="language-selector">
-                    <a href="/es/reserva" class="language-link active">ES</a>
+                    <a href="/en/reserva" class="language-link active">EN</a>
                     <span class="language-divider">|</span>
                     <a href="/en/reserva" class="language-link">EN</a>
                     <span class="language-divider">|</span>
@@ -69,75 +69,87 @@
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1>
-                    <span class="som">RESERVA</span>
-                    <span class="mar">MESA</span>
+                    <span class="som">RESERVATIONS</span>
                 </h1>
             </div>
-        </section>
-
-        <!-- Reservation Info Section -->
-        <section class="reservation-info-section">
-            <h2>Reserva de Mesa</h2>
-            <p>Estamos trabajando en un nuevo sistema de reservas online. Actualmente no podemos aceptar reservas de
-                mesa a través de la web. Disculpa las molestias.</p>
-            <p>Por favor, utiliza los datos de contacto a continuación para reservar tu mesa por teléfono o correo
-                electrónico. ¡Estaremos encantados de atenderte y confirmar tu reserva personalmente!</p>
         </section>
 
         <!-- Reservation Divider -->
         <div class="reservation-divider"></div>
 
-        <!-- Contact Info Section -->
-        <section class="contact-info-section">
-            <h2>Información de Contacto</h2>
-            <div class="contact-info-grid">
-                <!-- Top Row -->
-                <div class="contact-row top">
-                    <div class="contact-info-item phone">
-                        <a href="tel:+34671715988">
-                            <i class="fas fa-phone" style="font-size: 2rem;"></i>
-                            <h3>+34 671 71 59 88</h3>
-                        </a>
-                    </div>
+        <!-- Reservation Info Section -->
+        <section class="reservation-info-section">
+            <h2>Book a Table</h2>
+            <p>We're working on a new online reservation system. Currently, we cannot accept table reservations through the website. Sorry for the inconvenience.</p>
+            <p>Please use the contact information below to reserve your table by phone or email. We look forward to serving you and confirming your reservation personally!</p>
+        </section>
 
-                    <div class="contact-info-item whatsapp">
-                        <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
-                            target="_blank" rel="noopener" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
-                            <h3>+34 671 71 59 88</h3>
-                        </a>
-                    </div>
+        <!-- Reservation Divider -->
+        <div class="reservation-divider"></div>
 
-                    <div class="contact-info-item email">
-                        <a href="mailto:info@somdemar.com">
-                            <i class="fas fa-envelope" style="font-size: 2rem;"></i>
-                            <h3>info@somdemar.com</h3>
-                        </a>
-                    </div>
-
+        <!-- contact Information -->
+        <section class="section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-pin" aria-hidden="true">
+                    <i class="fa-solid fa-comments" style="font-size: 4rem; color: var(--primary-color);"></i>
                 </div>
-                <!-- middle row -->
-                <div class="contact-row middle">
-                    <div class="contact-info-item address">
-                        <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
-                            target="_blank" rel="noopener">
-                            <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
-                            <h3>Som De Mar<br>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
-                        </a>
+                <div class="contact-info-section">
+                    <!-- Spacer -->
+                    <div class="spacer-small">
+                        <a href="/en/contactanos" class="standard-button">Send A Message</a>
                     </div>
-                </div>
+                    <div class="contact-info-grid">
+                        <!-- Top Row -->
+                        <div class="contact-row top">
+                            <div class="contact-info-item phone">
+                                <a href="tel:+34671715988">
+                                    <i class="fas fa-phone" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
 
-                <!-- Bottom Row -->
-                <div class="contact-row bottom">
-                    <div class="contact-info-item hours">
-                        <i class="fas fa-clock" style="font-size: 2rem;"></i>
-                        <h3>Martes: Cerrado</h3>
-                        <h3>Augusto:<br>Miercoles - Lunes:<br>13:00 - 23:00</h3>
-                        <h3>Resto del año:<br>Miercoles - Lunes:<br>13:00 - 16:00<br>20:00 - 23:00</h3>
+                            <div class="contact-info-item whatsapp">
+                                <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                                    target="_blank" rel="noopener" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+                                    <h3>+34 671 71 59 88</h3>
+                                </a>
+                            </div>
+
+                            <div class="contact-info-item email">
+                                <a href="mailto:info@somdemar.eu">
+                                    <i class="fas fa-envelope" style="font-size: 2rem;"></i>
+                                    <h3>info@somdemar.eu</h3>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!-- middle row -->
+                        <div class="contact-row middle">
+                            <div class="contact-info-item address">
+                                <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
+                                    target="_blank" rel="noopener">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
+                                    <h3>Som De Mar</h3>
+                                    <h3>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
+                                </a>
+                            </div>
+                            <div class="contact-info-item hours">
+                                <i class="fas fa-clock" style="font-size: 2rem;"></i>
+                                <h3>Tuesday: Closed</h3>
+                                <h3>Wednesday - Monday:<br>13:00 - 16:00 / 20:00 - 23:00</h3>
+                                <h3>August:<br>Wednesday - Monday:<br>13:00 - 16:30 / 18:00 - 23:00</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Spacer -->
+        <div class="spacer">
+            <a href="/en/" class="standard-button">Back to Home</a>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -147,21 +159,21 @@
                 <!-- Left Column - Navigation Links -->
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="/es/">Inicio</a></li>
-                        <li><a href="/es/reserva">Reservar</a></li>
-                        <li><a href="/es/contactanos">Contáctanos</a></li>
-                        <li><a href="/es/#location">Ubicación</a></li>
-                        <li><a href="/es/nuestros-platos">Nuestros Platos</a></li>
-                        <li><a href="/es/origenes">Orígenes</a></li>
-                        <li><a href="/es/orígenes/#gallery">Galería</a></li>
-                        <li><a href="/es/legal">Legal</a></li>
+                        <li><a href="/en/">Home</a></li>
+                        <li><a href="/en/nuestros-platos">Our dishes</a></li>
+                        <li><a href="/en/origenes">Origins</a></li>
+                        <li><a href="/en/reserva">Book a Table</a></li>
+                        <li><a href="/en/#events">Events</a></li>
+                        <li><a href="/en/#contact">Contact us</a></li>
+                        <li><a href="/en/#location">Location</a></li>
+                        <li><a href="/en/orígenes/#galeria">Gallery</a></li>
+                        <li><a href="/en/legal">Legal</a></li>
                     </ul>
                 </div>
 
-
                 <!-- Center Column - Logo -->
                 <div class="footer-logo-container">
-                    <a href="/es/" class="footer-logo">
+                    <a href="/en/" class="footer-logo">
                         <h1>
                             <span class="som">SOM</span>
                             <span class="de">DE</span>
@@ -175,7 +187,8 @@
                     <div class="contact-address">
                         <p>
                             <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
-                                target="_blank" rel="noopener">
+                               target="_blank"
+                               rel="noopener">
                                 Carrer Arsenal, 38<br>
                                 03570 La Vila Joiosa<br>
                                 Alicante, Spain
@@ -184,11 +197,12 @@
                     </div>
                     <div class="contact-hours">
                         <p>
-                            Martes: cerrado<br>
-                            Miercoles - Lunes:<br>
+                            Tuesday: closed<br>
+                            Wednesday - Monday:<br>
                             13:00 - 16:00 / 20:00 - 23:00<br>
-                            Augusto:<br>
-                            13:00 - 23:00
+                            August:<br>
+                            Wednesday - Monday:<br>
+                            13:00 - 16:30 / 18:00 - 23:00
                         </p>
                     </div>
                     <div class="contact-info">
@@ -198,8 +212,8 @@
                             </a>
                         </p>
                         <p>
-                            <a href="mailto:info@somdemar.com">
-                                info@somdemar.com
+                            <a href="mailto:info@somdemar.eu">
+                                info@somdemar.eu
                             </a>
                         </p>
                     </div>
@@ -209,14 +223,19 @@
             <!-- Footer Bottom Bar -->
             <div class="footer-bottom-1">
                 <div class="social-links">
-                    <a href="https://www.youtube.com/@SomdeMar" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.youtube.com/@SomdeMar"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="social-footer">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
                 <div class="social-links">
                     <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
-                        target="_blank" rel="noopener" aria-label="WhatsApp" class="social-footer whatsapp">
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="WhatsApp"
+                        class="social-footer whatsapp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>

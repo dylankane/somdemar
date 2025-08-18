@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos</title>
+    <title>Contact Us</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
@@ -25,26 +25,28 @@
                 <span class="fab-icon"></span>
             </button>
             <nav class="fab-dropdown" id="fabDropdown">
-                <a href="/es/">Inicio</a>
-                <a href="/es/reserva">Reservar</a>
-                <a href="/es/nuestros-platos">Nuestros Platos</a>
-                <a href="/es/orígenes">Orígenes</a>
-                <a href="/es/index.html#location">Ubicación y Contacto</a>
+                <a href="/en/">Home</a>
+                <a href="/en/reserva">Book a Table</a>
+                <a href="/en/nuestros-platos">Our Dishes</a>
+                <a href="/en/orígenes">Origins</a>
+                <a href="/en/#events">Events</a>
+                <a href="/en/#location">Location</a>
             </nav>
         </div>
-
         <!-- Navigation -->
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <a href="/es/">
+                    <a href="/en/">
                         <div class="logo-image"></div>
                     </a>
                 </div>
                 <div class="language-selector">
-                    <a href="#" class="language-link active">ES</a>
+                    <a href="/es/contactanos" class="language-link">ES</a>
                     <span class="language-divider">|</span>
-                    <a href="#" class="language-link">EN</a>
+                    <a href="/en/contactanos" class="language-link active">EN</a>
+                    <span class="language-divider">|</span>
+                    <a href="/fr/contactanos" class="language-link">FR</a>
                 </div>
             </div>
         </nav>
@@ -64,7 +66,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>
-                <span class="som">CONTACTANOS</span>
+                <span class="som">CONTACT US</span>
             </h1>
         </div>
     </section>
@@ -77,20 +79,20 @@
                 
                 <!-- Success Banner -->
                 <div id="success-banner" class="contact-banner success">
-                    Tu mensaje ha sido enviado correctamente.
+                    Your message has been sent successfully.
                 </div>
 
                 <!-- Error Banner -->
                 <div id="error-banner" class="contact-banner error">
-                    Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.
+                    There was a problem sending your message. Please try again.
                 </div>
 
                 <!--Contact Form-->
                 <div class="contact-form-container">
-                    <h2>Envíanos un Mensaje</h2>
+                    <h2>Send Us a Message</h2>
                     <form id="contact-form" class="contact-form" method="POST" action="/contact.php">
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
@@ -98,25 +100,41 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Teléfono</label>
+                            <label for="phone">Phone</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensaje</label>
+                            <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="message-button standard-button">Enviar Mensaje</button>
+                        <button type="submit" class="message-button standard-button">Send Message</button>
                     </form>
                 </div>
-                <div class="reservation-divider"></div>
+            </div>
+        </section>
+
+        <div class="reservation-divider"></div>
+
+        
+        <!-- contact Information -->
+        <section class="section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-pin" aria-hidden="true">
+                    <i class="fa-solid fa-comments" style="font-size: 4rem; color: var(--primary-color);"></i>
+                </div>
                 <div class="contact-info-section">
                     <div class="section-title">
-                        <h2>Información de Contacto</h2>
-                        <p>Si necesitas ponerte en contacto con nosotros — ya sea para modificar una reserva, hacer una
-                            nueva o por cualquier otra consulta — puedes utilizar los datos de contacto que aparecen
-                            arriba.
-                            También puedes enviarnos un mensaje directamente a través del formulario a continuación, y
-                            te responderemos lo antes posible.</p>
+                        <h2>Contact Information</h2>
+                        <p>
+                            We're always happy to hear from our guests. To make a reservation, please call us directly,
+                            as our online booking system is still under construction.
+                            For any other inquiries or requests, including event planning or large groups,
+                            you're welcome to reach out by phone, WhatsApp, email, or via our message feature.
+                        </p>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="spacer-small">
+                        <a href="/en/contactanos" class="standard-button">Send A Message</a>
                     </div>
                     <div class="contact-info-grid">
                         <!-- Top Row -->
@@ -127,40 +145,50 @@
                                     <h3>+34 671 71 59 88</h3>
                                 </a>
                             </div>
+ 
                             <div class="contact-info-item whatsapp">
-                                <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
+                                        <a href="https://wa.me/34671715988?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20..."
                                     target="_blank" rel="noopener" aria-label="WhatsApp">
                                     <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
                                     <h3>+34 671 71 59 88</h3>
                                 </a>
                             </div>
+ 
                             <div class="contact-info-item email">
-                                <a href="mailto:info@somdemar.com">
+                                        <a href="mailto:info@somdemar.eu">
                                     <i class="fas fa-envelope" style="font-size: 2rem;"></i>
-                                    <h3>info@somdemar.com</h3>
+                                    <h3>info@somdemar.eu</h3>
                                 </a>
                             </div>
+ 
                         </div>
-                        <!-- middle row -->
+                                <!-- middle row -->
                         <div class="contact-row middle">
                             <div class="contact-info-item address">
                                 <a href="https://www.google.com/maps/place/Som+De+Mar,+Carrer+Arsenal,+38,+03570+La+Vila+Joiosa"
                                     target="_blank" rel="noopener">
                                     <i class="fas fa-map-marker-alt" style="font-size: 2rem;"></i>
-                                    <h3>Som De Mar<br>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
+                                    <h3>Som De Mar</h3>
+                                    <h3>Carrer Arsenal, 38<br>03570 La Vila Joiosa<br>Alicante, Spain</h3>
                                 </a>
                             </div>
                             <div class="contact-info-item hours">
                                 <i class="fas fa-clock" style="font-size: 2rem;"></i>
-                                <h3>Martes: Cerrado</h3>
-                                <h3>Miercoles - Lunes:<br>13:00 - 16:00 / 20:00 - 23:00</h3>
-                                <h3>Augusto: 13:00 - 23:00</h3>
+                                <h3>Tuesday: Closed</h3>
+                                <h3>Wednesday - Monday:<br>13:00 - 16:00 / 20:00 - 23:00</h3>
+                                <h3>August:<br>Wednesday - Monday:<br>13:00 - 16:30 / 18:00 - 23:00</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Spacer -->
+        <div class="spacer">
+            <a href="/en/" class="standard-button">Back to Home</a>
+        </div>
+
     </main>
 
     <!-- Footer -->
