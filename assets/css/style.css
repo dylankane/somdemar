@@ -12,8 +12,6 @@
     --light-contrast: #fff;
     --transition: all 0.3s ease;
     --logo: url('/assets/images/logos/som_de_mar_logo_light.png');
-    --modal-bg: url('/assets/images/noches-modal/nochemodal2.png');
-    --modal-sm: url('/assets/images/noches-modal/modal-mobile.png');
 }
 
 html {
