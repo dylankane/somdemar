@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home -->
+    <url><loc>https://www.somdemar.eu/</loc></url>
+    <url><loc>https://www.somdemar.eu/en/</loc></url>
+    <url><loc>https://www.somdemar.eu/es/</loc></url>
+    <url><loc>https://www.somdemar.eu/fr/</loc></url>
+
+    <!-- Reserva -->
+    <url><loc>https://www.somdemar.eu/en/reserva</loc></url>
+    <url><loc>https://www.somdemar.eu/es/reserva</loc></url>
+    <url><loc>https://www.somdemar.eu/fr/reserva</loc></url>
+
+    <!-- Orígenes -->
+    <url><loc>https://www.somdemar.eu/en/origenes</loc></url>
+    <url><loc>https://www.somdemar.eu/es/origenes</loc></url>
+    <url><loc>https://www.somdemar.eu/fr/origenes</loc></url>
+
+    <!-- Nuestros Platos -->
+    <url><loc>https://www.somdemar.eu/en/nuestros-platos</loc></url>
+    <url><loc>https://www.somdemar.eu/es/nuestros-platos</loc></url>
+    <url><loc>https://www.somdemar.eu/fr/nuestros-platos</loc></url>
+
+    <!-- Contacto -->
+    <url><loc>https://www.somdemar.eu/en/contactanos</loc></url>
+    <url><loc>https://www.somdemar.eu/es/contactanos</loc></url>
+    <url><loc>https://www.somdemar.eu/fr/contactanos</loc></url>
+</urlset>
