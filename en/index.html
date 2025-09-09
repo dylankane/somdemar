@@ -639,7 +639,13 @@
                 </p>
               </div>
               <div class="split-image">
-                <img src="/assets/images/index/eventos-1.webp" alt="Celebration at Som De Mar">
+                <video class="split-image-media"
+                       autoplay muted loop playsinline
+                       preload="metadata"
+                       poster="/assets/images/index/eventos-3.webp">
+                  <source src="/assets/videos/index/events-video.webm" type="video/webm">
+                  <source src="/assets/videos/index/events-video.mp4"  type="video/mp4">
+                </video>
               </div>
             </div>
           
@@ -654,7 +660,12 @@
                 </p>
               </div>
               <div class="split-image">
-                <img src="/assets/images/index/eventos-3.webp" alt="Dinner setting with music and lights">
+                <picture>
+                  <source srcset="/assets/images/index/eventos-1.webp" type="image/webp">
+                  <img src="/assets/images/index/eventos-1.png"
+                       alt="Dinner setting with music and lights"
+                       loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
         </section>
