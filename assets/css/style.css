@@ -107,6 +107,28 @@ a {
     background-color: var(--text-light);
 }
 
+.spacer-small-special-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 6rem;
+    /* height: 5rem; */
+    width: 100%;
+    background-color: var(--text-light);
+}
+
+.spacer-small-special-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 6rem;
+    /* height: 5rem; */
+    width: 100%;
+    background-color: var(--text-light);
+}
+
 /* ===== BUTTON STYLES ===== */
 .cta-button {
     position: relative;
@@ -1276,7 +1298,7 @@ a {
 .quote-text {
     position: relative;
     z-index: 1;
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
     font-size: 1.5rem;
     color: var(--text-light);
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
@@ -1300,6 +1322,10 @@ a {
 }
 
 /* Video gallery section */
+.video-gallery-section {
+    padding: 6rem 0rem;
+}
+
 .video-gallery {
     margin: 0 auto;
     display: flex;
@@ -1425,7 +1451,7 @@ a {
 
 /* Location Section */
 .location {
-    padding: 0;
+    padding: 6rem 0rem;;
     position: relative;
 }
 
@@ -1438,7 +1464,7 @@ a {
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
 }
 
 .location-row {
@@ -3016,6 +3042,7 @@ a {
 
 /* === Eventos Section === */
 .events {
+    padding: 6rem 0rem;
     width: 100%;
 }
 
@@ -3085,6 +3112,81 @@ a {
     }
 
     .split-image img {
+        height: 100%;
+    }
+}
+
+/* === Brunch Section === */
+.brunch {
+    padding: 6rem 0rem;
+    width: 100%;
+}
+
+.brunch-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.brunch-text {
+    background: #e0f2f1;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.brunch-title {
+    position: relative;
+    margin: 0 0 1.75rem;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.brunch-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.brunch-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brunch-image video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 880px) {
+    .brunch-row {
+        flex-direction: row-reverse;
+    }
+
+    .brunch-row.reverse {
+        flex-direction: row;
+    }
+
+    .brunch-text {
+        flex: 0 0 40%;
+    }
+
+    .brunch-image {
+        flex: 0 0 60%;
+    }
+
+    .brunch-image img {
         height: 100%;
     }
 }
