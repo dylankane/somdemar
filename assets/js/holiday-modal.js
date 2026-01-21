@@ -34,12 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("holiday-next");
 
   let currentSlide = 0;
-  let autoSlideInterval = null;
-  let userInteracted = false;
+  let autoAdvanceTimeout = null;
 
   function showSlide(index) {
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
+    if (index < 0) index = 0;
+    if (index >= slides.length) index = slides.length - 1;
     
     currentSlide = index;
     const offset = -currentSlide * 100;
@@ -54,29 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentSlide - 1);
   }
 
-  function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(() => {
-      if (!userInteracted) {
+  function startAutoAdvance() {
+    if (autoAdvanceTimeout) {
+      clearTimeout(autoAdvanceTimeout);
+    }
+    autoAdvanceTimeout = setTimeout(() => {
+      if (currentSlide === 0) {
         nextSlide();
       }
-    }, 5000);
+    }, 6000);
   }
 
-  function stopAutoSlide() {
-    if (autoSlideInterval) {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = null;
+  function stopAutoAdvance() {
+    if (autoAdvanceTimeout) {
+      clearTimeout(autoAdvanceTimeout);
+      autoAdvanceTimeout = null;
     }
-  }
-
-  function resetAutoSlide() {
-    userInteracted = true;
-    stopAutoSlide();
-    setTimeout(() => {
-      userInteracted = false;
-      startAutoSlide();
-    }, 10000);
   }
 
   function showModal() {
@@ -86,25 +78,25 @@ document.addEventListener("DOMContentLoaded", function () {
     
     modal.style.display = "flex";
     showSlide(0);
-    startAutoSlide();
+    startAutoAdvance();
   }
 
   function hideModal() {
     modal.style.display = "none";
-    stopAutoSlide();
+    stopAutoAdvance();
     sessionStorage.setItem(sessionKey, "true");
   }
 
   closeBtn.addEventListener("click", hideModal);
 
   prevBtn.addEventListener("click", () => {
+    stopAutoAdvance();
     prevSlide();
-    resetAutoSlide();
   });
 
   nextBtn.addEventListener("click", () => {
+    stopAutoAdvance();
     nextSlide();
-    resetAutoSlide();
   });
 
   modal.addEventListener("click", (e) => {
