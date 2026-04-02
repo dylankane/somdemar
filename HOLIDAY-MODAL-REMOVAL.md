@@ -7,6 +7,18 @@ This guide provides step-by-step instructions to **completely remove** the holid
 
 ---
 
+## Quick Deactivation (Without Removing Files)
+
+If you want to **temporarily disable** the modal but keep all files intact for future use:
+
+**Simply comment out the CSS and JS links** in all 15 HTML pages by adding `<!--` before and `-->` after each link block. This prevents the modal from loading while preserving all code for easy reactivation later.
+
+**To reactivate:** Just uncomment the links.
+
+This is useful if you plan to use the modal again for future holidays or similar campaigns.
+
+---
+
 ## Quick Removal Checklist
 
 - [ ] Delete JavaScript file
